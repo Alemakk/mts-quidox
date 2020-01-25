@@ -2,22 +2,26 @@ import React, { Suspense } from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
 
-import { Home, News } from './views'
-// import { Loading } from './components'
+import { Loading, Header } from './components'
 
-// const HomePage = React.lazy(() => import(Home))
-// const NewsPage = React.lazy(() => import(News))
+const Home = React.lazy(() => import('./views/Home'))
+const News = React.lazy(() => import('./views/News'))
 
 function App () {
   return (
-    <div className='App'>
-      <Router history={history}>
-        <Switch>
-          <Route path='/' component={Home} />
-          <Route path='/news' component={News} />
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <Header />
+      <main className='main'>
+        <Suspense fallback={<Loading />}>
+          <Router history={history}>
+            <Switch>
+              <Route path='/' component={Home} exact />
+              <Route path='/news' component={News} />
+            </Switch>
+          </Router>
+        </Suspense>
+      </main>
+    </>
   )
 }
 

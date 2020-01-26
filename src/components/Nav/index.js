@@ -1,3 +1,11 @@
+import { connect } from 'react-redux'
 import Nav from './Nav'
 
-export default Nav
+const mapStateToProps = state => ({
+  theme: state.theme
+})
+
+export default connect(
+  mapStateToProps,
+  null
+)(Nav)

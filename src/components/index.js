@@ -1,15 +1,23 @@
 import Loading from './Loading'
 import Header from './Header'
+import Footer from './Footer'
 import Heading from './Heading'
-import Typography from './Typography'
+import Text from './Text'
 import Container from './Container'
 import Nav from './Nav'
+import Button from './Button'
+import MobileMenu from './MobileMenu'
+import Aside from './Aside'
 
 export {
   Loading,
   Header,
+  Footer,
   Heading,
-  Typography,
+  Text,
   Container,
-  Nav
+  Nav,
+  Button,
+  MobileMenu,
+  Aside
 }

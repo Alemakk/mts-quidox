@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 import * as t from '../types'
 
+import app from './app'
 import theme from './theme'
 
 const appReducer = combineReducers({
+  app,
   theme
 })
 

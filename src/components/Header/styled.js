@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+import { styleguide } from '../../constants'
+
+const { sizes } = styleguide
+
 const ThemeHeader = styled.header`
   position: relative;
   box-shadow: 0px 10px 50px rgba(152, 152, 152, 0.18);
@@ -15,15 +19,23 @@ ThemeHeader.Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
 `
 
-ThemeHeader.Logo = styled.div`
-  width: 18rem;
-  height: 8rem;
-  background: url(${({ src }) => src}) no-repeat center;
-  background-size: cover;
+ThemeHeader.Logo = styled.img`
+  max-width: 10rem;
+  width: 100%;
+  height: auto;
   cursor: pointer;
+  
+  @media screen and (min-width: ${sizes.laptop}) {
+    max-width: 18rem;
+  }
+`
+
+ThemeHeader.AlignBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 ThemeHeader.Text = styled.p`

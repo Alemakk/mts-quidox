@@ -23,7 +23,10 @@ body {
   width: 100%;
 }
 section {
-  padding: 15rem 0;
+  padding: 5rem 0;
+  @media screen and (min-width: 1200px) {
+    padding: 15rem 0;
+  }
 }
 .wrapper {
   position: relative;

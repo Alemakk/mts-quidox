@@ -1,5 +1,4 @@
 import * as t from '../types'
-import { defaultAppState } from '../../constants'
 
 const initialState = {
   isMenuVisible: false,

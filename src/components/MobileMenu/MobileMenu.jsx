@@ -5,7 +5,6 @@ import { Nav } from '../'
 import { MobileMenuWrapper } from './styled'
 export default function MobileMenu (props) {
   const {
-    handleToggleMenu,
     app: { isMenuVisible },
   } = props
   return (

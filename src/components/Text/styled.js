@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Typography } from 'antd'
-import { styleguide } from '../../constants'
+// import { styleguide } from '../../constants'
 
 const { Text } = Typography
-const { colors, sizes } = styleguide
+// const { colors, sizes } = styleguide
 
 const ThemeText = styled(Text)`
   && {

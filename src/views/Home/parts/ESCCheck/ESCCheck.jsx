@@ -9,7 +9,7 @@ export default function ESCCheck () {
     <ESCCheckContent>
       <Container>
         <Row gutter={[24, 24]}>
-          <Col md={24} lg={{ offset: 4, span: 16 }}>
+          <Col md={24} lg={{ offset: 3, span: 18 }}>
             <ESCCheckContent.Block>
               <Heading
                 brandText='Проверить'

@@ -6,6 +6,7 @@ const { colors } =styleguide
 
 const AboutContent = styled.section`
   min-height: calc(100vh - 14.875rem);
+  padding-top: 5rem;
   position: relative;
   &:after {
     display: block;

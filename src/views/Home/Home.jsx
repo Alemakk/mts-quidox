@@ -5,12 +5,17 @@ import {
   HowToUse,
   ESCCheck,
   News,
-  AuthorizationType
+  AuthorizationType,
+  HowItsWork
 } from './parts'
 
 export default function Home () {
   return (
     <>
+      <HowItsWork />
+
+      <AuthorizationType />
+
       <About />
 
       <HowToUse />
@@ -18,8 +23,6 @@ export default function Home () {
       <ESCCheck />
 
       <News />
-
-      <AuthorizationType />
     </>
   )
 }

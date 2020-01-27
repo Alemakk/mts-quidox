@@ -8,6 +8,7 @@ import Nav from './Nav'
 import Button from './Button'
 import MobileMenu from './MobileMenu'
 import Aside from './Aside'
+import CarouselArrow from './CarouselArrow'
 
 export {
   Loading,
@@ -19,5 +20,6 @@ export {
   Nav,
   Button,
   MobileMenu,
-  Aside
+  Aside,
+  CarouselArrow
 }

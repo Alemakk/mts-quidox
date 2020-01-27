@@ -1,6 +1,6 @@
 import { menuIcons, homeIcons, footerIcons, ESCCheckIcon } from './icons'
 import images from './images'
-import fonts from './fonts'
+// import fonts from './fonts'
 
 export {
   menuIcons,
@@ -8,5 +8,5 @@ export {
   footerIcons,
   ESCCheckIcon,
   images,
-  fonts
+  // fonts
 }

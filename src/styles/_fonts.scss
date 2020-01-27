@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'MTS Sans UltraWide';
+  src: url('../resources/fonts/MTSSans/MTSSans-UltraWide.eot');
+  src: url('../resources/fonts/MTSSans/MTSSans-UltraWide.eot?#iefix') format('embedded-opentype'),
+  url('../resources/fonts/MTSSans/MTSSans-UltraWide.woff2') format('woff2'),
+  url('../resources/fonts/MTSSans/MTSSans-UltraWide.woff') format('woff'),
+  url('../resources/fonts/MTSSans/MTSSans-UltraWide.ttf') format('truetype'),
+  url('../resources/fonts/MTSSans/MTSSans-UltraWide.svg#MTSSans-UltraWide') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('../resources/fonts/MTSSans/MTSSans-Medium.eot');
+  src: url('../resources/fonts/MTSSans/MTSSans-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../resources/fonts/MTSSans/MTSSans-Medium.woff2') format('woff2'),
+  url('../resources/fonts/MTSSans/MTSSans-Medium.woff') format('woff'),
+  url('../resources/fonts/MTSSans/MTSSans-Medium.ttf') format('truetype'),
+  url('../resources/fonts/MTSSans/MTSSans-Medium.svg#MTSSans-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('../resources/fonts/MTSSans/MTSSans-Bold.eot');
+  src: url('../resources/fonts/MTSSans/MTSSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../resources/fonts/MTSSans/MTSSans-Bold.woff2') format('woff2'),
+  url('../resources/fonts/MTSSans/MTSSans-Bold.woff') format('woff'),
+  url('../resources/fonts/MTSSans/MTSSans-Bold.ttf') format('truetype'),
+  url('../resources/fonts/MTSSans/MTSSans-Bold.svg#MTSSans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('../resources/fonts/MTSSans/MTSSans-Regular.eot');
+  src: url('../resources/fonts/MTSSans/MTSSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../resources/fonts/MTSSans/MTSSans-Regular.woff2') format('woff2'),
+  url('../resources/fonts/MTSSans/MTSSans-Regular.woff') format('woff'),
+  url('../resources/fonts/MTSSans/MTSSans-Regular.ttf') format('truetype'),
+  url('../resources/fonts/MTSSans/MTSSans-Regular.svg#MTSSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MTS Sans';
+  src: url('../resources/fonts/MTSSans/MTSSans-Black.eot');
+  src: url('../resources/fonts/MTSSans/MTSSans-Black.eot?#iefix') format('embedded-opentype'),
+  url('../resources/fonts/MTSSans/MTSSans-Black.woff2') format('woff2'),
+  url('../resources/fonts/MTSSans/MTSSans-Black.woff') format('woff'),
+  url('../resources/fonts/MTSSans/MTSSans-Black.ttf') format('truetype'),
+  url('../resources/fonts/MTSSans/MTSSans-Black.svg#MTSSans-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+

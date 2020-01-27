@@ -21,7 +21,7 @@ export default function About () {
               <Text style={{ color: '#000' }}>
                 Центр обмена электронными документами,<br />
                 подписанными электронной цифровой подписью
-              </Text>
+              </Text><br />
 
               <Button type='primary' style={{ marginTop: width < 1200 ? '1.5rem' : '3rem' }}>Подключить</Button>
             </Col>

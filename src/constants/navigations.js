@@ -3,8 +3,8 @@ const { AboutIcon, PricesIcon, VideoIcon, NewsIcon, EscIcon } = menuIcons
 const menu = [
   {
     title: 'О сервисе',
-    route: '/about',
-    disabled: true,
+    route: '/',
+    disabled: false,
     icon: AboutIcon
   },
   {

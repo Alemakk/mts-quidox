@@ -6,7 +6,6 @@ import { Container, Button, Text, CarouselArrow, Heading } from '../../../../com
 import { ServicePackageContent, Package } from './styled'
 import { homeIcons } from '../../../../resources'
 import { servicePackage } from './static'
-import './HowItsWork.scss'
 
 const { star } = homeIcons
 

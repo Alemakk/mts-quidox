@@ -7,12 +7,15 @@ import {
   News,
   AuthorizationType,
   ServicePackage,
-  HowItsWork
+  HowItsWork,
+  QuidoxProcess
 } from './parts'
 
 export default function Home () {
   return (
     <>
+      <QuidoxProcess />
+
       <HowItsWork />
 
       <AuthorizationType />

@@ -7,6 +7,6 @@ export {
   homeIcons,
   footerIcons,
   ESCCheckIcon,
-  images,
+  images
   // fonts
 }

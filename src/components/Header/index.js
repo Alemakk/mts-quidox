@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleToggleMenu: data => dispatch(actions.app.handleToggleMenu(data)),
-  handleToggleAside: data => dispatch(actions.app.handleToggleAside(data)),
+  handleToggleAside: data => dispatch(actions.app.handleToggleAside(data))
 })
 
 export default connect(

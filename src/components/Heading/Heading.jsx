@@ -20,8 +20,7 @@ export default function Heading (props) {
           : <>
             {children}&nbsp;
             <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
-            </>
-        }
+            </>}
       </>
     </ThemeHeading>
   )

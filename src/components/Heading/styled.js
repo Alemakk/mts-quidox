@@ -3,7 +3,6 @@ import { Typography } from 'antd'
 
 import { styleguide } from '../../constants'
 
-
 const { Title } = Typography
 const { sizes } = styleguide
 

@@ -53,8 +53,6 @@ ThemeFooter.BottomBlock = styled.div`
   justify-content: flex-end;
 `
 
-
-
 export {
   ThemeFooter
 }

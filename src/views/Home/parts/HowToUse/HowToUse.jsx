@@ -13,9 +13,10 @@ export default function HowToUse () {
           brandText='Пользоваться'
           level={2}
           style={{ textAlign: 'center', marginBottom: '6rem' }}
-        >просто</Heading>
+        >просто
+        </Heading>
         <Row gutter={[24, 24]} align='middle'>
-          {howItsWork.map(({text, icon}, idx) => (
+          {howItsWork.map(({ text, icon }, idx) => (
             <Col md={12} lg={6} key={idx}>
               <HowToUseContent.Block>
                 <Icon component={icon} />

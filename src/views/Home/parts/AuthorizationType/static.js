@@ -1,6 +1,6 @@
 import { homeIcons } from '../../../../resources'
 
-const { emailIcon, escIcon, mtsIcon, phoneIcon  } = homeIcons
+const { emailIcon, escIcon, mtsIcon, phoneIcon } = homeIcons
 
 const auth = [
   {

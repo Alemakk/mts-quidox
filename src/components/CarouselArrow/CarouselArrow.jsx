@@ -14,7 +14,7 @@ export default function CarouselArrow (props) {
   } = props
   return (
     <CarouselButton {...rest} color={theme['@primary-color']}>
-      <Icon component={arrow} style={{ transform: direction === 'right' && 'rotate(180deg)'  }} />
+      <Icon component={arrow} style={{ transform: direction === 'right' && 'rotate(180deg)' }} />
     </CarouselButton>
   )
 }

@@ -6,6 +6,7 @@ import {
   ESCCheck,
   News,
   AuthorizationType,
+  ServicePackage,
   HowItsWork
 } from './parts'
 
@@ -21,6 +22,8 @@ export default function Home () {
       <HowToUse />
 
       <ESCCheck />
+
+      <ServicePackage />
 
       <News />
     </>

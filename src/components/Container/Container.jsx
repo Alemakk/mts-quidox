@@ -2,8 +2,8 @@ import React from 'react'
 
 import { ThemeContainer } from './styled'
 
-export default function Container ({ children }) {
+export default function Container ({ children, ...rest }) {
   return (
-    <ThemeContainer>{children}</ThemeContainer>
+    <ThemeContainer {...rest}>{children}</ThemeContainer>
   )
 }

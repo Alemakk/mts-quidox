@@ -5,7 +5,7 @@ import { Nav } from '../'
 import { MobileMenuWrapper } from './styled'
 export default function MobileMenu (props) {
   const {
-    app: { isMenuVisible },
+    app: { isMenuVisible }
   } = props
   return (
     <MobileMenuWrapper style={{ left: isMenuVisible ? '0' : '-100%' }}>

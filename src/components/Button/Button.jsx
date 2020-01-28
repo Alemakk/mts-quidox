@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeButton } from './styled';
+import { ThemeButton } from './styled'
 
 export default function Button ({ theme: { theme }, children, ...rest }) {
   return (

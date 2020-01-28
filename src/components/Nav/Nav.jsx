@@ -7,7 +7,7 @@ import { ThemeNav } from './styled'
 
 const { menu } = navigations
 
-export default function Nav ({ theme: { theme }, type='desktop' }) {
+export default function Nav ({ theme: { theme }, type = 'desktop' }) {
   const { width } = useWindowDimension()
   return (
     <ThemeNav type={type}>
@@ -20,10 +20,10 @@ export default function Nav ({ theme: { theme }, type='desktop' }) {
           activeStyle={{ color: theme['@primary-color'] }}
         >
           {width > 1200 &&
-            <Icon component={icon}/>}
+            <Icon component={icon} />}
           {title}
         </ThemeNav.Link>
-        ))}
+      ))}
     </ThemeNav>
   )
 }

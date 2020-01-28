@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function useWindowDimensions() {
+export default function useWindowDimensions () {
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
 
@@ -10,10 +10,10 @@ export default function useWindowDimensions() {
       setHeight(window.innerHeight)
     }
 
-    window.addEventListener("resize", listener)
+    window.addEventListener('resize', listener)
 
     return () => {
-      window.removeEventListener("resize", listener)
+      window.removeEventListener('resize', listener)
     }
   }, [])
 

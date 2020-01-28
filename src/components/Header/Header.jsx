@@ -31,11 +31,11 @@ export default function Header (props) {
         <ThemeHeader.Bottom>
           <ThemeHeader.AlignBlock>
             {width < 1200 &&
-            <Icon
-              onClick={() => handleToggleMenu(!isMenuVisible)}
-              type={isMenuVisible ? 'close' : 'menu'}
-              style={{ fontSize: '2rem', marginRight: width < 1200 ? '3rem' : '6rem' }}
-            />}
+              <Icon
+                onClick={() => handleToggleMenu(!isMenuVisible)}
+                type={isMenuVisible ? 'close' : 'menu'}
+                style={{ fontSize: '2rem', marginRight: width < 1200 ? '3rem' : '6rem' }}
+              />}
 
             <ThemeHeader.Logo
               src={theme['@logo-link']}
@@ -45,7 +45,7 @@ export default function Header (props) {
           </ThemeHeader.AlignBlock>
 
           {width > 1200 &&
-          <Nav />}
+            <Nav />}
 
           <ThemeHeader.AlignBlock>
             <Button type='primary'>Войти</Button>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import { Row, Col, Icon } from 'antd'
 import { Heading, Text, Container } from '../../../../components'

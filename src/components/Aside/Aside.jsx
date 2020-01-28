@@ -14,7 +14,7 @@ export default function Aside (props) {
       style={{ right: isAsideVisible ? '0' : '-100%' }}
     >
       <ThemeAside.Nav>
-        {aside.map(({title, route, disabled}) => (
+        {aside.map(({ title, route, disabled }) => (
           <ThemeAside.Link
             to={route}
             key={title}

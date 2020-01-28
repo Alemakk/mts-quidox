@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { styleguide } from '../../../../constants'
 
-const { colors } =styleguide
+const { colors } = styleguide
 
 const AboutContent = styled.section`
   min-height: calc(100vh - 14.875rem);

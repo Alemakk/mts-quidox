@@ -34,7 +34,7 @@ export default function Footer () {
               {footerNav.filter(el => el.position === 'left')
                 .map(({ title, route }, idx) => (
                   <ThemeFooter.NavLink key={idx} to={route}>{title}</ThemeFooter.NavLink>
-              ))}
+                ))}
             </ThemeFooter.Nav>
           </Col>
 

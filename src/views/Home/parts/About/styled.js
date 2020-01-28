@@ -12,7 +12,7 @@ const AboutContent = styled.section`
     display: block;
     content: '';
     position: absolute;
-    top: 50%;
+    top: 57%;
     bottom: 0;
     left: 0;
     width: 100%;

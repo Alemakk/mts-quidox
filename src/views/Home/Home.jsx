@@ -14,21 +14,14 @@ import {
 export default function Home () {
   return (
     <>
-      <QuidoxProcess />
-
-      <HowItsWork />
-
-      <AuthorizationType />
-
       <About />
-
+      <QuidoxProcess />
       <HowToUse />
-
+      <HowItsWork />
       <ESCCheck />
-
       <ServicePackage />
-
       <News />
+      <AuthorizationType />
     </>
   )
 }

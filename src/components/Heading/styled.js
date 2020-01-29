@@ -4,17 +4,9 @@ import { Typography } from 'antd'
 import { styleguide } from '../../constants'
 
 const { Title } = Typography
-const { sizes } = styleguide
+const { colors } = styleguide
 
-const ThemeHeading = styled(Title)`
-  && {
-    font-size: 3.2rem;
-    margin-top: 0;
-    @media screen and (min-width: ${sizes.laptop}) {
-      font-size: 6.4rem;
-    }
-  }
-`
+const ThemeHeading = styled(Title)``
 
 export {
   ThemeHeading

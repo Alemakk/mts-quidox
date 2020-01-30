@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
 
-import { Loading, Header, Footer, MobileMenu, Aside } from './components'
+import { Loading, Header, Footer, MobileMenu, Aside, ScrollTop } from './components'
 
 const Home = React.lazy(() => import('./views/Home'))
 const News = React.lazy(() => import('./views/News'))
@@ -11,6 +11,7 @@ function App () {
   return (
     <>
       <Router history={history}>
+        <ScrollTop />
         <Header />
         <div className='wrapper'>
           <MobileMenu />
@@ -18,7 +19,7 @@ function App () {
           <main className='main'>
             <Suspense fallback={<Loading />}>
               <Switch>
-                <Route path='/' component={Home} exact />
+                <Route path='/' component={Home} />
                 <Route path='/news' component={News} />
               </Switch>
             </Suspense>

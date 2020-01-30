@@ -10,7 +10,7 @@ export default function News () {
       <Heading
         brandText='Новости'
         level={2}
-        style={{ textAlign: 'center', marginBottom: '8rem' }}
+        style={{ marginBottom: '8rem' }}
       >
         проекта
       </Heading>

@@ -10,7 +10,7 @@ export default function AuthorizationType () {
       <Heading
         brandText='Выберите'
         level={2}
-        style={{ textAlign: 'center', marginBottom: '9rem' }}
+        style={{ marginBottom: '9rem' }}
       >
         способ авторизации
       </Heading>

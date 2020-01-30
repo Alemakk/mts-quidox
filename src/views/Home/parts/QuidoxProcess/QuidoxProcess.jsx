@@ -38,7 +38,7 @@ export default function QuidoxProcess () {
     <QuidoxProcessContent>
       <div style={{ position: 'relative', zIndex: 5 }}>
         <Heading
-          style={{ textAlign: 'center' }}
+          level={2}
           brandPosition='right'
           brandText='MTC Quidox'
         >

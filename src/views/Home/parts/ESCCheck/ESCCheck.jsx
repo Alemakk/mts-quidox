@@ -14,7 +14,6 @@ export default function ESCCheck () {
               <Heading
                 brandText='Проверить'
                 level={2}
-                style={{ textAlign: 'center' }}
               >
                 электронную подпись
               </Heading>

@@ -1,6 +1,6 @@
 @import "mixins";
 
-h1.ant-typography {
+h2.ant-typography {
   font-weight: 700;
   @include for-size(for-phone-only) {
     font-size: 5.8rem;
@@ -16,7 +16,7 @@ h1.ant-typography {
   }
 }
 
-h2.ant-typography {
+h3.ant-typography {
   font-weight: 500;
   @include for-size(for-phone-only) {
     font-size: 2rem;

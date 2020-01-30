@@ -54,9 +54,9 @@ export default function HowItsWork ({ theme: { theme } }) {
   return (
     <HowItsWorkContent>
       <Heading
+        level={2}
         brandText='MTC Quidox?'
         brandPosition='right'
-        style={{ textAlign: 'center' }}
       >
         Как работает
       </Heading>

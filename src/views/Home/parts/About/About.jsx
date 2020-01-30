@@ -16,7 +16,13 @@ export default function About () {
         <Container>
           <Row gutter={[24, 24]} type='flex' align='middle'>
             <Col md={24} lg={12}>
-              <Heading level={1} brandText='MTC'>Quidox</Heading>
+              <Heading
+                level={2}
+                style={{ textAlign: 'left' }}
+                brandText='MTC'
+              >
+                Quidox
+              </Heading>
 
               <Text style={{ color: '#000' }}>
                 Центр обмена электронными документами,<br />

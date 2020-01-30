@@ -10,9 +10,9 @@ export default function HowToUse () {
     <HowToUseContent>
       <Container>
         <Heading
-          brandText='Пользоваться'
           level={2}
-          style={{ textAlign: 'center', marginBottom: '6rem' }}
+          style={{ marginBottom: '6rem' }}
+          brandText='Пользоваться'
         >просто
         </Heading>
         <Row gutter={[24, 24]} align='middle'>

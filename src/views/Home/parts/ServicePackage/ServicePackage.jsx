@@ -41,7 +41,7 @@ export default function ServicePackage ({ theme: { theme } }) {
     <ServicePackageContent>
       <Heading
         brandText='Подключить'
-        style={{ textAlign: 'center' }}
+        level={2}
       >
         пакет услуг
       </Heading>

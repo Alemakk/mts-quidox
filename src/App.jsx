@@ -6,6 +6,7 @@ import { Loading, Header, Footer, MobileMenu, Aside, ScrollTop } from './compone
 
 const Home = React.lazy(() => import('./views/Home'))
 const News = React.lazy(() => import('./views/News'))
+const SingleNews = React.lazy(() => import('./views/SingleNews'))
 
 function App () {
   return (
@@ -20,7 +21,8 @@ function App () {
             <Suspense fallback={<Loading />}>
               <Switch>
                 <Route path='/' component={Home} exact />
-                <Route path='/news' component={News} />
+                <Route path='/news' component={News} exact />
+                <Route path='/news/:id' component={SingleNews} />
               </Switch>
             </Suspense>
           </main>

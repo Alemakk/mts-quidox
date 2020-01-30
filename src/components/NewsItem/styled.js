@@ -12,13 +12,14 @@ const NewsItemBlock = styled.div`
   toDirection: '180deg',
   fallback: `${colors.black}`
   })};
-  background: url(${({ image }) => image }) center no-repeat;
+  background: url(${({ src }) => src }) center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 1rem;
   height: 55rem;
+  cursor: pointer;
 `
 
 export {

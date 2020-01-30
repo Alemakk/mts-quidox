@@ -32,7 +32,7 @@ const menu = [
   {
     title: 'Новости',
     route: '/news',
-    exact: true,
+    exact: false,
     disabled: false,
     icon: NewsIcon
   }

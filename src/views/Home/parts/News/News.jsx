@@ -16,9 +16,9 @@ export default function News () {
       </Heading>
       <Container>
         <Row gutter={[24, 24]}>
-          {news.map(({ text, image }, idx) => (
+          {news.map(({ text, image, id }, idx) => (
             <Col md={24} lg={12} key={idx}>
-              <NewsItem text={text} path={image} />
+              <NewsItem text={text} path={image} id={id} />
             </Col>
           ))}
         </Row>

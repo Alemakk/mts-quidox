@@ -20,7 +20,7 @@ export default function News () {
         <Row gutter={[24, 120]}>
           {news.map(({ id, text, image }, idx) => (
             <Col md={24} lg={idx === 0 ? 24 : 12} key={idx}>
-              <NewsItem text={text} path={image} />
+              <NewsItem text={text} path={image} id={id} />
             </Col>
           ))}
         </Row>

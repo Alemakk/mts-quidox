@@ -48,7 +48,7 @@ export default function Header (props) {
             <Nav />}
 
           <ThemeHeader.AlignBlock>
-            <Button type='primary'>Войти</Button>
+            <Button>Войти</Button>
 
             <Icon
               style={{ fontSize: '2rem', marginLeft: width < 1200 ? '3rem' : '6rem' }}

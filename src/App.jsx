@@ -19,7 +19,7 @@ function App () {
           <main className='main'>
             <Suspense fallback={<Loading />}>
               <Switch>
-                <Route path='/' component={Home} />
+                <Route path='/' component={Home} exact />
                 <Route path='/news' component={News} />
               </Switch>
             </Suspense>

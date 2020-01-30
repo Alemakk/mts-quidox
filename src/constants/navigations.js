@@ -9,6 +9,13 @@ const menu = [
     icon: AboutIcon
   },
   {
+    title: 'Проверка подписи',
+    route: '/esc',
+    exact: true,
+    disabled: true,
+    icon: EscIcon
+  },
+  {
     title: 'Стоимость',
     route: '/prices',
     exact: true,
@@ -19,7 +26,7 @@ const menu = [
     title: 'Видеоуроки',
     route: '/video',
     exact: true,
-    disabled: true,
+    disabled: false,
     icon: VideoIcon
   },
   {
@@ -28,13 +35,6 @@ const menu = [
     exact: true,
     disabled: false,
     icon: NewsIcon
-  },
-  {
-    title: 'Проверка подписи',
-    route: '/esc',
-    exact: true,
-    disabled: true,
-    icon: EscIcon
   }
 ]
 

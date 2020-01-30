@@ -10,6 +10,7 @@ import MobileMenu from './MobileMenu'
 import Aside from './Aside'
 import CarouselArrow from './CarouselArrow'
 import ScrollTop from './ScrollTop'
+import NewsItem from './NewsItem'
 
 export {
   Loading,
@@ -23,5 +24,6 @@ export {
   MobileMenu,
   Aside,
   CarouselArrow,
-  ScrollTop
+  ScrollTop,
+  NewsItem
 }

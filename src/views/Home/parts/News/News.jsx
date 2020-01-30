@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'antd'
-import { Container, Heading, Text } from '../../../../components'
+import { Container, Heading, NewsItem } from '../../../../components'
 import { news } from './static'
 import { NewsContent } from './styled'
 export default function News () {
@@ -18,9 +18,7 @@ export default function News () {
         <Row gutter={[24, 24]}>
           {news.map(({ text, image }, idx) => (
             <Col md={24} lg={12} key={idx}>
-              <NewsContent.Item src={image}>
-                <Text style={{ color: '#fff' }}>{text}</Text>
-              </NewsContent.Item>
+              <NewsItem text={text} path={image} />
             </Col>
           ))}
         </Row>

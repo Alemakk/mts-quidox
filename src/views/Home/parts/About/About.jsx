@@ -24,7 +24,7 @@ export default function About () {
                 Quidox
               </Heading>
 
-              <Text style={{ color: '#000' }}>
+              <Text style={{ color: '#000', textAlign: 'left' }}>
                 Центр обмена электронными документами,<br />
                 подписанными электронной цифровой подписью
               </Text><br />

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import history from '../../../../history'
 import { Row, Col } from 'antd'
 import { Container, Heading, NewsItem, Button } from '../../../../components'
 import { news } from './static'
@@ -23,7 +24,7 @@ export default function News () {
           ))}
         </Row>
         <div style={{ textAlign: 'center', marginTop: '10rem' }}>
-          <Button type='secondary' ghost>Другие новости</Button>
+          <Button type='secondary' onClick={() => history.push('/news')} ghost>Другие новости</Button>
         </div>
       </Container>
     </NewsContent>

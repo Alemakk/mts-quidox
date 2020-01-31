@@ -31,6 +31,11 @@ ThemeFooter.SocialsItem = styled.li`
 ThemeFooter.SocialsItemLink = styled.a`
   text-decoration: none;
   color: ${colors.white};
+  &:hover {
+    * {
+      fill: ${({ color }) => color};
+    }
+  }
 `
 
 ThemeFooter.Nav = styled.div`
@@ -44,6 +49,9 @@ ThemeFooter.NavLink = styled(NavLink)`
   margin-bottom: 2.5rem;
   &:last-of-type {
     margin-bottom: 0;
+  }
+  &:hover {
+    color: ${({ color }) => color};
   }
 `
 ThemeFooter.BottomBlock = styled.div`

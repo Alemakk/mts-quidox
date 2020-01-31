@@ -1,23 +1,23 @@
-import { homeIcons } from '../../../../resources'
+import { images } from '../../../../resources'
 
-const { emailIcon, escIcon, mtsIcon, phoneIcon } = homeIcons
+const { auth_id, auth_phone, auth_usb, auth_email } = images
 
 const auth = [
   {
     text: 'Электронная почта',
-    icon: emailIcon
+    image: auth_email
   },
   {
     text: 'USB ЭЦП',
-    icon: escIcon
+    image: auth_usb
   },
   {
     text: 'MTC ID',
-    icon: mtsIcon
+    image: auth_id
   },
   {
     text: 'Номер телефона',
-    icon: phoneIcon
+    image: auth_phone
   }
 ]
 

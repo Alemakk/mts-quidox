@@ -2,23 +2,9 @@ import React, { useState } from 'react'
 import Slider from 'react-slick'
 
 import { useWindowDimension } from '../../../../hooks'
-import { CarouselArrow, Container, Heading, Text } from '../../../../components'
+import { CarouselArrow, Container, Heading, Text, Button } from '../../../../components'
+import videoData from './static'
 import { HowItsWorkContent, Video } from './styled'
-
-const videoData = [
-  {
-    text: 'Как отправить документ MTC QuiDox?',
-    url: 'https://youtu.be/dutlNDEhldE'
-  },
-  {
-    text: 'Как отправить документ MTC QuiDox?',
-    url: 'https://youtu.be/dutlNDEhldE'
-  },
-  {
-    text: 'Как отправить документ MTC QuiDox?',
-    url: 'https://youtu.be/dutlNDEhldE'
-  }
-]
 
 export default function HowItsWork ({ theme: { theme } }) {
   const { width } = useWindowDimension()
@@ -82,6 +68,7 @@ export default function HowItsWork ({ theme: { theme } }) {
             </Video>
           ))}
         </Slider>
+        <Button type='secondary' ghost style={{ marginTop: '10rem' }}>Другие видео</Button>
       </Container>
     </HowItsWorkContent>
   )

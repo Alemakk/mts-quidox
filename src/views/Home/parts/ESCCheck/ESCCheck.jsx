@@ -24,7 +24,7 @@ export default function ESCCheck () {
 
               <Icon style={{ margin: '6rem 0' }} component={ESCCheckIcon} />
 
-              <Button type='primary'>Проверить подпись</Button>
+              <Button type='secondary' ghost>Проверить подпись</Button>
             </ESCCheckContent.Block>
           </Col>
         </Row>

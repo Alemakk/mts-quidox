@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'antd'
-import { Container, Heading, NewsItem } from '../../../../components'
+import { Container, Heading, NewsItem, Button } from '../../../../components'
 import { news } from './static'
 import { NewsContent } from './styled'
 export default function News () {
@@ -22,6 +22,9 @@ export default function News () {
             </Col>
           ))}
         </Row>
+        <div style={{ textAlign: 'center', marginTop: '10rem' }}>
+          <Button type='secondary' ghost>Другие новости</Button>
+        </div>
       </Container>
     </NewsContent>
   )

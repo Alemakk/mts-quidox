@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
 
+import history from '../../../../history'
 import { useWindowDimension } from '../../../../hooks'
 import { CarouselArrow, Container, Heading, Text, Button } from '../../../../components'
 import videoData from './static'
@@ -68,7 +69,14 @@ export default function HowItsWork ({ theme: { theme } }) {
             </Video>
           ))}
         </Slider>
-        <Button type='secondary' ghost style={{ marginTop: '10rem' }}>Другие видео</Button>
+        <Button
+          type='secondary'
+          style={{ marginTop: '10rem' }}
+          onClick={() => history.push('/video')}
+          ghost
+        >
+          Другие видео
+        </Button>
       </Container>
     </HowItsWorkContent>
   )

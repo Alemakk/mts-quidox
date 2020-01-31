@@ -7,6 +7,7 @@ export default function Heading (props) {
     theme: { theme },
     brandText = '',
     brandPosition = 'left',
+    space = true,
     children,
     ...rest
   } = props
@@ -14,17 +15,31 @@ export default function Heading (props) {
     <ThemeHeading {...rest}>
       {brandText
         ? <>
-          {brandPosition === 'left'
+          {space
             ? <>
-              <span style={{ color: theme['@primary-color'] }}>{brandText}</span>&nbsp;
-              {children}
+              {brandPosition === 'left'
+                ? <>
+                  <span style={{ color: theme['@primary-color'] }}>{brandText}</span>&nbsp;
+                  {children}
+                </>
+                : <>
+                  {children}&nbsp;
+                  <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
+                </>}
             </>
             : <>
-              {children}&nbsp;
-              <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
-            </>}
+              {brandPosition === 'left'
+                ? <>
+                  <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
+                  {children}
+                  </>
+                : <>
+                  {children}
+                  <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
+                  </>}
+              </>}
           </>
-        : <>{ children }</>}
+        : <>{children}</>}
     </ThemeHeading>
   )
 }

@@ -6,6 +6,7 @@ import { Loading, Header, Footer, MobileMenu, Aside, ScrollTop } from './compone
 
 const Home = React.lazy(() => import('./views/Home'))
 const News = React.lazy(() => import('./views/News'))
+const Video = React.lazy(() => import('./views/Video'))
 const SingleNews = React.lazy(() => import('./views/SingleNews'))
 const Registration = React.lazy(() => import('./views/Registration'))
 
@@ -25,6 +26,8 @@ function App () {
 
                 <Route path='/news' component={News} exact />
                 <Route path='/news/:id' component={SingleNews} />
+
+                <Route path='/video' component={Video} />
 
                 <Route path='/registration' component={Registration} />
               </Switch>

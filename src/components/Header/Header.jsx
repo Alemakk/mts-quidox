@@ -51,7 +51,8 @@ export default function Header (props) {
             <Button
               ghost
               type='secondary'
-            >Войти</Button>
+            >Войти
+            </Button>
 
             <Icon
               style={{ fontSize: '2rem', marginLeft: width < 1200 ? '3rem' : '6rem' }}

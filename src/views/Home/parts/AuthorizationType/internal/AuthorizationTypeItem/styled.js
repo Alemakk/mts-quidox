@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const AuthorizationItem = styled.div`
+const AuthorizationItem = styled(Link)`
+  display: block;
   text-align: center;
   cursor: pointer;
 `
@@ -11,7 +13,7 @@ AuthorizationItem.Image = styled.div`
   height: 17rem;
   background: url(${({ src }) => src}) center no-repeat;
   background-size: cover;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 `
 
 export {

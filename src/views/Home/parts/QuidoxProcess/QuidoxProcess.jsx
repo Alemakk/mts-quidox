@@ -47,7 +47,8 @@ export default function QuidoxProcess () {
 
         <Container style={{ textAlign: 'center' }}>
           <Text>Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br />
-            сервисом, отправлять и получать документы с ЭЦП.</Text>
+            сервисом, отправлять и получать документы с ЭЦП.
+          </Text>
 
           <Slider {...settings} style={{ marginTop: '10rem' }}>
             {quidoxProcess.map(({ text, icon }, idx) => (
@@ -59,7 +60,9 @@ export default function QuidoxProcess () {
                 <QuidoxProcessItem.Icon small={width < 800 ? 1 : 0} component={icon} />
                 <Text
                   className='slider-hidden-text'
-                  style={{ color: '#000', marginTop: '5rem' }}>{text}</Text>
+                  style={{ color: '#000', marginTop: '5rem' }}
+                >{text}
+                </Text>
               </QuidoxProcessItem>
             ))}
           </Slider>

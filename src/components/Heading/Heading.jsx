@@ -1,4 +1,5 @@
 import React from 'react'
+import Slider from 'react-slick'
 
 import { ThemeHeading } from './styled'
 export default function Heading (props) {
@@ -11,17 +12,19 @@ export default function Heading (props) {
   } = props
   return (
     <ThemeHeading {...rest}>
-      <>
-        {brandPosition === 'left'
-          ? <>
-            <span style={{ color: theme['@primary-color'] }}>{brandText}</span>&nbsp;
-            {children}
-          </>
-          : <>
-            {children}&nbsp;
-            <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
+      {brandText
+        ? <>
+          {brandPosition === 'left'
+            ? <>
+              <span style={{ color: theme['@primary-color'] }}>{brandText}</span>&nbsp;
+              {children}
+            </>
+            : <>
+              {children}&nbsp;
+              <span style={{ color: theme['@primary-color'] }}>{brandText}</span>
             </>}
-      </>
+          </>
+        : <>{ children }</>}
     </ThemeHeading>
   )
 }

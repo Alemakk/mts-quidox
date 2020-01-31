@@ -12,7 +12,7 @@ const NewsItemBlock = styled.div`
   toDirection: '180deg',
   fallback: `${colors.black}`
   })};
-  background: url(${({ src }) => src }) center no-repeat;
+  background: url(${({ src }) => src}) center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;

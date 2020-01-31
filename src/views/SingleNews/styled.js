@@ -46,6 +46,13 @@ News.Banner = styled.div`
   padding-bottom: 4rem;
 `
 
+News.ItemContent = styled.div`
+  margin-top: 10rem;
+  * {
+    text-align: left;
+  }
+`
+
 export {
   News
 }

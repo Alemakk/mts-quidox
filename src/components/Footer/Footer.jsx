@@ -23,7 +23,7 @@ export default function Footer ({ theme: { theme } }) {
                 ))}
               </ThemeFooter.Socials>
 
-              <Text style={{ color: '#fff', fontSize: '1.8rem' }}>
+              <Text style={{ color: '#fff', fontSize: '1.8rem', textAlign: 'left' }}>
                 © 2019 СООО «Мобильные ТелеСистемы». Все права защищены.
               </Text>
             </div>

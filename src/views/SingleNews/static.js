@@ -18,4 +18,19 @@ const news = [
   }
 ]
 
-export default news
+const sliderItems = [
+  {
+    url: single_news
+  },
+  {
+    url: single_news
+  },
+  {
+    url: single_news
+  }
+]
+
+export {
+  news,
+  sliderItems
+}

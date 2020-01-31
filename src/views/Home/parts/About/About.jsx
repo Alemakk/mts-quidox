@@ -19,10 +19,8 @@ export default function About () {
               <Heading
                 level={2}
                 style={{ textAlign: 'left' }}
-                brandText='MTC'
-              >
-                Quidox
-              </Heading>
+                brandText='MTC Quidox'
+              />
 
               <Text style={{ color: '#000', textAlign: 'left' }}>
                 Центр обмена электронными документами,<br />

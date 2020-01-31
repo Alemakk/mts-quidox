@@ -7,7 +7,7 @@ import { NewsItemBlock } from './styled'
 
 export default function NewsItem ({ text = '', path = '', id = null, ...rest }) {
   const { src } = useImage(path)
-  console.log(path);
+
   return (
     <NewsItemBlock
       src={src}

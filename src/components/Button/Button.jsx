@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import { ThemeButton } from './styled'
 
@@ -8,12 +9,22 @@ export default function Button (props) {
     type = 'primary',
     ghost = false,
     children,
-    ...rest } = props
+    ...rest
+  } = props
+
+  const buttonClasses = classNames('button', {
+    ghost: ghost,
+    ghost_primary: ghost && type === 'primary',
+    ghost_secondary: ghost && type === 'secondary',
+    button_primary: type === 'primary',
+    button_secondary: type === 'secondary'
+  })
 
   return (
     <ThemeButton
-      color={type === 'primary' ? theme['@primary-color'] : theme['@secondary-color']}
-      ghost={ghost ? 1 : 0}
+      className={buttonClasses}
+      primaryColor={theme['@primary-color']}
+      secondaryColor={theme['@secondary-color']}
       {...rest}
     >
       {children}

@@ -1,19 +1,60 @@
 import styled from 'styled-components'
 import { styleguide } from '../../constants'
 
-const { sizes } = styleguide
+const { colors } = styleguide
 
 const ThemeButton = styled.button`
-  && {
-    border: .1rem solid transparent;
-    border-color: ${({ color }) => color};
-    background-color: ${({ color }) => color};
-    font-size: 1.8rem;
-    font-weight: bold;
-    padding: 1.5rem 6rem;
-    height: auto;
-    @media screen and (max-width: ${sizes.laptop}) {
-      padding: 1rem 2rem;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  padding: 1.5rem 6rem;
+  font-weight: 700;
+  border: .2rem solid transparent;
+  border-radius: .6rem;
+  outline: none;
+  transition: .2s linear;
+
+  &.button_primary {
+    border-color: ${({ primaryColor }) => primaryColor};
+    background-color: ${({ primaryColor }) => primaryColor};
+    color: ${colors.white};
+    &:hover {
+      background-color: transparent;
+      color: ${({ primaryColor }) => primaryColor};
+    }
+  }
+  
+  &.button_secondary {
+    border-color: ${({ secondaryColor }) => secondaryColor};
+    background-color: ${({ secondaryColor }) => secondaryColor};
+    color: ${colors.white};
+    &:hover {
+      background-color: transparent;
+      color: ${({ secondaryColor }) => secondaryColor};
+    }
+  }
+
+  &.ghost {
+    background: transparent;
+    
+    &.ghost_primary {
+      color: ${({ primaryColor }) => primaryColor};
+      border-color: ${({ primaryColor }) => primaryColor};
+      &:hover {
+        color: ${colors.white};
+        background-color: ${({ primaryColor }) => primaryColor};
+      }    
+    }
+    
+    &.ghost_secondary {
+      color: ${({ secondaryColor }) => secondaryColor};
+      border-color: ${({ secondaryColor }) => secondaryColor};
+      &:hover {
+        color: ${colors.white};
+        background-color: ${({ secondaryColor }) => secondaryColor};
+      }    
     }
   }
 `

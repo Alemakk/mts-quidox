@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
+import YouTube from 'react-youtube'
 
 import history from '../../../../history'
 import { useWindowDimension } from '../../../../hooks'
-import { CarouselArrow, Container, Heading, Text, Button } from '../../../../components'
+import { CarouselArrow, VideoPlayer, Container, Heading, Text, Button } from '../../../../components'
 import videoData from './static'
 import { HowItsWorkContent, Video } from './styled'
+import ReactPlayer from "react-player";
 
 export default function HowItsWork ({ theme: { theme } }) {
   const { width } = useWindowDimension()
@@ -51,21 +53,20 @@ export default function HowItsWork ({ theme: { theme } }) {
         <Text>
           Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br /> сервисом, отправлять и получать документы с ЭЦП.
         </Text>
+
         <Slider {...settings} style={{ marginTop: '10rem' }}>
-          {videoData.map(({ url, text }, idx) => (
+          {videoData.map(({ url, text, poster }, idx) => (
             <Video
               key={idx}
               style={{ width: width > 1200 && 800 }}
               className='slide-item'
             >
-              <Video.Slide
-                width='100%'
-                height='100%'
+              <VideoPlayer
                 url={url}
+                light={poster}
                 playing={pause === idx}
-                light
               />
-              <Video.Text style={{ color: '#fff' }}>{text}</Video.Text>
+              <Video.Text style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
             </Video>
           ))}
         </Slider>

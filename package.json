@@ -28,6 +28,7 @@
     "react-scripts": "3.3.0",
     "react-slick": "^0.25.2",
     "react-svg": "^11.0.7",
+    "react-youtube": "^7.9.0",
     "redux": "^4.0.5",
     "redux-devtools": "^3.5.0",
     "redux-devtools-extension": "^2.13.8",

@@ -11,6 +11,7 @@ import Aside from './Aside'
 import CarouselArrow from './CarouselArrow'
 import ScrollTop from './ScrollTop'
 import NewsItem from './NewsItem'
+import VideoPlayer from './VideoPlayer'
 
 export {
   Loading,
@@ -25,5 +26,6 @@ export {
   Aside,
   CarouselArrow,
   ScrollTop,
-  NewsItem
+  NewsItem,
+  VideoPlayer
 }

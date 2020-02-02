@@ -9,6 +9,7 @@ const News = React.lazy(() => import('./views/News'))
 const Video = React.lazy(() => import('./views/Video'))
 const SingleNews = React.lazy(() => import('./views/SingleNews'))
 const Registration = React.lazy(() => import('./views/Registration'))
+const Contacts = React.lazy(() => import('./views/Contacts'))
 
 function App () {
   return (
@@ -29,6 +30,7 @@ function App () {
 
                 <Route path='/video' component={Video} />
 
+                <Route patch='/contacts' component={Contacts} />
                 <Route path='/registration' component={Registration} />
               </Switch>
             </Suspense>

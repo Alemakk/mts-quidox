@@ -42,7 +42,7 @@ const aside = [
   {
     title: 'Контакты',
     exact: true,
-    disabled: true,
+    disabled: false,
     route: '/contacts'
   },
   {

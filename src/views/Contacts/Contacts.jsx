@@ -45,7 +45,7 @@ export default function Contact ({ theme: { theme } }) {
 
               <Form.Item label='Телефон'>
                 {getFieldDecorator('phone', {
-                  rules: [{ required: true, message: 'Введите номер телефона'}]
+                  rules: [{ required: true, pattern: new RegExp("^[-+\\/\\s]*([0-9][-+\\/\\s]*){9,}$"), message: 'Введите номер телефона'}]
                 })(
                   <MaskedInput addonBefore='+375' mask='11-111-11-11' size='large' placeholder='Номер телефона' />
                 )}
@@ -53,7 +53,7 @@ export default function Contact ({ theme: { theme } }) {
 
               <Form.Item label='Адрес электронной почты'>
                 {getFieldDecorator('email', {
-                  rules: [{ required: true, message: 'Введите ваше адрес электронной почты'}]
+                  rules: [{ required: true, pattern: new RegExp('^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$'), message: 'Введите ваше адрес электронной почты'}]
                 })(
                   <Input size='large' placeholder='Ваше адрес электронной почты' />
                 )}

@@ -3,8 +3,6 @@ import ReactPlayer from 'react-player'
 import { Icon } from 'antd'
 import { player } from '../../resources'
 
-
-
 export default function VideoPlayer (props) {
   const {
     theme: { theme },

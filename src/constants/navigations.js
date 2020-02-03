@@ -41,7 +41,6 @@ const menu = [
 const aside = [
   {
     title: 'Контакты',
-    exact: true,
     disabled: false,
     route: '/contacts'
   },

@@ -61,7 +61,7 @@ export default function SingleNews ({ theme: { theme } }) {
             генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст
             более привлекательным и живым.
           </Text>
-          <Slider></Slider>
+          <Slider />
         </Container>
       </News.ItemContent>
     </News.Content>

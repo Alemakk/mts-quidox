@@ -7,7 +7,7 @@ import { useWindowDimension } from '../../../../hooks'
 import { CarouselArrow, VideoPlayer, Container, Heading, Text, Button } from '../../../../components'
 import videoData from './static'
 import { HowItsWorkContent, Video } from './styled'
-import ReactPlayer from "react-player";
+import ReactPlayer from 'react-player'
 
 export default function HowItsWork ({ theme: { theme } }) {
   const { width } = useWindowDimension()

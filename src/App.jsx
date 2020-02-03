@@ -25,12 +25,12 @@ function App () {
               <Switch>
                 <Route path='/' component={Home} exact />
 
-                <Route path='/news' component={News} exact />
+                <Route path='/news' component={News} />
                 <Route path='/news/:id' component={SingleNews} />
 
                 <Route path='/video' component={Video} />
 
-                <Route patch='/contacts' component={Contacts} />
+                <Route path='/contacts' component={Contacts} />
                 <Route path='/registration' component={Registration} />
               </Switch>
             </Suspense>

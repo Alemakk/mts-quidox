@@ -38,7 +38,7 @@ const footerNav = [
   },
   {
     title: 'Стоимость',
-    route: '/prices',
+    route: '/services',
     position: 'left'
   },
   {

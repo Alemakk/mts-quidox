@@ -5,6 +5,8 @@ import SingleNews from './SingleNews'
 import Registration from './Registration'
 import Contacts from './Contacts'
 import FAQ from './FAQ'
+import Services from './Services'
+import ESCCheck from './ESCCheck'
 
 export {
   Home,
@@ -13,5 +15,7 @@ export {
   SingleNews,
   Registration,
   Contacts,
-  FAQ
+  FAQ,
+  Services,
+  ESCCheck
 }

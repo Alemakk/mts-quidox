@@ -10,16 +10,16 @@ const menu = [
   },
   {
     title: 'Проверка подписи',
-    route: '/esc',
+    route: '/esc-check',
     exact: true,
-    disabled: true,
+    disabled: false,
     icon: EscIcon
   },
   {
-    title: 'Стоимость',
-    route: '/prices',
+    title: 'Пакеты услуг',
+    route: '/services',
     exact: true,
-    disabled: true,
+    disabled: false,
     icon: PricesIcon
   },
   {

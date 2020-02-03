@@ -11,6 +11,8 @@ const SingleNews = React.lazy(() => import('./views/SingleNews'))
 const Registration = React.lazy(() => import('./views/Registration'))
 const Contacts = React.lazy(() => import('./views/Contacts'))
 const FAQ = React.lazy(() => import('./views/FAQ'))
+const Services = React.lazy(() => import('./views/Services'))
+const ESCCheck = React.lazy(() => import('./views/ESCCheck'))
 
 function App () {
   return (
@@ -31,6 +33,8 @@ function App () {
 
                 <Route path='/video' component={Video} />
 
+                <Route path='/esc-check' component={ESCCheck} />
+                <Route path='/services' component={Services} />
                 <Route path='/faq' component={FAQ} />
                 <Route path='/contacts' component={Contacts} />
                 <Route path='/registration' component={Registration} />

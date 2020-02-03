@@ -46,7 +46,7 @@ const aside = [
   },
   {
     title: 'Вопросы и ответы',
-    disabled: true,
+    disabled: false,
     route: '/faq'
   },
   {

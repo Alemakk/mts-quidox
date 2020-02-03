@@ -4,6 +4,7 @@ import Video from './Video'
 import SingleNews from './SingleNews'
 import Registration from './Registration'
 import Contacts from './Contacts'
+import FAQ from './FAQ'
 
 export {
   Home,
@@ -11,5 +12,6 @@ export {
   Video,
   SingleNews,
   Registration,
-  Contacts
+  Contacts,
+  FAQ
 }

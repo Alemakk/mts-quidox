@@ -3,7 +3,7 @@ import { Icon } from 'antd'
 
 import { styleguide } from '../../../../constants'
 
-const { colors } = styleguide
+const { colors, sizes } = styleguide
 
 const ServicePackageContent = styled.section``
 
@@ -15,7 +15,7 @@ const Package = styled.div`
 `
 
 Package.Header = styled.div`
-  font-size: 4.8rem;
+  font-size: 3.8rem;
   color: ${colors.white};
   text-align: center;
   padding: 3.5rem 1rem;
@@ -26,11 +26,18 @@ Package.Header = styled.div`
     content: '';
     width: 0;
     height: 0;
-    border-top: 20rem solid ${({ color }) => color};
-    border-left: 20rem solid transparent;
+    border-top: 15rem solid ${({ color }) => color};
+    border-left: 15rem solid transparent;
     position: absolute;
     right: 0;
     top: 0;
+  }
+  @media screen and (min-width: ${sizes.laptop}) {
+    font-size: 4.8rem;
+    &:after {
+    border-top: 20rem solid ${({ color }) => color};
+    border-left: 20rem solid transparent;
+    }
   }
 `
 
@@ -39,7 +46,10 @@ Package.Star = styled(Icon)`
   right: 0;
   top: 0;
   z-index: 5;
-  transform: translate(-50%, 50%);
+  transform: translate(-25%, 50%);
+    @media screen and (min-width: ${sizes.laptop}) {
+    transform: translate(-50%, 50%);
+  }
 `
 
 Package.List = styled.ul`

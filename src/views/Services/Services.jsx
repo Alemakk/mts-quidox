@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Heading, Text, Button } from '../../components'
+import { Container, Heading } from '../../components'
 import { ServicesContent } from './styled'
 
 export default function Services () {

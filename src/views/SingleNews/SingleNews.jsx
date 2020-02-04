@@ -2,36 +2,10 @@ import React from 'react'
 import Slider from 'react-slick'
 import { useParams } from 'react-router-dom'
 
-import { CarouselArrow, Container, Heading, Text } from '../../components'
+import { Container, Heading, Text } from '../../components'
 import { useImage } from '../../hooks'
-import { news, sliderItems } from './static'
+import { news } from './static'
 import { News } from './styled'
-
-const settings = {
-  className: 'center',
-  dots: true,
-  arrows: true,
-  centerMode: true,
-  infinite: true,
-  centerPadding: '70px',
-  slidesToShow: 1,
-  speed: 500,
-  variableWidth: true,
-  nextArrow: <CarouselArrow />,
-  prevArrow: <CarouselArrow direction='right' />,
-  initialSlide: 1,
-  responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        centerMode: false,
-        variableWidth: false,
-        arrows: false
-      }
-    }
-  ]
-}
 
 export default function SingleNews ({ theme: { theme } }) {
   const { id } = useParams()

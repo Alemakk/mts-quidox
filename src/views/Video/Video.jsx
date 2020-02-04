@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'antd'
-import { Heading, Text, Container, Button } from '../../components'
+import { Heading, Text, Container } from '../../components'
 import { VideoItem } from './internal'
 import video from './static'
 import VideosContent from './styled'

@@ -21,12 +21,21 @@ const settings = {
   initialSlide: 1,
   responsive: [
     {
-      breakpoint: 800,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 1,
         centerMode: false,
         variableWidth: false,
-        arrows: false
+        arrows: true
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        centerMode: false,
+        variableWidth: false,
       }
     }
   ]
@@ -51,7 +60,7 @@ export default function QuidoxProcess () {
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
 
-          <Slider {...settings} style={{ marginTop: '15rem' }}>
+          <Slider {...settings} style={{ marginTop: width > 1200 && '15rem' }}>
             {quidoxProcess.map(({ text, image }, idx) => (
               <QuidoxProcessItem
                 key={idx}
@@ -59,11 +68,11 @@ export default function QuidoxProcess () {
                 className='slide-item slide-item--process'
               >
                 <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
-                <Text
+                <Heading
                   className='slider-hidden-text'
-                  style={{ color: '#000', margin: '15rem 0 8rem', fontSize: '3.6rem' }}
-                  dangerouslySetInnerHTML={{ __html: text }}
-                />
+                  style={{ color: '#000' }}
+                  level={2}
+                >{text}</Heading>
               </QuidoxProcessItem>
             ))}
           </Slider>

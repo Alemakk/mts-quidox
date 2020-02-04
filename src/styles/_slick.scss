@@ -13,12 +13,12 @@
     }
 
     .slider-hidden-text {
-      @media screen and (min-width: 800px) {
+      @media screen and (min-width: 1200px) {
         display: none;
       }
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1200px) {
       opacity: 0.5;
       transform: scale(0.7);
     }

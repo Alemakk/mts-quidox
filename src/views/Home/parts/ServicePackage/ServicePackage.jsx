@@ -24,12 +24,21 @@ const settings = {
   initialSlide: 1,
   responsive: [
     {
-      breakpoint: 800,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 1,
         centerMode: false,
         variableWidth: false,
-        arrows: false
+        arrows: true
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        centerMode: false,
+        variableWidth: false,
       }
     }
   ]
@@ -39,64 +48,64 @@ export default function ServicePackage ({ theme: { theme } }) {
   const { width } = useWindowDimension()
   return (
     <ServicePackageContent>
-      <Heading
-        brandText='Подключить'
-        level={2}
-      >
-        пакет услуг
-      </Heading>
       <Container>
-        <Slider {...settings} style={{ marginTop: '10rem' }}>
-          {servicePackage.map((i, idx) => (
-            <Package className='slide-item' style={{ width: width > 1200 && 800 }} key={idx}>
-              <Package.Header top={i.top} color={theme['@primary-color']}>
-                {i.top &&
-                  <Package.Star component={star}>
-                  </Package.Star>}
-                {i.title}
-              </Package.Header>
-              <Package.List>
-                <Package.Item>
-                  <Text>Доступ по API</Text>
-                  <Text style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'Нету'}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Срок действия пакета</Text>
-                  <Text style={{ color: '#000' }}>{i.timePeriod}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Количество пользователей компании</Text>
-                  <Text style={{ color: '#000' }}>{i.usersCount}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Количество внутренних отправлений</Text>
-                  <Text style={{ color: '#000' }}>{i.amountInner}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Количество внешних отправлений</Text>
-                  <Text style={{ color: '#000' }}>{i.amountOut}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Количество входящих отправлений</Text>
-                  <Text style={{ color: '#000' }}>{i.amountIn}</Text>
-                </Package.Item>
-
-                <Package.Item>
-                  <Text>Объём рабочего дискового пространства</Text>
-                  <Text style={{ color: '#000' }}>{i.diskSpace}</Text>
-                </Package.Item>
-              </Package.List>
-
-              <Button type='primary'>Подключить</Button>
-            </Package>
-          ))}
-        </Slider>
+        <Heading
+          brandText='Подключить'
+          level={2}
+        >
+          пакет услуг
+        </Heading>
       </Container>
+      <Slider {...settings} style={{ marginTop: '10rem' }}>
+        {servicePackage.map((i, idx) => (
+          <Package className='slide-item' style={{ width: width > 1200 && 800 }} key={idx}>
+            <Package.Header top={i.top} color={theme['@primary-color']}>
+              {i.top &&
+              <Package.Star component={star}>
+              </Package.Star>}
+              {i.title}
+            </Package.Header>
+            <Package.List>
+              <Package.Item>
+                <Text>Доступ по API</Text>
+                <Text style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'Нету'}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Срок действия пакета</Text>
+                <Text style={{ color: '#000' }}>{i.timePeriod}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Количество пользователей компании</Text>
+                <Text style={{ color: '#000' }}>{i.usersCount}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Количество внутренних отправлений</Text>
+                <Text style={{ color: '#000' }}>{i.amountInner}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Количество внешних отправлений</Text>
+                <Text style={{ color: '#000' }}>{i.amountOut}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Количество входящих отправлений</Text>
+                <Text style={{ color: '#000' }}>{i.amountIn}</Text>
+              </Package.Item>
+
+              <Package.Item>
+                <Text>Объём рабочего дискового пространства</Text>
+                <Text style={{ color: '#000' }}>{i.diskSpace}</Text>
+              </Package.Item>
+            </Package.List>
+
+            <Button type='primary'>Подключить</Button>
+          </Package>
+        ))}
+      </Slider>
     </ServicePackageContent>
   )
 }

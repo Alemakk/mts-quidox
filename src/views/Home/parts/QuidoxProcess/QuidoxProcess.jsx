@@ -59,24 +59,24 @@ export default function QuidoxProcess () {
           <Text>Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br />
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
-
-          <Slider {...settings} style={{ marginTop: width > 1200 && '15rem' }}>
-            {quidoxProcess.map(({ text, image }, idx) => (
-              <QuidoxProcessItem
-                key={idx}
-                style={{ width: width > 1200 && 800 }}
-                className='slide-item slide-item--process'
-              >
-                <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
-                <Heading
-                  className='slider-hidden-text'
-                  style={{ color: '#000' }}
-                  level={2}
-                >{text}</Heading>
-              </QuidoxProcessItem>
-            ))}
-          </Slider>
         </Container>
+
+        <Slider {...settings} style={{ marginTop: width > 1200 && '15rem' }}>
+          {quidoxProcess.map(({ text, image }, idx) => (
+            <QuidoxProcessItem
+              key={idx}
+              style={{ width: width > 1200 && 800 }}
+              className='slide-item slide-item--process'
+            >
+              <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
+              <Heading
+                className='slider-hidden-text'
+                style={{ color: '#000', marginTop: width > 1200 && '10rem' }}
+                level={3}
+              >{text}</Heading>
+            </QuidoxProcessItem>
+          ))}
+        </Slider>
       </div>
     </QuidoxProcessContent>
   )

@@ -9,7 +9,7 @@ const ThemeButton = styled.button`
   text-align: center;
   cursor: pointer;
   touch-action: manipulation;
-  padding: 1.5rem 6rem;
+  padding: 1.8rem 6.2rem;
   font-weight: 700;
   border: .2rem solid transparent;
   border-radius: .6rem;
@@ -55,6 +55,17 @@ const ThemeButton = styled.button`
         color: ${colors.white};
         background-color: ${({ secondaryColor }) => secondaryColor};
       }    
+    }
+  }
+  .button-with-bg {
+    position: relative;
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 `

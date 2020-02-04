@@ -14,13 +14,20 @@ const QuidoxProcessContent = styled.section`
     top: 0;
     left: 0;
     width: 100%;
-    height: 60%;
+    height: 50%;
     background-color: ${colors.alabaster};
   }
 `
 
 const QuidoxProcessItem = styled.div`
   margin: 1rem 0 4rem;
+`
+
+QuidoxProcessItem.Image = styled.div`
+  width: 100%;
+  height: 50rem;
+  background: url(${({ src }) => src }) center no-repeat;
+  background-size: contain;
 `
 
 QuidoxProcessItem.Icon = styled(Icon)`

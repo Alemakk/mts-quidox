@@ -1,5 +1,6 @@
 .slick-slide {
   .slide-item {
+    will-change: transform;
     transform: scale(0.9);
     transition: .3s ease-in;
     box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.75);

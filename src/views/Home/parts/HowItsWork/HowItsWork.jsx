@@ -44,21 +44,20 @@ export default function HowItsWork ({ theme: { theme } }) {
     <HowItsWorkContent>
       <Heading
         level={2}
-        brandText='MTC Quidox?'
+        brandText='Видеоуроки'
         brandPosition='right'
-      >
-        Как работает
-      </Heading>
+        style={{ marginBottom: '7.5rem' }}
+      />
       <Container style={{ textAlign: 'center' }}>
         <Text>
           Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br /> сервисом, отправлять и получать документы с ЭЦП.
         </Text>
 
-        <Slider {...settings} style={{ marginTop: '10rem' }}>
+        <Slider {...settings} style={{ marginTop: '5rem' }}>
           {videoData.map(({ url, text, poster }, idx) => (
             <Video
               key={idx}
-              style={{ width: width > 1200 && 800 }}
+              style={{ width: width > 1200 && 900 }}
               className='slide-item'
             >
               <VideoPlayer
@@ -66,7 +65,7 @@ export default function HowItsWork ({ theme: { theme } }) {
                 light={poster}
                 playing={pause === idx}
               />
-              <Video.Text style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
+              <Video.Text level={3} style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
             </Video>
           ))}
         </Slider>
@@ -76,7 +75,7 @@ export default function HowItsWork ({ theme: { theme } }) {
           onClick={() => history.push('/video')}
           ghost
         >
-          Другие видео
+          Другие видеоуроки
         </Button>
       </Container>
     </HowItsWorkContent>

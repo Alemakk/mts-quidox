@@ -14,7 +14,14 @@ const handleToggleAside = data => dispatch => {
   })
 }
 
+const hideAllMenu = () => dispatch => {
+  dispatch({
+    type: t.HIDE_ALL
+  })
+}
+
 export {
   handleToggleMenu,
-  handleToggleAside
+  handleToggleAside,
+  hideAllMenu
 }

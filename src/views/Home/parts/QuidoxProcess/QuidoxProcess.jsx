@@ -37,32 +37,33 @@ export default function QuidoxProcess () {
   return (
     <QuidoxProcessContent>
       <div style={{ position: 'relative', zIndex: 5 }}>
-        <Heading
-          level={2}
-          brandPosition='right'
-          brandText='MTC Quidox'
-        >
-          Процессы
-        </Heading>
+        <Container>
+          <Heading
+            level={2}
+            brandPosition='right'
+            brandText='MTC Quidox'
+            style={{ marginBottom: '6.5rem' }}
+          >
+            Как работает
+          </Heading>
 
-        <Container style={{ textAlign: 'center' }}>
           <Text>Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br />
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
 
-          <Slider {...settings} style={{ marginTop: '10rem' }}>
-            {quidoxProcess.map(({ text, icon }, idx) => (
+          <Slider {...settings} style={{ marginTop: '15rem' }}>
+            {quidoxProcess.map(({ text, image }, idx) => (
               <QuidoxProcessItem
                 key={idx}
                 style={{ width: width > 1200 && 800 }}
                 className='slide-item slide-item--process'
               >
-                <QuidoxProcessItem.Icon small={width < 800 ? 1 : 0} component={icon} />
+                <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
                 <Text
                   className='slider-hidden-text'
-                  style={{ color: '#000', marginTop: '5rem' }}
-                >{text}
-                </Text>
+                  style={{ color: '#000', margin: '15rem 0 8rem', fontSize: '3.6rem' }}
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
               </QuidoxProcessItem>
             ))}
           </Slider>

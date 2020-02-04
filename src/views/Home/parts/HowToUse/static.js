@@ -9,7 +9,7 @@ const howItsWork = [
 
   },
   {
-    text: 'Вставьте ключ к ЭЦП в компьютер',
+    text: 'Вставьте ключ к ЭЦП <br /> в компьютер',
     icon: easyInclude
   },
   {
@@ -17,7 +17,7 @@ const howItsWork = [
     icon: easyDoc
   },
   {
-    text: 'Нажмите кнопку “Подписать”, затем “Отправить”',
+    text: 'Нажмите кнопку “Подписать”, <br /> затем “Отправить”',
     icon: easyVerify
   }
 ]

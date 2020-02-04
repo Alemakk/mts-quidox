@@ -19,6 +19,10 @@ export default (state = initialState, action) => {
         isAsideVisible: action.payload,
         isMenuVisible: false
       }
+    case t.HIDE_ALL:
+      return {
+        ...initialState
+      }
     default: return state
   }
 }

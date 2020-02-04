@@ -9,13 +9,6 @@ const menu = [
     icon: AboutIcon
   },
   {
-    title: 'Проверка подписи',
-    route: '/esc-check',
-    exact: true,
-    disabled: false,
-    icon: EscIcon
-  },
-  {
     title: 'Пакеты услуг',
     route: '/services',
     exact: true,
@@ -35,6 +28,13 @@ const menu = [
     exact: false,
     disabled: false,
     icon: NewsIcon
+  },
+  {
+    title: 'Проверка подписи',
+    route: '/esc-check',
+    exact: true,
+    disabled: false,
+    icon: EscIcon
   }
 ]
 

@@ -5,14 +5,17 @@ import { styleguide } from '../../../../constants'
 const { colors } = styleguide
 
 const AboutContent = styled.section`
-  min-height: calc(100vh - 14.875rem);
-  padding-top: 5rem;
+  min-height: calc(100vh - 17.6rem);
+  padding: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   &:after {
     display: block;
     content: '';
     position: absolute;
-    top: 57%;
+    top: 48%;
     bottom: 0;
     left: 0;
     width: 100%;

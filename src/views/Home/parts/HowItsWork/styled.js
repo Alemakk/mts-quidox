@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import ReactPlayer from 'react-player'
 import { linearGradient } from 'polished'
-import { Text } from '../../../../components'
+import { Heading } from '../../../../components'
 import { styleguide } from '../../../../constants'
 
 const { colors } = styleguide
@@ -9,8 +9,8 @@ const { colors } = styleguide
 const HowItsWorkContent = styled.section``
 
 const Video = styled.div`
-  height: 45rem;
-  margin: 1rem 0 4rem;
+  height: 75rem;
+  margin: 1rem 0 8rem;
   ${linearGradient({
   colorStops: [`${colors.black} 0%`, `${colors.black} 20%`],
   toDirection: '180deg'
@@ -23,7 +23,7 @@ Video.Slide = styled(ReactPlayer)`
   overflow: hidden;
 `
 
-Video.Text = styled(Text)`
+Video.Text = styled(Heading)`
   position: absolute;
   left: 0;
   bottom: 3rem;

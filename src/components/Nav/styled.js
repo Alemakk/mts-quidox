@@ -30,16 +30,12 @@ ThemeNav.Link = styled(NavLink)`
   
   @media screen and (min-width: 1200px) {
     height: 100%;
-    margin-right: 6rem;
+    margin-left: 6rem;
     font-size: 1.8rem;
     align-items: center;
     width: auto;
     padding: 0;
     border-bottom: 0;
-  }
-  
-  &:last-of-type {
-  margin-right: 0;
   }
   
   &:after {
@@ -53,7 +49,7 @@ ThemeNav.Link = styled(NavLink)`
     background-color: transparent;
     
     @media screen and (min-width: 1200px) {
-      bottom: -2.5rem;
+      bottom: -3rem;
       left: 0;
       width: 100%;
       height: .3rem

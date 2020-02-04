@@ -1,10 +1,13 @@
 import React from 'react'
 
 import history from '../../history'
+import { images } from '../../resources'
 import { Icon } from 'antd'
 import { useWindowDimension } from '../../hooks'
 import { Container, Nav, Button } from '../'
 import { ThemeHeader } from './styled'
+
+const { logo } = images
 
 export default function Header (props) {
   const {
@@ -38,8 +41,7 @@ export default function Header (props) {
               />}
 
             <ThemeHeader.Logo
-              src={theme['@logo-link']}
-              alt='Brand Logo'
+              src={logo}
               onClick={() => history.push('/')}
             />
           </ThemeHeader.AlignBlock>

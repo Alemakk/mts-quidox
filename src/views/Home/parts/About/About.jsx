@@ -12,22 +12,22 @@ export default function About () {
   const { width } = useWindowDimension()
   return (
     <AboutContent>
-      <div style={{ position: 'relative', zIndex: 5 }}>
+      <div style={{ position: 'relative', zIndex: 5, paddingBottom: width > 1200 && '26rem' }}>
         <Container>
           <Row gutter={[24, 24]} type='flex' align='middle'>
             <Col md={24} lg={12}>
               <Heading
                 level={2}
-                style={{ textAlign: 'left' }}
-                brandText='MTC Quidox'
+                style={{ textAlign: 'left', margin: 0 }}
+                brandText='MTC QuiDox'
               />
 
-              <Text style={{ color: '#000', textAlign: 'left' }}>
+              <Text style={{ color: '#000', textAlign: 'left', fontWeight: 500, marginTop: '1rem' }}>
                 Центр обмена электронными документами,<br />
                 подписанными электронной цифровой подписью
               </Text><br />
 
-              <Button type='primary' style={{ marginTop: width < 1200 ? '1.5rem' : '3rem' }}>Подключить</Button>
+              <Button type='primary' style={{ marginTop: width < 1200 ? '1.5rem' : '1rem' }}>Подключить</Button>
             </Col>
 
             <Col md={24} lg={12}>

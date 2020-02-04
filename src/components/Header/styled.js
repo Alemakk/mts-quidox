@@ -11,7 +11,7 @@ const ThemeHeader = styled.header`
 
 ThemeHeader.Top = styled.div`
   text-align: center;
-  padding: 0.5rem 0;
+  padding: 1.2rem 0;
   background-color: ${({ color }) => color};
 `
 
@@ -19,16 +19,19 @@ ThemeHeader.Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1.95rem 0;
 `
 
-ThemeHeader.Logo = styled.img`
-  max-width: 10rem;
-  width: 100%;
+ThemeHeader.Logo = styled.div`
+  width: 18rem;
   height: auto;
   cursor: pointer;
+  background: url(${({ src }) => src}) center no-repeat;
+  background-size: cover;
   
   @media screen and (min-width: ${sizes.laptop}) {
-    max-width: 18rem;
+    width: 30rem;
+    height: 8.7rem;
   }
 `
 

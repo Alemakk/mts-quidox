@@ -7,6 +7,11 @@ import home_news_1 from './home_news_1.png'
 import home_news_2 from './home_news_2.png'
 import single_news from './single-news.png'
 import poster from './video-poster-1.png'
+import logo from './logo.jpg'
+import doc1 from './doc-1.png'
+import doc2 from './doc-2.png'
+import doc3 from './doc-3.png'
+import esc from './esc.png'
 
 export default {
   home_about,
@@ -17,5 +22,10 @@ export default {
   home_news_1,
   home_news_2,
   single_news,
-  poster
+  poster,
+  logo,
+  doc1,
+  doc2,
+  doc3,
+  esc
 }

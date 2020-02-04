@@ -46,7 +46,7 @@ export default function Header (props) {
             />
           </ThemeHeader.AlignBlock>
 
-          {width > 1200 &&
+          {width > 1450 &&
             <Nav />}
 
           <ThemeHeader.AlignBlock>

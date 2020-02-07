@@ -27,7 +27,7 @@ export default function Header (props) {
         <Container>
           <ThemeHeader.Text>
             {isSecondaryRoute ? 'Пакет услуг "Легкий"' : 'В mtsquidoх.by появилась новая функциональность. Теперь вы можете'}
-            <span> {isSecondaryRoute ? 'БЕСЛПАТНО первые 90 дней!' : 'подключить ЭЦП к своему мобильному телефону или планшету!'}</span>
+            <span> {isSecondaryRoute ? ' БЕСЛПАТНО первые 90 дней!' : ' подключить ЭЦП к своему мобильному телефону или планшету!'}</span>
           </ThemeHeader.Text>
         </Container>
       </ThemeHeader.Top>

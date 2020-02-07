@@ -12,6 +12,7 @@ import doc1 from './doc-1.png'
 import doc2 from './doc-2.png'
 import doc3 from './doc-3.png'
 import esc from './esc.png'
+import login from './login-img.png'
 
 export default {
   home_about,
@@ -27,5 +28,6 @@ export default {
   doc1,
   doc2,
   doc3,
-  esc
+  esc,
+  login
 }

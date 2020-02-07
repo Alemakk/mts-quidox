@@ -1,0 +1,17 @@
+@import "mixins";
+
+button.button {
+  padding: 1.2rem 2.5rem;
+  @include for-size(for-phone-only) {
+    padding: 1.6rem 4.5rem;
+  }
+  @include for-size(tablet-portrait-up) {
+    padding: 1.6rem 4.7rem;
+  }
+  @include for-size(tablet-landscape-up) {
+    padding: 1.6rem 5.2rem;
+  }
+  @include for-size(desktop-up) {
+    padding: 1.8rem 5.7rem;
+  }
+}

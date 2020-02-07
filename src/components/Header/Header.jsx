@@ -33,7 +33,7 @@ export default function Header (props) {
       <Container>
         <ThemeHeader.Bottom>
           <ThemeHeader.AlignBlock>
-            {width < 1200 &&
+            {width < 0 &&
               <Icon
                 onClick={() => handleToggleMenu(!isMenuVisible)}
                 type={isMenuVisible ? 'close' : 'menu'}
@@ -46,7 +46,7 @@ export default function Header (props) {
             />
           </ThemeHeader.AlignBlock>
 
-          {width > 1200 &&
+          {width > 1450 &&
             <Nav />}
 
           <ThemeHeader.AlignBlock>

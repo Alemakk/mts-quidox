@@ -1,5 +1,4 @@
 import React from 'react'
-import Slider from 'react-slick'
 
 import { ThemeHeading } from './styled'
 export default function Heading (props) {

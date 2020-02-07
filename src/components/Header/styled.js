@@ -22,7 +22,7 @@ ThemeHeader.Bottom = styled.div`
   padding: 1.95rem 0;
 `
 
-ThemeHeader.Logo = styled.div`
+ThemeHeader.Logo = styled.img`
   width: 18rem;
   height: auto;
   cursor: pointer;
@@ -42,13 +42,17 @@ ThemeHeader.AlignBlock = styled.div`
 `
 
 ThemeHeader.Text = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.6rem;
   color: #fff;
 
   span {
     color: #000;
+  }
+  
+  @media screen and (min-width: ${sizes.laptop}) {
+    font-size: 1.8rem;
   }
 `
 

@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { useWindowDimension } from '../../../../hooks'
 import { VideoPlayer, Heading, Text } from '../../../../components'
 import { Video } from './styled'
 export default function VideoItem ({ data = null, direction }) {
   const { title, text, url, poster } = data
-  const { width } = useWindowDimension()
   return (
     <Video direction={direction}>
       <Video.Player>

@@ -25,10 +25,11 @@ Video.Slide = styled(ReactPlayer)`
 
 Video.Text = styled(Heading)`
   position: absolute;
-  left: 0;
+  left: 4rem;
   bottom: 3rem;
   width: 100%;
   z-index: 5;
+  margin: 0 !important;
 `
 
 export {

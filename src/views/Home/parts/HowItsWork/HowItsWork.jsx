@@ -65,7 +65,7 @@ export default function HowItsWork ({ theme: { theme } }) {
                 light={poster}
                 playing={pause === idx}
               />
-              <Video.Text level={3} style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
+              <Video.Text level={3} style={{ color: '#fff', textAlign: 'left' }}>{text}</Video.Text>
             </Video>
           ))}
         </Slider>

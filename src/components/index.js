@@ -1,3 +1,5 @@
+import MainRoute from './MainRoute'
+import SecondaryRoute from './SecondaryRoute'
 import Loading from './Loading'
 import Header from './Header'
 import Footer from './Footer'
@@ -14,6 +16,8 @@ import NewsItem from './NewsItem'
 import VideoPlayer from './VideoPlayer'
 
 export {
+  MainRoute,
+  SecondaryRoute,
   Loading,
   Header,
   Footer,

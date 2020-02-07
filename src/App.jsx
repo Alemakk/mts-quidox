@@ -1,8 +1,8 @@
 import React from 'react'
-import { Router, Route, Switch } from 'react-router-dom'
+import { Router, Switch } from 'react-router-dom'
 import history from './history'
 
-import { MainRoute } from './components'
+import { MainRoute, SecondaryRoute } from './components'
 import {
   Home,
   News,
@@ -12,7 +12,8 @@ import {
   Contacts,
   FAQ,
   Services,
-  ESCCheck
+  ESCCheck,
+  Login
 } from './views'
 
 function App () {
@@ -31,7 +32,9 @@ function App () {
           <MainRoute path='/services' component={Services} />
           <MainRoute path='/faq' component={FAQ} />
           <MainRoute path='/contacts' component={Contacts} />
-          <Route path='/registration' component={Registration} />
+          <MainRoute path='/registration' component={Registration} />
+
+          <SecondaryRoute path='/login' components={Login} />
         </Switch>
       </Router>
     </>

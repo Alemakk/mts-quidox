@@ -14,7 +14,8 @@ export default function Header (props) {
     handleToggleMenu,
     handleToggleAside,
     app: { isMenuVisible, isAsideVisible },
-    theme: { theme }
+    theme: { theme },
+    isSecondaryRoute = false
   } = props
   const { width } = useWindowDimension()
 
@@ -25,8 +26,8 @@ export default function Header (props) {
       >
         <Container>
           <ThemeHeader.Text>
-            В mtsquidoх.by появилась новая функциональность. Теперь вы можете
-            <span> подключить ЭЦП к своему мобильному телефону или планшету!</span>
+            {isSecondaryRoute ? 'Пакет услуг "Легкий"' : 'В mtsquidoх.by появилась новая функциональность. Теперь вы можете'}
+            <span> {isSecondaryRoute ? 'БЕСЛПАТНО первые 90 дней!' : 'подключить ЭЦП к своему мобильному телефону или планшету!'}</span>
           </ThemeHeader.Text>
         </Container>
       </ThemeHeader.Top>
@@ -46,22 +47,26 @@ export default function Header (props) {
             />
           </ThemeHeader.AlignBlock>
 
-          {width > 1450 &&
-            <Nav />}
+          {!isSecondaryRoute &&
+            <>
+              {width > 1450 &&
+                <Nav />}
+            </>}
 
-          <ThemeHeader.AlignBlock>
-            <Button
-              ghost
-              type='secondary'
-            >Войти
-            </Button>
+          {!isSecondaryRoute &&
+            <ThemeHeader.AlignBlock>
+              <Button
+                ghost
+                type='secondary'
+              >Войти
+              </Button>
 
-            <Icon
-              style={{ fontSize: '2rem', marginLeft: width < 1200 ? '3rem' : '6rem' }}
-              onClick={() => handleToggleAside(!isAsideVisible)}
-              type={isAsideVisible ? 'close' : 'menu'}
-            />
-          </ThemeHeader.AlignBlock>
+              <Icon
+                style={{ fontSize: '2rem', marginLeft: width < 1200 ? '3rem' : '6rem' }}
+                onClick={() => handleToggleAside(!isAsideVisible)}
+                type={isAsideVisible ? 'close' : 'menu'}
+              />
+            </ThemeHeader.AlignBlock>}
         </ThemeHeader.Bottom>
       </Container>
     </ThemeHeader>

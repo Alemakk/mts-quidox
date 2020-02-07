@@ -1,3 +1,4 @@
+import Login from './Login'
 import Home from './Home'
 import News from './News'
 import Video from './Video'
@@ -9,6 +10,7 @@ import Services from './Services'
 import ESCCheck from './ESCCheck'
 
 export {
+  Login,
   Home,
   News,
   Video,

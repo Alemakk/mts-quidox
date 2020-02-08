@@ -43,6 +43,11 @@ export default function Login ({ theme: { theme } }) {
         <Text>Обмен электронными документами с ЭЦП</Text>
         <LoginContent.FormWrapp>
           <LoginForm />
+
+          <LoginContent.Footer>
+            <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>
+            <Button style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
+          </LoginContent.Footer>
         </LoginContent.FormWrapp>
       </LoginContent.Main>
     </LoginContent>

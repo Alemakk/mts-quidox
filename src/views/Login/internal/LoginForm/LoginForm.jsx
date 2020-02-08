@@ -1,17 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useForm from 'rc-form-hooks'
+import generateHash from 'random-hash'
+import { Base64 } from 'js-base64'
 
+import api from '../../../../services'
 import { Form, Input, Checkbox } from 'antd'
-import { Button, Text } from '../../../../components'
+import { Button, Alert } from '../../../../components'
 import LoginFormContent from './styled'
 
 export default function LoginForm () {
   const { getFieldDecorator, validateFields, values } = useForm()
+  const [error, setError] = useState(null)
 
   const handleLogin = e => {
     e.preventDefault()
     validateFields()
-      .then(() => console.log(values))
+      .then(() => {
+        values.secret_key = process.env.REACT_APP_SECRET_KEY
+        values.auth_data = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
+        delete values.email
+        delete values.password
+        delete values.secret_key
+        api.user.userLogin(values)
+          .then(({ data }) => {
+            if (data.success) {
+              console.log(data.success)
+            } else {
+              throw new Error(data.error)
+            }
+          })
+          .catch(error => setError(error.message))
+      })
   }
   return (
     <LoginFormContent>
@@ -31,6 +50,9 @@ export default function LoginForm () {
             <Input size='large' type='password' placeholder='Введите пароль' />
           )}
         </Form.Item>
+
+        {error &&
+          <Alert>{error}</Alert>}
 
         <Form.Item>
           {getFieldDecorator('remember', {

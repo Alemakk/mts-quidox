@@ -14,6 +14,7 @@ import CarouselArrow from './CarouselArrow'
 import ScrollTop from './ScrollTop'
 import NewsItem from './NewsItem'
 import VideoPlayer from './VideoPlayer'
+import Alert from './Alert'
 
 export {
   MainRoute,
@@ -31,5 +32,6 @@ export {
   CarouselArrow,
   ScrollTop,
   NewsItem,
-  VideoPlayer
+  VideoPlayer,
+  Alert
 }

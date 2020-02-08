@@ -42,8 +42,15 @@ LoginContent.Main = styled.div`
 LoginContent.FormWrapp = styled.div`
   display: inline-block;
   width: 100%;
+  max-width: 88rem;
+  margin: 5rem auto auto;
   background-color: ${colors.white};
   padding: 5rem;
+`
+
+LoginContent.Footer = styled.div`
+  margin-top: 5rem;
+  text-align: left;
 `
 
 export {

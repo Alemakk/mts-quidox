@@ -56,8 +56,9 @@ export default function Header (props) {
           {!isSecondaryRoute &&
             <ThemeHeader.AlignBlock>
               <Button
-                ghost
                 type='secondary'
+                onClick={() => history.push('/login')}
+                ghost
               >Войти
               </Button>
 

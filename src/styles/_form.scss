@@ -6,6 +6,18 @@
     color: #000;
   }
 
+  .ant-checkbox + span {
+      font-size: 1.8rem;
+      color: #000;
+  }
+
+  .form-link {
+    font-size: 1.8rem;
+    color: #808285;
+    font-weight: bold;
+    padding-left: 2rem;
+  }
+
   .ant-input {
     border-radius: .3rem;
     border: 1px solid #BCBEC0;

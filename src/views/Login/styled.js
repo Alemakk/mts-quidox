@@ -5,6 +5,7 @@ import { styleguide } from '../../constants'
 const { colors } = styleguide
 
 const LoginContent = styled.div`
+  height: 1px;
   min-height: calc(100vh - 17.6rem);
   display: flex;
   background-color: ${colors.alabaster};
@@ -30,6 +31,19 @@ LoginContent.AsideContent = styled.div`
 LoginContent.Description = styled.div`
 
   margin-top: 5rem;
+`
+
+LoginContent.Main = styled.div`
+  width: 100%;
+  padding: 8rem 1rem;
+  text-align: center;
+`
+
+LoginContent.FormWrapp = styled.div`
+  display: inline-block;
+  width: 100%;
+  background-color: ${colors.white};
+  padding: 5rem;
 `
 
 export {

@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import useForm from 'rc-form-hooks'
 import generateHash from 'random-hash'
 import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
-import { Form, Input, Checkbox } from 'antd'
-import { Button, Alert } from '../../../../components'
+import FormContext from '../../context'
+import { Form, Input, Checkbox, Icon } from 'antd'
+import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
+import { LoginContent } from '../../styled'
 
 export default function LoginForm () {
   const { getFieldDecorator, validateFields, values } = useForm()
-  const [error, setError] = useState(null)
+  const { state, dispatch } = useContext(FormContext)
 
   const handleLogin = e => {
     e.preventDefault()
     validateFields()
       .then(() => {
+        dispatch({ type: 'FETCH_DATA', payload: true })
         values.secret_key = process.env.REACT_APP_SECRET_KEY
         values.auth_data = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
         delete values.email
@@ -25,13 +28,17 @@ export default function LoginForm () {
           .then(({ data }) => {
             if (data.success) {
               console.log(data.success)
+              dispatch({ type: 'FETCH_DATA', payload: false })
             } else {
               throw new Error(data.error)
             }
           })
-          .catch(error => setError(error.message))
+          .catch(error => {
+            dispatch({ type: 'ERROR', payload: error.message })
+          })
       })
   }
+  const { isFetching, error } = state
   return (
     <LoginFormContent>
       <Form onSubmit={handleLogin} className='theme-form' hideRequiredMark>
@@ -59,11 +66,18 @@ export default function LoginForm () {
             valuePropName: 'checked',
             initialValue: true
           })(<Checkbox>Запомнить меня</Checkbox>)}
-          <a className='form-link' href='#'>Забыли пароль?</a>
+          <a className='form-link' onClick={() => dispatch({ type: 'CHANGE_FORM' })} href='#'>Забыли пароль?</a>
         </Form.Item>
 
-        <Button type='primary' htmlType='submit'>Войти</Button>
+        <Button type='primary' htmlType='submit'>
+          {isFetching
+            ? <Icon type='loading' />
+            : 'Войти'}
+        </Button>
       </Form>
+
+      <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>
+      <Button style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
     </LoginFormContent>
   )
 }

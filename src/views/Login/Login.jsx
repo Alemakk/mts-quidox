@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 
 import history from '../../history'
+import FormContext from './context'
 import { images } from '../../resources'
 import { useImage } from '../../hooks'
 import { Text, Heading, Button } from '../../components'
@@ -8,9 +9,40 @@ import { LoginForm } from './internal'
 import { LoginContent } from './styled'
 
 const { login } = images
+
+const initialState = {
+  isLogin: true,
+  isFetching: false,
+  error: null
+}
+
+function reducer (state, action) {
+  switch (action.type) {
+    case 'CHANGE_FORM':
+      return {
+        ...state,
+        error: null,
+        isLogin: action.payload
+      }
+    case 'FETCH_DATA':
+      return {
+        ...state,
+        isFetching: action.payload
+      }
+    case 'ERROR':
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      }
+  }
+}
+
 export default function Login ({ theme: { theme } }) {
   const { src } = useImage(login)
+  const [state, dispatch] = useReducer(reducer, initialState)
 
+  const { isLogin } = state
   return (
     <LoginContent>
       <LoginContent.Aside>
@@ -42,12 +74,11 @@ export default function Login ({ theme: { theme } }) {
         <Heading level={3}>Войти в МТС Quidox</Heading>
         <Text>Обмен электронными документами с ЭЦП</Text>
         <LoginContent.FormWrapp>
-          <LoginForm />
-
-          <LoginContent.Footer>
-            <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>
-            <Button style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
-          </LoginContent.Footer>
+          <FormContext.Provider value={{ state, dispatch }}>
+            {isLogin
+              ? <LoginForm />
+              : '123'}
+          </FormContext.Provider>
         </LoginContent.FormWrapp>
       </LoginContent.Main>
     </LoginContent>

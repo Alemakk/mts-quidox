@@ -8,7 +8,6 @@ import FormContext from '../../context'
 import { Form, Input, Checkbox, Icon } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
-import { LoginContent } from '../../styled'
 
 export default function LoginForm () {
   const { getFieldDecorator, validateFields, values } = useForm()

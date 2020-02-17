@@ -47,7 +47,7 @@ export default function Login ({ theme: { theme } }) {
     <LoginContent>
       <LoginContent.Aside>
         <LoginContent.AsideContent>
-          <img style={{ maxWidth: 320 }} src={src} alt='Login Image' />
+          <img style={{ maxWidth: 320 }} src={src} alt='Login Picture' />
 
           <LoginContent.Description>
             <Text style={{ fontWeight: 500, textAlign: 'left' }}>

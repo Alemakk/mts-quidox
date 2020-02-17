@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 
 import history from '../../../../history'

@@ -23,7 +23,7 @@ ThemeAside.Nav = styled.div`
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  max-width: 50%;
+  max-width: 75%;
   margin-left: auto;
   background-color: ${colors.white};
   
@@ -34,7 +34,7 @@ ThemeAside.Nav = styled.div`
 
 ThemeAside.Link = styled(NavLink)`
    width: 100%;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    font-weight: bold;
    line-height: 2rem;
    padding: 1.6rem 2.5rem;
@@ -44,9 +44,8 @@ ThemeAside.Link = styled(NavLink)`
    }
    
    @media screen and (min-width: ${sizes.laptop}) {
-      padding: 3.2rem 5rem;
-      font-size: 2.4rem;
-      line-height: 2.6rem;
+      padding: 1.5rem 2rem;
+      font-size: 1.5rem;
    }
 `
 

@@ -12,7 +12,7 @@ export default function About () {
   const { width } = useWindowDimension()
   return (
     <AboutContent>
-      <div style={{ position: 'relative', zIndex: 5, paddingBottom: width > 1200 && '26rem' }}>
+      <div style={{ position: 'relative', zIndex: 5 }}>
         <Container>
           <Row gutter={[24, 24]} type='flex' align='middle'>
             <Col md={24} lg={12}>
@@ -31,7 +31,7 @@ export default function About () {
             </Col>
 
             <Col md={24} lg={12}>
-              <img src={home_about} alt='About Us' />
+              <img style={{ maxWidth: '80%' }} src={home_about} alt='About Us' />
             </Col>
           </Row>
         </Container>

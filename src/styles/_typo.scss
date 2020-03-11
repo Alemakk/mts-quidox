@@ -2,53 +2,35 @@
 
 h2.ant-typography {
   font-weight: 700;
-  @include for-size(for-phone-only) {
-    font-size: 5.8rem;
-  }
+  line-height: 4.2rem;
   @include for-size(tablet-portrait-up) {
-    font-size: 6rem;
-  }
-  @include for-size(tablet-landscape-up) {
-    font-size: 6.2rem;
+    font-size: 3.4rem;
   }
   @include for-size(desktop-up) {
-    font-size: 6.4rem;
+    font-size: 4rem;
+    line-height: 4.8rem;
   }
 }
 
 h3.ant-typography {
   font-weight: 500;
-  @include for-size(for-phone-only) {
-    font-size: 2rem;
-  }
   @include for-size(tablet-portrait-up) {
-    font-size: 3rem;
-  }
-  @include for-size(tablet-landscape-up) {
-    font-size: 3.2rem
+    font-size: 3.2rem;
   }
   @include for-size(desktop-up) {
-    font-size: 3.6rem;
+    font-size: 3.4rem;
   }
 }
 
 .text  {
   font-weight: normal;
   font-style: normal;
+  line-height: 2.6rem;
   @include for-size(for-phone-only) {
     font-size: 1.8rem;
-    line-height: 3.6rem;
-  }
-  @include for-size(tablet-portrait-up) {
-    font-size: 2rem;
-    line-height: 3.8rem;
-  }
-  @include for-size(tablet-landscape-up) {
-    font-size: 2.2rem;
-    line-height: 4rem;
   }
   @include for-size(desktop-up) {
-    font-size: 2.4rem;
-    line-height: 4.3rem;
+    font-size: 2.1rem;
+    line-height: 2.9rem;
   }
 }

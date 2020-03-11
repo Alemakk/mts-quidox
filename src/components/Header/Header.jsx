@@ -11,9 +11,8 @@ const { logo } = images
 
 export default function Header (props) {
   const {
-    handleToggleMenu,
     handleToggleAside,
-    app: { isMenuVisible, isAsideVisible },
+    app: { isAsideVisible },
     theme: { theme },
     isSecondaryRoute = false
   } = props
@@ -34,13 +33,6 @@ export default function Header (props) {
       <Container>
         <ThemeHeader.Bottom>
           <ThemeHeader.AlignBlock>
-            {width < 0 &&
-              <Icon
-                onClick={() => handleToggleMenu(!isMenuVisible)}
-                type={isMenuVisible ? 'close' : 'menu'}
-                style={{ fontSize: '2rem', marginRight: width < 1200 ? '3rem' : '6rem' }}
-              />}
-
             <ThemeHeader.Logo
               src={logo}
               onClick={() => history.push('/')}

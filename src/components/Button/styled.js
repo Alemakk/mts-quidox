@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { styleguide } from '../../constants'
 
-const { colors, sizes } = styleguide
+const { colors } = styleguide
 
 const ThemeButton = styled.button`
   display: inline-block;

@@ -57,23 +57,24 @@ export default function HowItsWork ({ theme: { theme } }) {
         <Text>
           Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br /> сервисом, отправлять и получать документы с ЭЦП.
         </Text>
+
+        <Slider {...settings} style={{ marginTop: '5rem' }}>
+          {videoData.map(({ url, text, poster }, idx) => (
+            <Video
+              key={idx}
+              style={{ width: width > 1200 && 900 }}
+              className='slide-item'
+            >
+              <VideoPlayer
+                url={url}
+                light={poster}
+                playing={pause === idx}
+              />
+              <Video.Text level={3} style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
+            </Video>
+          ))}
+        </Slider>
       </Container>
-      <Slider {...settings} style={{ marginTop: '5rem' }}>
-        {videoData.map(({ url, text, poster }, idx) => (
-          <Video
-            key={idx}
-            style={{ width: width > 1200 && 900 }}
-            className='slide-item'
-          >
-            <VideoPlayer
-              url={url}
-              light={poster}
-              playing={pause === idx}
-            />
-            <Video.Text level={3} style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
-          </Video>
-        ))}
-      </Slider>
       <div style={{ textAlign: 'center' }}>
         <Button
           type='secondary'

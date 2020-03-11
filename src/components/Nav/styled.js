@@ -23,7 +23,7 @@ ThemeNav.Link = styled(NavLink)`
   flex-direction: ${({ type }) => type === 'desktop' ? 'column' : 'row'};
   align-items: flex-start;
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 500;
   width: 100%;
   padding: 2rem;
@@ -31,7 +31,6 @@ ThemeNav.Link = styled(NavLink)`
   @media screen and (min-width: 1200px) {
     height: 100%;
     margin-left: 6rem;
-    font-size: 1.8rem;
     align-items: center;
     width: auto;
     padding: 0;
@@ -42,18 +41,10 @@ ThemeNav.Link = styled(NavLink)`
     display: block;
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -1.2rem;
     left: 0;
-    height: 100%;
-    width: .3rem;
-    background-color: transparent;
-    
-    @media screen and (min-width: 1200px) {
-      bottom: -3rem;
-      left: 0;
-      width: 100%;
-      height: .3rem
-    }
+    height: .3rem;
+    width: 100%;
   }
   
   &.active {

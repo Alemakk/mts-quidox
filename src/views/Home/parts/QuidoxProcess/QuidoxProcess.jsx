@@ -51,7 +51,6 @@ export default function QuidoxProcess () {
             level={2}
             brandPosition='right'
             brandText='MTC Quidox'
-            style={{ marginBottom: '6.5rem' }}
           >
             Как работает
           </Heading>
@@ -60,23 +59,29 @@ export default function QuidoxProcess () {
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
 
-          <Slider {...settings} style={{ marginTop: width > 1200 && '15rem' }}>
-            {quidoxProcess.map(({ text, image }, idx) => (
-              <QuidoxProcessItem
-                key={idx}
-                style={{ width: width > 1200 && 800 }}
-                className='slide-item slide-item--process'
-              >
-                <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
-                <Heading
-                  className='slider-hidden-text'
-                  style={{ color: '#000', marginTop: width > 1200 && '10rem' }}
-                  level={3}
+          <Slider {...settings}>
+            {quidoxProcess.map(({ text, image }, idx) => {
+              const slideItemWidth = (width * 0.3)
+              return (
+                <QuidoxProcessItem
+                  key={idx}
+                  className='slide-item slide-item--process'
+                  style={{ width: slideItemWidth }}
                 >
-                  {text}
-                </Heading>
-              </QuidoxProcessItem>
-            ))}
+                  <QuidoxProcessItem.Image
+                    slideItemHeight={slideItemWidth * 0.8}
+                    src={image}
+                  />
+                  <Heading
+                    className='slider-hidden-text'
+                    style={{ color: '#000' }}
+                    level={4}
+                  >
+                    {text}
+                  </Heading>
+                </QuidoxProcessItem>
+              )
+            })}
           </Slider>
         </Container>
       </div>

@@ -11,7 +11,7 @@ import {
   QuidoxProcess
 } from './parts'
 
-export default function Home () {
+export default function () {
   return (
     <>
       <About />

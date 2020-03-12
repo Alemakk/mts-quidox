@@ -19,7 +19,7 @@ const ThemeButton = styled.button`
     background-color: ${({ primaryColor }) => primaryColor};
     color: ${colors.white};
     &:hover {
-      background-color: transparent;
+      background-color: ${colors.white};
       color: ${({ primaryColor }) => primaryColor};
     }
   }

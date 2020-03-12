@@ -39,7 +39,7 @@ export default function HowItsWork ({ theme: { theme } }) {
           arrows: false,
           slidesToShow: 1,
           centerMode: false,
-          variableWidth: false,
+          variableWidth: false
         }
       }
     ]

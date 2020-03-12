@@ -21,19 +21,15 @@ const QuidoxProcessContent = styled.section`
 
 const QuidoxProcessItem = styled.div`
   margin: 1rem 0 4rem;
+  //width: 100%;
+  width: ${({ slideItemWidth }) => `${slideItemWidth}px`};
 `
 
 QuidoxProcessItem.Image = styled.div`
   width: 100%;
-  height: 50rem;
-  background: url(${({ src }) => src }) center no-repeat;
+  height: ${({ slideItemHeight }) => `${slideItemHeight}px`};
+  background: url(${({ src }) => src}) center no-repeat;
   background-size: contain;
-`
-
-QuidoxProcessItem.Icon = styled(Icon)`
-  * {
-    width: ${({ small }) => small ? '100%' : ''};
-  }
 `
 
 export {

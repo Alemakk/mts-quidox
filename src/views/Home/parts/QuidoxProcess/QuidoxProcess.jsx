@@ -7,7 +7,7 @@ import { quidoxProcess } from './static'
 import { QuidoxProcessContent, QuidoxProcessItem } from './styled'
 
 const settings = {
-  className: 'center',
+  className: 'slider-quidox-process',
   dots: true,
   arrows: true,
   centerMode: true,
@@ -41,10 +41,10 @@ const settings = {
   ]
 }
 
-export default function QuidoxProcess () {
+export default function () {
   const { width } = useWindowDimension()
   return (
-    <QuidoxProcessContent>
+    <QuidoxProcessContent className='section-with-slider'>
       <div style={{ position: 'relative', zIndex: 5 }}>
         <Container>
           <Heading
@@ -72,13 +72,8 @@ export default function QuidoxProcess () {
                     slideItemHeight={slideItemWidth * 0.8}
                     src={image}
                   />
-                  <Heading
-                    className='slider-hidden-text'
-                    style={{ color: '#000' }}
-                    level={4}
-                  >
-                    {text}
-                  </Heading>
+
+                  <Text bolder style={{ marginTop: '3rem' }}>{text}</Text>
                 </QuidoxProcessItem>
               )
             })}

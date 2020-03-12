@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Icon } from 'antd'
 
 import { styleguide } from '../../../../constants'
 
@@ -21,17 +20,14 @@ const QuidoxProcessContent = styled.section`
 
 const QuidoxProcessItem = styled.div`
   margin: 1rem 0 4rem;
-  //width: 100%;
-  width: ${({ slideItemWidth }) => `${slideItemWidth}px`};
 `
 
 QuidoxProcessItem.Image = styled.div`
   width: 100%;
   height: ${({ slideItemHeight }) => `${slideItemHeight}px`};
-  background: url(${({ src }) => src}) center no-repeat;
+  background: url(${({ src }) => src}) bottom center no-repeat;
   background-size: contain;
 `
-
 export {
   QuidoxProcessContent,
   QuidoxProcessItem

@@ -21,8 +21,9 @@ export default function HowToUse () {
               <HowToUseContent.Block>
                 <Icon component={icon} />
                 <Text
-                  style={{ color: '#000', marginTop: '5rem', fontWeight: 500 }}
+                  style={{ marginTop: '3rem' }}
                   dangerouslySetInnerHTML={{ __html: text }}
+                  bolder
                 />
               </HowToUseContent.Block>
             </Col>

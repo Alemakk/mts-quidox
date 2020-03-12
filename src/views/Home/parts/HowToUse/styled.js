@@ -14,7 +14,6 @@ HowToUseContent.Block = styled.div`
   align-items: center;
   text-align: center;
 `
-
 export {
   HowToUseContent
 }

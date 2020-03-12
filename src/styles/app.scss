@@ -30,6 +30,10 @@ body {
 }
 section {
   padding: 5rem 0;
+
+  &.section-with-slider {
+    padding-bottom: 7rem;
+  }
 }
 .wrapper {
   position: relative;

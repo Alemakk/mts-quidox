@@ -1,0 +1,17 @@
+.burger {
+  width: 3rem;
+  margin-left: 3rem;
+}
+
+.burger:before,
+.burger:after {
+  background-color: #808285;
+  content: '';
+  display: block;
+  height: .4rem;
+  transition: all 200ms ease-in-out;
+}
+.burger:before {
+  box-shadow: 0 1rem 0 #808285;
+  margin-bottom: 1.6rem;
+}

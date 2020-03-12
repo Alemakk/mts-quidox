@@ -22,7 +22,7 @@ export default function Nav ({ theme: { theme }, type = 'desktop' }) {
           activeStyle={{ color: theme['@primary-color'] }}
         >
 
-          {width > 1450 &&
+          {width > 1350 &&
             <Icon component={icon} />}
           {title}
         </ThemeNav.Link>

@@ -8,7 +8,6 @@ import Text from './Text'
 import Container from './Container'
 import Nav from './Nav'
 import Button from './Button'
-import MobileMenu from './MobileMenu'
 import Aside from './Aside'
 import CarouselArrow from './CarouselArrow'
 import ScrollTop from './ScrollTop'
@@ -27,7 +26,6 @@ export {
   Container,
   Nav,
   Button,
-  MobileMenu,
   Aside,
   CarouselArrow,
   ScrollTop,

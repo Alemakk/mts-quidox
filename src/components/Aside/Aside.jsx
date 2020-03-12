@@ -1,46 +1,75 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import posed from 'react-pose'
 
+import ApplicationContext from '../../ApplicationContext'
+import { Icon } from 'antd'
 import { useWindowDimension } from '../../hooks'
-import { ThemeAside } from './styled'
 import { navigations } from '../../constants'
+
+import './Aside.scss'
 
 const { aside, menu } = navigations
 
-export default function Aside (props) {
-  const {
-    app: { isAsideVisible }
-  } = props
+const SideBarList = posed.div({
+  open: {
+    x: '0',
+    delayChildren: 200,
+    staggerChildren: 50
+  },
+  closed: { x: '100%', delay: 500 }
+})
 
-  const { width } = useWindowDimension()
+function Close ({ ...rest }) {
   return (
-    <ThemeAside
-      style={{ right: isAsideVisible ? '0' : '-100%' }}
-    >
-      <ThemeAside.Nav>
+    <div className='close' {...rest} />
+  )
+}
+
+const SideBarItem = posed.li({
+  open: { y: 0, opacity: 1 },
+  closed: { y: 20, opacity: 0 }
+})
+
+export default function () {
+  const { width } = useWindowDimension()
+  const { state, dispatch } = useContext(ApplicationContext)
+  const { isAsideOpen } = state
+  return (
+    <SideBarList className='aside' pose={isAsideOpen ? 'open' : 'closed'}>
+      <Close onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: false })} />
+      <ul className='aside__list'>
         {width < 1450 &&
           <>
             {menu.map(({ title, route, disabled }) => (
-              <ThemeAside.Link
+              <SideBarItem
+                className='aside__item'
                 key={title}
-                to={route}
-                disabled={disabled}
               >
-                {title}
-              </ThemeAside.Link>
+                <NavLink
+                  to={route}
+                  disabled={disabled}
+                >
+                  {title}
+                </NavLink>
+              </SideBarItem>
             ))}
           </>}
 
         {aside.map(({ title, route, disabled }) => (
-          <ThemeAside.Link
-            to={route}
+          <SideBarItem
             key={title}
-            disabled={disabled}
-            activeStyle={{ color: '#000' }}
+            className='aside__item'
           >
-            {title}
-          </ThemeAside.Link>
+            <NavLink
+              to={route}
+              disabled={disabled}
+            >
+              {title}
+            </NavLink>
+          </SideBarItem>
         ))}
-      </ThemeAside.Nav>
-    </ThemeAside>
+      </ul>
+    </SideBarList>
   )
 }

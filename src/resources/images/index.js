@@ -16,6 +16,7 @@ import login from './login-img.png'
 import d1 from './disabled-1.png'
 import d2 from './disabled-2.png'
 import d3 from './disabled-3.png'
+import star from './star.png'
 
 export default {
   home_about,
@@ -35,5 +36,6 @@ export default {
   login,
   d1,
   d2,
-  d3
+  d3,
+  star
 }

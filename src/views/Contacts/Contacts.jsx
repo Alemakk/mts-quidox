@@ -1,21 +1,18 @@
 import React from 'react'
-import useForm from 'rc-form-hooks'
 import MaskedInput from 'antd-mask-input'
 
 import { useWindowDimension } from '../../hooks'
-import { Row, Col, Form, Input } from 'antd'
+import { Row, Col, Form, Input, notification } from 'antd'
 import { Heading, Text, Container, Button } from '../../components'
 import { ContactsContent } from './styled'
 
 const { TextArea } = Input
 export default function Contact ({ theme: { theme } }) {
   const { width } = useWindowDimension()
-  const { getFieldDecorator, validateFields, values } = useForm()
-
-  const handleSendMessage = e => {
-    e.preventDefault()
-    validateFields()
-      .then(() => console.log(values))
+  const handleSendMessage = value => {
+    notification.success({
+      message: `Уважаемый`
+    })
   }
 
   return (
@@ -24,7 +21,7 @@ export default function Contact ({ theme: { theme } }) {
 
       <Text>Мы ответим на любой ваш вопрос</Text>
       <Container>
-        <Form className='theme-form' onSubmit={handleSendMessage} hideRequiredMark>
+        <Form className='theme-form' layout='vertical' onFinish={handleSendMessage} hideRequiredMark>
           <Row gutter={[24, 24]}>
             <Col lg={12}>
               <Form.Item label='Название компании'>

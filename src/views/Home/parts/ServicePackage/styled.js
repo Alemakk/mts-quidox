@@ -39,14 +39,18 @@ Package.Header = styled.div`
   }
 `
 
-Package.Star = styled(Icon)`
+Package.Star = styled.img`
   position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
   right: 0;
   top: 0;
   z-index: 5;
   transform: translate(-25%, 50%);
-    @media screen and (min-width: ${sizes.laptop}) {
+    @media screen and (min-width: ${sizes.mobile}) {
     transform: translate(-50%, 50%);
+      width: 3rem;
+      height: 3rem;
   }
 `
 

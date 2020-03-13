@@ -41,7 +41,7 @@ export default function () {
       <ul className='aside__list'>
         {width < 1450 &&
           <>
-            {menu.map(({ title, route, disabled }) => (
+            {menu.map(({ title, route, disabled, exact }) => (
               <SideBarItem
                 className='aside__item'
                 key={title}
@@ -49,6 +49,8 @@ export default function () {
                 <NavLink
                   to={route}
                   disabled={disabled}
+                  activeStyle={{ color: '#E30611' }}
+                  exact={exact}
                 >
                   {title}
                 </NavLink>
@@ -56,7 +58,7 @@ export default function () {
             ))}
           </>}
 
-        {aside.map(({ title, route, disabled }) => (
+        {aside.map(({ title, route, disabled, exact }) => (
           <SideBarItem
             key={title}
             className='aside__item'
@@ -64,6 +66,8 @@ export default function () {
             <NavLink
               to={route}
               disabled={disabled}
+              exact={exact}
+              activeStyle={{ color: '#E30611' }}
             >
               {title}
             </NavLink>

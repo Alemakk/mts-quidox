@@ -4,11 +4,10 @@ import Slider from 'react-slick'
 import { useWindowDimension } from '../../../../hooks'
 import { Container, Button, Text, CarouselArrow, Heading } from '../../../../components'
 import { ServicePackageContent, Package } from './styled'
-import { homeIcons } from '../../../../resources'
-import { servicePackage } from './static'
-import Header from '../../../../components/Header'
+import { images } from '../../../../resources'
+import { servicePackages } from './static'
 
-const { star } = homeIcons
+const { star } = images
 
 const settings = {
   className: 'center',
@@ -58,13 +57,13 @@ export default function ServicePackage ({ theme: { theme } }) {
         </Heading>
       </Container>
       <Slider {...settings} style={{ marginTop: '5rem' }}>
-        {servicePackage.map((i, idx) => {
+        {servicePackages.map((i, idx) => {
           const sliderItemWidth = width * 0.4
           return (
             <Package className='slide-item' key={idx} style={{ width: sliderItemWidth }}>
               <Package.Header top={i.top} color={theme['@primary-color']}>
                 {i.top &&
-                <Package.Star component={star}>
+                <Package.Star src={star}>
                 </Package.Star>}
                 <Heading level={4} style={{ color: '#fff', marginBottom: 0 }}>{i.title}</Heading>
               </Package.Header>

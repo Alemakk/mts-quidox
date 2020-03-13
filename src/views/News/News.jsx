@@ -16,7 +16,7 @@ export default function News () {
       </Heading>
 
       <Text>Здесь вы можете найти актуальные новости об обновлениях, акциях и многом другом в  МТС Quidox </Text>
-      <Container>
+      <Container medium style={{ marginTop: '3rem' }}>
         <Row gutter={[24, 120]}>
           {news.map(({ id, text, image }, idx) => (
             <Col md={24} lg={idx === 0 ? 24 : 12} key={idx}>

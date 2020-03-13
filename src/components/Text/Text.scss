@@ -17,4 +17,13 @@
     font-weight: 500;
     color: #000;
   }
+
+  &.text--white {
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &.text--small {
+    font-size: 1.8rem;
+  }
 }

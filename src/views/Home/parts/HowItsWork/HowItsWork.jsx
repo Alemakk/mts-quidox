@@ -51,7 +51,6 @@ export default function HowItsWork ({ theme: { theme } }) {
         level={2}
         brandText='Видеоуроки'
         brandPosition='right'
-        style={{ marginBottom: '7.5rem' }}
       />
       <Container style={{ textAlign: 'center' }}>
         <Text>
@@ -59,26 +58,34 @@ export default function HowItsWork ({ theme: { theme } }) {
         </Text>
 
         <Slider {...settings} style={{ marginTop: '5rem' }}>
-          {videoData.map(({ url, text, poster }, idx) => (
-            <Video
-              key={idx}
-              style={{ width: width > 1200 && 900 }}
-              className='slide-item'
-            >
-              <VideoPlayer
-                url={url}
-                light={poster}
-                playing={pause === idx}
-              />
-              <Video.Text level={3} style={{ color: '#fff', textAlign: 'left', padding: '0 2rem' }}>{text}</Video.Text>
-            </Video>
-          ))}
+          {videoData.map(({ url, text, poster }, idx) => {
+            const slideItemWidth = (width * 0.5)
+            const slideItemHeight = slideItemWidth * 0.6
+            return (
+              <Video
+                key={idx}
+                style={{ width: slideItemWidth }}
+                className='slide-item'
+                videoHeight={slideItemHeight}
+              >
+                <VideoPlayer
+                  url={url}
+                  light={poster}
+                  playing={pause === idx}
+                />
+
+                <Video.Description>
+                  <Text white>{text}</Text>
+                </Video.Description>
+              </Video>
+            )
+          })}
         </Slider>
       </Container>
       <div style={{ textAlign: 'center' }}>
         <Button
           type='secondary'
-          style={{ marginTop: '10rem' }}
+          style={{ marginTop: '7rem' }}
           onClick={() => history.push('/video')}
           ghost
         >

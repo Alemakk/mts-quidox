@@ -9,27 +9,31 @@ const { colors } = styleguide
 const HowItsWorkContent = styled.section``
 
 const Video = styled.div`
-  height: 75rem;
-  margin: 1rem 0 8rem;
+  margin: 1rem 0 5rem;
   ${linearGradient({
   colorStops: [`${colors.black} 0%`, `${colors.black} 20%`],
   toDirection: '180deg'
   })};
-  border-radius: .6rem !important;
+  border-radius: .6rem;
   overflow: hidden;
+  height: ${({ videoHeight }) => `${videoHeight}px`};
+  
+  .react-player__preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 `
 
-Video.Slide = styled(ReactPlayer)`
-  overflow: hidden;
-`
-
-Video.Text = styled(Heading)`
+Video.Description = styled.div`
   position: absolute;
-  left: 4rem;
-  bottom: 3rem;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  padding: 1rem;
   z-index: 5;
-  margin: 0 !important;
 `
 
 export {

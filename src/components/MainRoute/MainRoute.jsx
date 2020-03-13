@@ -32,8 +32,8 @@ export default function MainRoute ({ component: Component, ...rest }) {
             <ScrollTop />
             <Header />
             <div className='wrapper'>
-              <Aside />
               <main className='main'>
+                <Aside />
                 <Component {...props} />
               </main>
             </div>

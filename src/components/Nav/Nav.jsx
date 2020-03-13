@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useWindowDimension } from '../../hooks'
-import { Icon } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { navigations } from '../../constants'
 import { ThemeNav } from './styled'
 

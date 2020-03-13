@@ -58,27 +58,26 @@ export default function () {
           <Text>Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br />
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
-
-          <Slider {...settings}>
-            {quidoxProcess.map(({ text, image }, idx) => {
-              const slideItemWidth = (width * 0.3)
-              return (
-                <QuidoxProcessItem
-                  key={idx}
-                  className='slide-item slide-item--process'
-                  style={{ width: slideItemWidth }}
-                >
-                  <QuidoxProcessItem.Image
-                    slideItemHeight={slideItemWidth * 0.8}
-                    src={image}
-                  />
-
-                  <Text bolder style={{ marginTop: '3rem' }}>{text}</Text>
-                </QuidoxProcessItem>
-              )
-            })}
-          </Slider>
         </Container>
+        <Slider {...settings}>
+          {quidoxProcess.map(({ text, image }, idx) => {
+            const slideItemWidth = (width * 0.3)
+            return (
+              <QuidoxProcessItem
+                key={idx}
+                className='slide-item slide-item--process'
+                style={{ width: slideItemWidth }}
+              >
+                <QuidoxProcessItem.Image
+                  slideItemHeight={slideItemWidth * 0.8}
+                  src={image}
+                />
+
+                <Text bolder style={{ marginTop: '3rem' }}>{text}</Text>
+              </QuidoxProcessItem>
+            )
+          })}
+        </Slider>
       </div>
     </QuidoxProcessContent>
   )

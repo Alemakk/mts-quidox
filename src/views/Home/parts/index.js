@@ -5,6 +5,7 @@ import News from './News'
 import AuthorizationType from './AuthorizationType'
 import ServicePackage from './ServicePackage'
 import HowItsWork from './HowItsWork'
+import QuestionsForm from './QuestionsForm'
 import QuidoxProcess from './QuidoxProcess'
 
 export {
@@ -15,5 +16,6 @@ export {
   AuthorizationType,
   ServicePackage,
   HowItsWork,
+  QuestionsForm,
   QuidoxProcess
 }

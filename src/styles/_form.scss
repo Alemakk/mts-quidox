@@ -1,5 +1,11 @@
 .theme-form {
 
+  .ant-form-item-has-error {
+    .ant-input {
+      border-color: #ff4d4f;
+    }
+  }
+
   .ant-form-item-label {
     font-size: 1.8rem;
     font-weight: bold;
@@ -30,5 +36,10 @@
     font-size: 1.8rem;
     padding: 0 1.6rem;
     border-radius: .3rem 0 0 .3rem;
+  }
+
+  &.theme-form--home {
+    max-width: 40rem;
+    margin: 0 auto;
   }
 }

@@ -8,7 +8,8 @@ import {
   AuthorizationType,
   ServicePackage,
   HowItsWork,
-  QuidoxProcess
+  QuidoxProcess,
+  QuestionsForm
 } from './parts'
 
 export default function () {
@@ -20,6 +21,7 @@ export default function () {
       <HowItsWork />
       <ESCCheck />
       <ServicePackage />
+      <QuestionsForm />
       <News />
       <AuthorizationType />
     </>

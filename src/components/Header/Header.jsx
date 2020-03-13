@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 import ApplicationContext from '../../ApplicationContext'
 import history from '../../history'
 import { images } from '../../resources'
-import { Icon } from 'antd'
 import { useWindowDimension } from '../../hooks'
 import { Container, Nav, Button } from '../'
 import { ThemeHeader } from './styled'
@@ -58,10 +57,11 @@ export default function Header (props) {
                 type='secondary'
                 onClick={() => history.push('/login')}
                 ghost
+                disabled
               >Войти
               </Button>
 
-              <BurgerButton onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
+              <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
             </ThemeHeader.AlignBlock>}
         </ThemeHeader.Bottom>
       </Container>

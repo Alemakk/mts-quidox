@@ -1,69 +1,79 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import MaskedInput from 'antd-mask-input'
 
-import { useWindowDimension } from '../../hooks'
 import { Row, Col, Form, Input, notification } from 'antd'
 import { Heading, Text, Container, Button } from '../../components'
 import { ContactsContent } from './styled'
 
 const { TextArea } = Input
 export default function Contact ({ theme: { theme } }) {
-  const { width } = useWindowDimension()
+  const colNode = useRef(null)
+
+  useEffect(() => {
+    console.log(colNode)
+  }, [])
+
   const handleSendMessage = value => {
     notification.success({
-      message: `Уважаемый`
+      message: `Уважаемый ${value.name}`,
+      description: 'В ближайшее время мы ознакомимся с вашим обращением'
     })
   }
-
   return (
     <ContactsContent>
       <Heading brandText='Контакты' level={2} />
 
       <Text>Мы ответим на любой ваш вопрос</Text>
-      <Container>
-        <Form className='theme-form' layout='vertical' onFinish={handleSendMessage} hideRequiredMark>
+      <Container small>
+        <Form className='theme-form' layout='vertical' onFinish={handleSendMessage} style={{ marginTop: '3rem' }} hideRequiredMark>
           <Row gutter={[24, 24]}>
-            <Col lg={12}>
-              <Form.Item label='Название компании'>
-                {getFieldDecorator('company', {
-                  rules: [{ required: true, message: 'Введите название компании' }]
-                })(
-                  <Input size='large' placeholder='Название компании' />
-                )}
-              </Form.Item>
-
-              <Form.Item label='Имя'>
-                {getFieldDecorator('name', {
-                  rules: [{ required: true, message: 'Введите ваше имя' }]
-                })(
-                  <Input size='large' placeholder='Ваше имя' />
-                )}
-              </Form.Item>
-
-              <Form.Item label='Телефон'>
-                {getFieldDecorator('phone', {
-                  rules: [{ required: true, pattern: new RegExp('^[-+\\/\\s]*([0-9][-+\\/\\s]*){9,}$'), message: 'Введите номер телефона' }]
-                })(
-                  <MaskedInput addonBefore='+375' mask='11-111-11-11' size='large' placeholder='Номер телефона' />
-                )}
-              </Form.Item>
-
-              <Form.Item label='Адрес электронной почты'>
-                {getFieldDecorator('email', {
-                  rules: [{ required: true, pattern: new RegExp('^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$'), message: 'Введите ваше адрес электронной почты' }]
-                })(
-                  <Input size='large' placeholder='Ваше адрес электронной почты' />
-                )}
+            <Col md={24} lg={12}>
+              <Form.Item
+                label='Название компании'
+                name='company'
+                rules={[{ required: true, message: 'Введите название компании' }]}
+              >
+                <Input size='large' placeholder='Название компании' />
               </Form.Item>
             </Col>
 
-            <Col lg={12}>
-              <Form.Item label='Сообщение'>
-                {getFieldDecorator('message', {
-                  rules: [{ required: true, message: 'Введите ваше сообщение' }]
-                })(
-                  <TextArea style={{ resize: 'none' }} rows={width < 991 ? 8 : 17} size='large' placeholder='Текст сообщения' />
-                )}
+            <Col md={24} lg={12}>
+              <Form.Item
+                label='Имя'
+                name='name'
+                rules={[{ required: true, message: 'Введите ваше имя' }]}
+              >
+                <Input size='large' placeholder='Ваше имя' />
+              </Form.Item>
+            </Col>
+
+            <Col md={24} lg={12}>
+              <Form.Item
+                label='Телефон'
+                nome='phone'
+                rules={[{ required: true, pattern: new RegExp('^[-+\\/\\s]*([0-9][-+\\/\\s]*){9,}$'), message: 'Введите номер телефона' }]}
+              >
+                <MaskedInput addonBefore='+375' mask='11-111-11-11' size='large' placeholder='Номер телефона' />
+              </Form.Item>
+            </Col>
+
+            <Col md={24} lg={12}>
+              <Form.Item
+                label='Адрес электронной почты'
+                name='email'
+                rules={[{ required: true, pattern: new RegExp('^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$'), message: 'Введите ваше адрес электронной почты' }]}
+              >
+                <Input size='large' placeholder='Ваше адрес электронной почты' />
+              </Form.Item>
+            </Col>
+
+            <Col lg={24}>
+              <Form.Item
+                label='Сообщение'
+                name='message'
+                rules={[{ required: true, message: 'Введите ваше сообщение' }]}
+              >
+                <TextArea style={{ resize: 'none' }} rows={8} size='large' placeholder='Текст сообщения' />
               </Form.Item>
             </Col>
           </Row>

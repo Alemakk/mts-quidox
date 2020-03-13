@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 
 import history from '../../history'
 import FormContext from './context'
@@ -38,7 +38,7 @@ function reducer (state, action) {
   }
 }
 
-export default function Login ({ theme: { theme } }) {
+export default function ({ theme: { theme } }) {
   const { src } = useImage(login)
   const [state, dispatch] = useReducerWithLogger(reducer, initialState)
 

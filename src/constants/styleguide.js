@@ -2,7 +2,7 @@ const colors = {
   white: '#fff',
   black: '#000',
   red: '#E30611',
-  silver_sand: '#BCBEC0',
+  silver_sand: '#e5e5e5',
   alabaster: '#F9F9F9',
   rolling_stone: '#808285'
 }

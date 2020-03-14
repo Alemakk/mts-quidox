@@ -1,14 +1,19 @@
 import React from 'react'
+import classNames from 'classnames'
 
-import { ThemeText } from './styled'
+import './Text.scss'
 
-export default function Text ({ children, ...rest }) {
+export default function Text (props) {
+  const { children, bolder = false, white = false, gray = false, small = false, ...rest } = props
+  const paragraphClass = classNames({
+    text: true,
+    'text--bolder': bolder,
+    'text--white': white,
+    'text--small': small,
+    'text--gray': gray
+  })
+
   return (
-    <ThemeText
-      className='text'
-      {...rest}
-    >
-      {children}
-    </ThemeText>
+    <p className={paragraphClass} {...rest}>{children}</p>
   )
 }

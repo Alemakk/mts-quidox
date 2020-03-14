@@ -18,7 +18,7 @@ const NewsItemBlock = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 1rem;
-  height: 55rem;
+  height: 40rem;
   cursor: pointer;
 `
 

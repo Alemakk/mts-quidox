@@ -8,17 +8,15 @@ const { colors, sizes } = styleguide
 const ServicePackageContent = styled.section``
 
 const Package = styled.div`
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   text-align: center;
   margin: 1rem 0 4rem;
   overflow: hidden;
 `
 
 Package.Header = styled.div`
-  font-size: 3.8rem;
-  color: ${colors.white};
   text-align: center;
-  padding: 3.5rem 1rem;
+  padding: 1.5rem 2rem;
   background-color: ${colors.black};
   position: relative;
   &:after {
@@ -26,29 +24,33 @@ Package.Header = styled.div`
     content: '';
     width: 0;
     height: 0;
-    border-top: 15rem solid ${({ color }) => color};
-    border-left: 15rem solid transparent;
+    border-top: 5rem solid ${({ color }) => color};
+    border-left: 5rem solid transparent;
     position: absolute;
     right: 0;
     top: 0;
   }
   @media screen and (min-width: ${sizes.laptop}) {
-    font-size: 4.8rem;
+    font-size: 2rem;
     &:after {
-    border-top: 20rem solid ${({ color }) => color};
-    border-left: 20rem solid transparent;
+    border-top: 10rem solid ${({ color }) => color};
+    border-left: 10rem solid transparent;
     }
   }
 `
 
-Package.Star = styled(Icon)`
+Package.Star = styled.img`
   position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
   right: 0;
   top: 0;
   z-index: 5;
   transform: translate(-25%, 50%);
-    @media screen and (min-width: ${sizes.laptop}) {
+    @media screen and (min-width: ${sizes.mobile}) {
     transform: translate(-50%, 50%);
+      width: 3rem;
+      height: 3rem;
   }
 `
 
@@ -64,7 +66,7 @@ Package.Item = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2.5rem;
+  padding: 1rem 2rem;
   &:nth-child(even) {
     background-color: ${colors.alabaster};
   }

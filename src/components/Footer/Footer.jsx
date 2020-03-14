@@ -13,7 +13,7 @@ export default function Footer ({ theme: { theme } }) {
         <Row type='flex' gutter={[24, 24]}>
           <Col md={24} lg={12}>
             <div>
-              <ThemeFooter.Socials style={{ marginBottom: width < 1200 ? '2.5rem' : '7rem' }}>
+              <ThemeFooter.Socials style={{ marginBottom: width < 1200 ? '2.5rem' : '10rem' }}>
                 {socials.map(({ type, url, icon }, idx) => (
                   <ThemeFooter.SocialsItem key={idx}>
                     <ThemeFooter.SocialsItemLink href={url} alt={type} color={theme['@primary-color']} target='_blank'>

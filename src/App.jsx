@@ -21,9 +21,9 @@ function App () {
     <>
       <Router history={history}>
         <Switch>
-          <MainRoute path='/' component={Home} exact />
+          <MainRoute exact path='/' component={Home} />
 
-          <MainRoute path='/news' component={News} exact />
+          <MainRoute path='/news' component={News} />
           <MainRoute path='/news/:id' component={SingleNews} />
 
           <MainRoute path='/video' component={Video} />

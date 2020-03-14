@@ -1,10 +1,17 @@
 import React from 'react'
 
-import { Row, Col, Icon } from 'antd'
-import { ESCCheckIcon } from '../../../../resources'
+import { useImage } from '../../../../hooks'
+import { Row, Col } from 'antd'
+import { images } from '../../../../resources'
 import { Container, Text, Heading, Button } from '../../../../components'
 import { ESCCheckContent } from './styled'
+
+import './esc.scss'
+
+const { esc } = images
+
 export default function ESCCheck () {
+  const { src } = useImage(esc)
   return (
     <ESCCheckContent>
       <Container>
@@ -22,7 +29,7 @@ export default function ESCCheck () {
                 C помощью сервиса «Проверка ЭЦП» можно проверить электронно-цифровые подписи (ЭЦП) в электронном документе.
               </Text>
 
-              <Icon style={{ margin: '6rem 0' }} component={ESCCheckIcon} />
+              <img className='esc-image' src={src} />
 
               <Button type='secondary' ghost>Проверить подпись</Button>
             </ESCCheckContent.Block>

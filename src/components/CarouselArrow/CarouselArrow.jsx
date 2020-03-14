@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Icon } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { homeIcons } from '../../resources'
 import { CarouselButton } from './styled'
 

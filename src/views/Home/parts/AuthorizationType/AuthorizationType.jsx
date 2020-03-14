@@ -11,7 +11,6 @@ export default function AuthorizationType () {
       <Heading
         brandText='Выберите'
         level={2}
-        style={{ marginBottom: '9rem' }}
       >
         способ авторизации
       </Heading>
@@ -19,7 +18,7 @@ export default function AuthorizationType () {
       <Container>
         <Row gutter={[24, 24]}>
           {auth.map((i, idx) => (
-            <Col md={12} lg={6} key={idx}>
+            <Col sm={24} md={12} lg={6} key={idx}>
               <AuthorizationTypeItem data={i} />
             </Col>
           ))}

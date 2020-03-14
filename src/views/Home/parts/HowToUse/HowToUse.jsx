@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Row, Col, Icon } from 'antd'
+import { Row, Col } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { howItsWork } from './static'
 import { Text, Heading, Container } from '../../../../components'
 import { HowToUseContent } from './styled'
@@ -21,8 +22,9 @@ export default function HowToUse () {
               <HowToUseContent.Block>
                 <Icon component={icon} />
                 <Text
-                  style={{ color: '#000', marginTop: '5rem', fontWeight: 500 }}
+                  style={{ marginTop: '3rem' }}
                   dangerouslySetInnerHTML={{ __html: text }}
+                  bolder
                 />
               </HowToUseContent.Block>
             </Col>

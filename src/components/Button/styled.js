@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { styleguide } from '../../constants'
 
-const { colors, sizes } = styleguide
+const { colors } = styleguide
 
 const ThemeButton = styled.button`
   display: inline-block;
@@ -19,7 +19,7 @@ const ThemeButton = styled.button`
     background-color: ${({ primaryColor }) => primaryColor};
     color: ${colors.white};
     &:hover {
-      background-color: transparent;
+      background-color: ${colors.white};
       color: ${({ primaryColor }) => primaryColor};
     }
   }

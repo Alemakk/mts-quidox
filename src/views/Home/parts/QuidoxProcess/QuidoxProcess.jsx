@@ -7,7 +7,7 @@ import { quidoxProcess } from './static'
 import { QuidoxProcessContent, QuidoxProcessItem } from './styled'
 
 const settings = {
-  className: 'center',
+  className: 'slider-quidox-process',
   dots: true,
   arrows: true,
   centerMode: true,
@@ -41,17 +41,16 @@ const settings = {
   ]
 }
 
-export default function QuidoxProcess () {
+export default function () {
   const { width } = useWindowDimension()
   return (
-    <QuidoxProcessContent>
+    <QuidoxProcessContent className='section-with-slider'>
       <div style={{ position: 'relative', zIndex: 5 }}>
         <Container>
           <Heading
             level={2}
             brandPosition='right'
             brandText='MTC Quidox'
-            style={{ marginBottom: '6.5rem' }}
           >
             Как работает
           </Heading>
@@ -60,22 +59,24 @@ export default function QuidoxProcess () {
             сервисом, отправлять и получать документы с ЭЦП.
           </Text>
         </Container>
+        <Slider {...settings}>
+          {quidoxProcess.map(({ text, image }, idx) => {
+            const slideItemWidth = (width * 0.3)
+            return (
+              <QuidoxProcessItem
+                key={idx}
+                className='slide-item slide-item--process'
+                style={{ width: slideItemWidth }}
+              >
+                <QuidoxProcessItem.Image
+                  slideItemHeight={slideItemWidth * 0.8}
+                  src={image}
+                />
 
-        <Slider {...settings} style={{ marginTop: width > 1200 && '15rem' }}>
-          {quidoxProcess.map(({ text, image }, idx) => (
-            <QuidoxProcessItem
-              key={idx}
-              style={{ width: width > 1200 && 800 }}
-              className='slide-item slide-item--process'
-            >
-              <QuidoxProcessItem.Image small={width < 800 ? 1 : 0} src={image} />
-              <Heading
-                className='slider-hidden-text'
-                style={{ color: '#000', marginTop: width > 1200 && '10rem' }}
-                level={3}
-              >{text}</Heading>
-            </QuidoxProcessItem>
-          ))}
+                <Text bolder style={{ marginTop: '3rem' }}>{text}</Text>
+              </QuidoxProcessItem>
+            )
+          })}
         </Slider>
       </div>
     </QuidoxProcessContent>

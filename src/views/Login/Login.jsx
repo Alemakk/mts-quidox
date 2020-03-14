@@ -1,9 +1,9 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 
 import history from '../../history'
 import FormContext from './context'
 import { images } from '../../resources'
-import { useImage } from '../../hooks'
+import { useImage, useReducerWithLogger } from '../../hooks'
 import { Text, Heading, Button } from '../../components'
 import { LoginForm } from './internal'
 import { LoginContent } from './styled'
@@ -38,9 +38,9 @@ function reducer (state, action) {
   }
 }
 
-export default function Login ({ theme: { theme } }) {
+export default function ({ theme: { theme } }) {
   const { src } = useImage(login)
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducerWithLogger(reducer, initialState)
 
   const { isLogin } = state
   return (

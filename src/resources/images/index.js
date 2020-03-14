@@ -13,6 +13,10 @@ import doc2 from './doc-2.png'
 import doc3 from './doc-3.png'
 import esc from './esc.png'
 import login from './login-img.png'
+import d1 from './disabled-1.png'
+import d2 from './disabled-2.png'
+import d3 from './disabled-3.png'
+import star from './star.png'
 
 export default {
   home_about,
@@ -29,5 +33,9 @@ export default {
   doc2,
   doc3,
   esc,
-  login
+  login,
+  d1,
+  d2,
+  d3,
+  star
 }

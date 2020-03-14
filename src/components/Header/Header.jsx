@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
+import ApplicationContext from '../../ApplicationContext'
 import history from '../../history'
 import { images } from '../../resources'
-import { Icon } from 'antd'
 import { useWindowDimension } from '../../hooks'
 import { Container, Nav, Button } from '../'
 import { ThemeHeader } from './styled'
 
+import './Header.scss'
+
 const { logo } = images
+
+function BurgerButton ({ ...rest }) {
+  return (
+    <div className='burger' {...rest} />
+  )
+}
 
 export default function Header (props) {
   const {
-    handleToggleMenu,
-    handleToggleAside,
-    app: { isMenuVisible, isAsideVisible },
     theme: { theme },
     isSecondaryRoute = false
   } = props
   const { width } = useWindowDimension()
-
+  const { dispatch } = useContext(ApplicationContext)
   return (
     <ThemeHeader>
       <ThemeHeader.Top
@@ -34,13 +39,6 @@ export default function Header (props) {
       <Container>
         <ThemeHeader.Bottom>
           <ThemeHeader.AlignBlock>
-            {width < 0 &&
-              <Icon
-                onClick={() => handleToggleMenu(!isMenuVisible)}
-                type={isMenuVisible ? 'close' : 'menu'}
-                style={{ fontSize: '2rem', marginRight: width < 1200 ? '3rem' : '6rem' }}
-              />}
-
             <ThemeHeader.Logo
               src={logo}
               onClick={() => history.push('/')}
@@ -49,7 +47,7 @@ export default function Header (props) {
 
           {!isSecondaryRoute &&
             <>
-              {width > 1450 &&
+              {width > 1350 &&
                 <Nav />}
             </>}
 
@@ -59,14 +57,11 @@ export default function Header (props) {
                 type='secondary'
                 onClick={() => history.push('/login')}
                 ghost
+                disabled
               >Войти
               </Button>
 
-              <Icon
-                style={{ fontSize: '2rem', marginLeft: width < 1200 ? '3rem' : '6rem' }}
-                onClick={() => handleToggleAside(!isAsideVisible)}
-                type={isAsideVisible ? 'close' : 'menu'}
-              />
+              <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
             </ThemeHeader.AlignBlock>}
         </ThemeHeader.Bottom>
       </Container>

@@ -1,9 +1,15 @@
 import React from 'react'
+import classNames from 'classnames'
 
-import { ThemeContainer } from './styled'
+import './Container.scss'
 
-export default function Container ({ small = false, children, ...rest }) {
+export default function ({ small = false, medium = false, children, ...rest }) {
+  const containerClass = classNames({
+    container: true,
+    'container--small': small,
+    'container-medium': medium
+  })
   return (
-    <ThemeContainer small={small ? 1 : 0} {...rest}>{children}</ThemeContainer>
+    <div className={containerClass} {...rest}>{children}</div>
   )
 }

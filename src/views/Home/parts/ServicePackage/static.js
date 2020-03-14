@@ -1,4 +1,4 @@
-const servicePackage = [
+const servicePackages = [
   {
     id: 1,
     title: 'Легкий',
@@ -36,5 +36,5 @@ const servicePackage = [
 ]
 
 export {
-  servicePackage
+  servicePackages
 }

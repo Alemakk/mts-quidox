@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import { Icon } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { player } from '../../resources'
 
 export default function VideoPlayer (props) {

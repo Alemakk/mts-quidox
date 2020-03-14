@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import ApplicationContext from '../../ApplicationContext'
 import history from '../../history'
@@ -16,14 +17,16 @@ function BurgerButton ({ ...rest }) {
     <div className='burger' {...rest} />
   )
 }
-
 export default function Header (props) {
   const {
-    theme: { theme },
-    isSecondaryRoute = false
+    theme: { theme }
   } = props
+
+  const { path } = useLocation()
   const { width } = useWindowDimension()
   const { dispatch } = useContext(ApplicationContext)
+
+  const isSecondaryRoute = path === '/login'
   return (
     <ThemeHeader>
       <ThemeHeader.Top
@@ -57,7 +60,6 @@ export default function Header (props) {
                 type='secondary'
                 onClick={() => history.push('/login')}
                 ghost
-                disabled
               >Войти
               </Button>
 

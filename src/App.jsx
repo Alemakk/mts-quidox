@@ -1,8 +1,10 @@
 import React from 'react'
-import { Router, Switch } from 'react-router-dom'
+import { Router, Switch, Route } from 'react-router-dom'
 import history from './history'
 
-import { MainRoute, SecondaryRoute } from './components'
+import ApplicationContext from './ApplicationContext'
+import { useReducerWithLogger } from './hooks'
+import { Header, ScrollTop, Aside, Footer } from './components'
 import {
   Home,
   News,
@@ -16,28 +18,52 @@ import {
   Login
 } from './views'
 
+const initialState = {
+  isAsideOpen: false
+}
+
+function reducer (state, action) {
+  switch (action.type) {
+    case 'SWITCH_ASIDE':
+      return {
+        isAsideOpen: action.payload
+      }
+    default:
+      throw new Error('Oops:( Wrong action or something else!')
+  }
+}
+
 function App () {
+  const [state, dispatch] = useReducerWithLogger(reducer, initialState)
   return (
-    <>
+    <ApplicationContext.Provider value={{ state, dispatch }}>
       <Router history={history}>
-        <Switch>
-          <MainRoute exact path='/' component={Home} />
+        <ScrollTop />
+        <Header />
+        <div className='wrapper'>
+          <main className='main'>
+            <Aside />
+            <Switch>
+              <Route exact path='/' component={Home} />
 
-          <MainRoute path='/news' component={News} />
-          <MainRoute path='/news/:id' component={SingleNews} />
+              <Route exact path='/news' component={News} />
+              <Route path='/news/:id' component={SingleNews} />
 
-          <MainRoute path='/video' component={Video} />
+              <Route path='/video' component={Video} />
 
-          <MainRoute path='/esc-check' component={ESCCheck} />
-          <MainRoute path='/services' component={Services} />
-          <MainRoute path='/faq' component={FAQ} />
-          <MainRoute path='/contacts' component={Contacts} />
-          <MainRoute path='/registration' component={Registration} />
+              <Route path='/esc-check' component={ESCCheck} />
+              <Route path='/services' component={Services} />
+              <Route path='/faq' component={FAQ} />
+              <Route path='/contacts' component={Contacts} />
+              <Route path='/registration' component={Registration} />
 
-          <SecondaryRoute path='/login' components={Login} />
-        </Switch>
+              <Route path='/login' component={Login} />
+            </Switch>
+          </main>
+          <Footer />
+        </div>
       </Router>
-    </>
+    </ApplicationContext.Provider>
   )
 }
 

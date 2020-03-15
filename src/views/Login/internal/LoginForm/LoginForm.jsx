@@ -5,11 +5,11 @@ import { Base64 } from 'js-base64'
 import api from '../../../../services'
 import formItems from './static'
 import FormContext from '../../context'
-import { Form, Input, Checkbox, Icon } from 'antd'
+import { Form, Input, Checkbox } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
 
-export default function LoginForm () {
+export default function () {
   const [form] = Form.useForm()
   const { state, dispatch } = useContext(FormContext)
 
@@ -49,7 +49,7 @@ export default function LoginForm () {
       >
         <Form.Item
           name='email'
-          label='E-mail'
+          label='Введите адрес электронной почты'
           rules={[
             {
               type: 'email',
@@ -66,7 +66,7 @@ export default function LoginForm () {
 
         <Form.Item
           name='password'
-          label='Password'
+          label='Введите пароль'
           rules={[
             {
               required: true,
@@ -94,7 +94,7 @@ export default function LoginForm () {
       </Form>
 
       <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>
-      <Button style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
+      <Button disabled={isFetching} loading={isFetching} style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
     </LoginFormContent>
   )
 }

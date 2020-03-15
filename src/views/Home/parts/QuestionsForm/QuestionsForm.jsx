@@ -36,8 +36,8 @@ export default function () {
           className='theme-form theme-form--home'
           hideRequiredMark
         >
-          {formItems.map((i, idx) => {
-            const { name, label, rules, type, placeholder, phoneRules: { mask, addonBefore } } = i
+          {formItems.map((item, idx) => {
+            const { name, label, rules, type, placeholder, phoneRules: { mask, addonBefore } } = item
             return (
               <Form.Item name={name} label={label} rules={[rules]} key={idx}>
                 {type === 'text'

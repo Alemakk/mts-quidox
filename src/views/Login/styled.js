@@ -5,8 +5,6 @@ import { styleguide } from '../../constants'
 const { colors } = styleguide
 
 const LoginContent = styled.div`
-  height: 1px;
-  min-height: calc(100vh - 17.6rem);
   display: flex;
   background-color: ${colors.alabaster};
 `

@@ -1,78 +1,96 @@
-import React, { useState, useContext } from 'react'
-import useForm from 'rc-form-hooks'
+import React, { useContext } from 'react'
 import generateHash from 'random-hash'
 import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
+import formItems from './static'
 import FormContext from '../../context'
 import { Form, Input, Checkbox, Icon } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
 
 export default function LoginForm () {
-  const { getFieldDecorator, validateFields, values } = useForm()
+  const [form] = Form.useForm()
   const { state, dispatch } = useContext(FormContext)
 
-  const handleLogin = e => {
-    e.preventDefault()
-    validateFields()
-      .then(() => {
-        dispatch({ type: 'FETCH_DATA', payload: true })
-        values.secret_key = process.env.REACT_APP_SECRET_KEY
-        values.auth_data = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
-        delete values.email
-        delete values.password
-        delete values.secret_key
-        api.user.userLogin(values)
-          .then(({ data }) => {
-            if (data.success) {
-              console.log(data.success)
-              dispatch({ type: 'FETCH_DATA', payload: false })
-            } else {
-              throw new Error(data.error)
-            }
-          })
-          .catch(error => {
-            dispatch({ type: 'ERROR', payload: error.message })
-          })
+  const handleLogin = values => {
+    dispatch({ type: 'FETCH_DATA', payload: true })
+    values.secret_key = process.env.REACT_APP_SECRET_KEY
+    console.log(values)
+    values.authData = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
+    const { authData } = values
+    api.user.userLogin(authData)
+      .then(({ data }) => {
+        if (data.success) {
+          dispatch({ type: 'FETCH_DATA', payload: false })
+        } else {
+          throw new Error(data.error)
+        }
+      })
+      .catch(error => {
+        dispatch({ type: 'ERROR', payload: error.message })
       })
   }
+
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
+  };
   const { isFetching, error } = state
   return (
     <LoginFormContent>
-      <Form onSubmit={handleLogin} className='theme-form' hideRequiredMark>
-        <Form.Item label='Введите адрес электронной почты'>
-          {getFieldDecorator('email', {
-            rules: [{ required: true, pattern: new RegExp('^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$'), message: 'Введите адрес электронной почты' }]
-          })(
-            <Input size='large' placeholder='Введите адрес электронной почты' />
-          )}
+      <Form
+        form={form}
+        onFinish={handleLogin}
+        onFinishFailed={onFinishFailed}
+        initialValues={{ remember: true }}
+        className='theme-form'
+        layout='vertical'
+        hideRequiredMark
+      >
+        <Form.Item
+          name='email'
+          label='E-mail'
+          rules={[
+            {
+              type: 'email',
+              message: 'Не валидный имейл'
+            },
+            {
+              required: true,
+              message: 'Обязательное поле!'
+            }
+          ]}
+        >
+          <Input size='large' />
         </Form.Item>
 
-        <Form.Item label='Введите пароль'>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Введите пароль' }]
-          })(
-            <Input size='large' type='password' placeholder='Введите пароль' />
-          )}
+        <Form.Item
+          name='password'
+          label='Password'
+          rules={[
+            {
+              required: true,
+              message: 'Обязательное поле!'
+            }
+          ]}
+        >
+          <Input.Password size='large' />
         </Form.Item>
 
         {error &&
-          <Alert>{error}</Alert>}
+          <Form.Item>
+            <Alert>{error}</Alert>
+          </Form.Item>}
 
-        <Form.Item>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true
-          })(<Checkbox>Запомнить меня</Checkbox>)}
-          <a className='form-link' onClick={() => dispatch({ type: 'CHANGE_FORM' })} href='#'>Забыли пароль?</a>
+        <Form.Item name='remember' valuePropName='checked'>
+          <Checkbox>Запомнить меня</Checkbox>
         </Form.Item>
 
-        <Button type='primary' htmlType='submit'>
-          {isFetching
-            ? <Icon type='loading' />
-            : 'Войти'}
-        </Button>
+        <Form.Item>
+          <Button type='primary' htmlType='submit'>
+            Войти
+          </Button>
+        </Form.Item>
       </Form>
 
       <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>

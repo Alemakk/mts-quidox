@@ -22,11 +22,11 @@ export default function Header (props) {
     theme: { theme }
   } = props
 
-  const { path } = useLocation()
+  const { pathname } = useLocation()
   const { width } = useWindowDimension()
   const { dispatch } = useContext(ApplicationContext)
 
-  const isSecondaryRoute = path === '/login'
+  const isSecondaryRoute = pathname === '/login'
   return (
     <ThemeHeader>
       <ThemeHeader.Top
@@ -52,19 +52,17 @@ export default function Header (props) {
             <>
               {width > 1350 &&
                 <Nav />}
+              <ThemeHeader.AlignBlock>
+                <Button
+                  type='secondary'
+                  onClick={() => history.push('/login')}
+                  ghost
+                >Войти
+                </Button>
+
+                <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
+              </ThemeHeader.AlignBlock>
             </>}
-
-          {!isSecondaryRoute &&
-            <ThemeHeader.AlignBlock>
-              <Button
-                type='secondary'
-                onClick={() => history.push('/login')}
-                ghost
-              >Войти
-              </Button>
-
-              <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
-            </ThemeHeader.AlignBlock>}
         </ThemeHeader.Bottom>
       </Container>
     </ThemeHeader>

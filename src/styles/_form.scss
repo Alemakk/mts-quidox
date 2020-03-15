@@ -1,8 +1,17 @@
 .theme-form {
 
   .ant-form-item-has-error {
-    .ant-input {
+    .ant-input,
+    .ant-input-password {
       border-color: #ff4d4f;
+    }
+  }
+
+  .ant-checkbox-wrapper {
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        border-radius: .2rem;
+      }
     }
   }
 
@@ -24,12 +33,10 @@
     padding-left: 2rem;
   }
 
-  .ant-input {
+  .ant-input,
+  .ant-input-password {
     border-radius: .3rem;
     border: 1px solid #BCBEC0;
-    &.ant-input-lg {
-      height: 4.4rem;
-    }
   }
 
   .ant-input-group-addon {

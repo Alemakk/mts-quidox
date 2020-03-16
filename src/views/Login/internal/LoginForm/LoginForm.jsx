@@ -17,9 +17,12 @@ export default function () {
     dispatch({ type: 'FETCH_DATA', payload: true })
     values.secret_key = process.env.REACT_APP_SECRET_KEY
     console.log(values)
-    values.authData = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
-    const { authData } = values
-    api.user.userLogin(authData)
+    values.auth_data = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
+    //const { authData } = values
+    delete values.email
+    delete values.password
+    delete values.secret_key
+    api.user.userLogin(values)
       .then(({ data }) => {
         if (data.success) {
           dispatch({ type: 'FETCH_DATA', payload: false })

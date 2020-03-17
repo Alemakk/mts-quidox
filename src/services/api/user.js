@@ -8,6 +8,14 @@ function userLogin (data) {
   })
 }
 
+function getUser () {
+  return http({
+    url: '/user',
+    method: 'GET'
+  })
+}
+
 export {
-  userLogin
+  userLogin,
+  getUser
 }

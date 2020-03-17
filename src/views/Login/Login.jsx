@@ -24,12 +24,12 @@ function reducer (state, action) {
         error: null,
         isLogin: action.payload
       }
-    case 'FETCH_DATA':
+    case 'LOGIN_INIT':
       return {
         ...state,
         isFetching: action.payload
       }
-    case 'ERROR':
+    case 'LOGIN_ERROR':
       return {
         ...state,
         isFetching: false,

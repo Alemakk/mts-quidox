@@ -1,50 +1,49 @@
 import React, { useContext } from 'react'
+import { useHistory } from 'react-router'
 import generateHash from 'random-hash'
 import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
-import formItems from './static'
 import FormContext from '../../context'
+import ApplicationContext from '../../../../ApplicationContext'
 import { Form, Input, Checkbox } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
 
 export default function () {
-  const [form] = Form.useForm()
+  const history = useHistory()
   const { state, dispatch } = useContext(FormContext)
+  const { dispatch: userLogin } = useContext(ApplicationContext)
 
   const handleLogin = values => {
-    dispatch({ type: 'FETCH_DATA', payload: true })
+    dispatch({ type: 'LOGIN_INIT', payload: true })
     values.secret_key = process.env.REACT_APP_SECRET_KEY
-    console.log(values)
     values.auth_data = generateHash({ length: 10 }) + Base64.encode(JSON.stringify(values)) + generateHash({ length: 5 })
-    //const { authData } = values
     delete values.email
     delete values.password
     delete values.secret_key
     api.user.userLogin(values)
       .then(({ data }) => {
-        if (data.success) {
-          dispatch({ type: 'FETCH_DATA', payload: false })
+        const { data: { token }, success } = data
+        if (success) {
+          dispatch({ type: 'LOGIN_INIT', payload: false })
+          window.localStorage.setItem('authToken', token)
+          userLogin({ type: 'USER_AUTHORIZED', payload: true })
+          history.push('/')
         } else {
           throw new Error(data.error)
         }
       })
       .catch(error => {
-        dispatch({ type: 'ERROR', payload: error.message })
+        dispatch({ type: 'LOGIN_ERROR', payload: error.message })
       })
   }
 
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
-  };
   const { isFetching, error } = state
   return (
     <LoginFormContent>
       <Form
-        form={form}
         onFinish={handleLogin}
-        onFinishFailed={onFinishFailed}
         initialValues={{ remember: true }}
         className='theme-form'
         layout='vertical'

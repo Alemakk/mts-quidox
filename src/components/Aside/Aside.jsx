@@ -33,8 +33,9 @@ const SideBarItem = posed.li({
 
 export default function () {
   const { width } = useWindowDimension()
-  const { state, dispatch } = useContext(ApplicationContext)
-  const { isAsideOpen } = state
+  const { state: applicationData, dispatch } = useContext(ApplicationContext)
+  const { isAsideOpen } = applicationData
+
   return (
     <SideBarList className='aside' pose={isAsideOpen ? 'open' : 'closed'}>
       <Close onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: false })} />

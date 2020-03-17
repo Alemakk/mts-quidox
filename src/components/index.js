@@ -1,3 +1,4 @@
+import PublicRoute from './PublicRoute'
 import Loading from './Loading'
 import Header from './Header'
 import Footer from './Footer'
@@ -14,6 +15,7 @@ import VideoPlayer from './VideoPlayer'
 import Alert from './Alert'
 
 export {
+  PublicRoute,
   Loading,
   Header,
   Footer,

@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { token } from './interceptors'
 const instance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   headers: {
@@ -9,5 +9,7 @@ const instance = axios.create({
   // data: {},
   timeout: 180000
 })
+
+token(instance)
 
 export default instance

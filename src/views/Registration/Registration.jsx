@@ -27,7 +27,6 @@ export default function () {
       setRegistrationType(type)
     }
   }, [])
-
   return (
     <RegistrationContent>
       <AboutServiceBanner />
@@ -53,7 +52,7 @@ export default function () {
                   <Radio style={radioStyle} key={idx} value={type} disabled={disabled}>{name}</Radio>)}
               </Radio.Group>
               : <RegistrationContent.FormWrapp>
-                {type === 'phone' && <Phone />}
+                {registrationType === 'phone' && <Phone />}
               </RegistrationContent.FormWrapp>}
 
             <Button onClick={() => setMethodsVisible(false)} style={{ display: 'block', marginTop: '3rem' }} type='primary'>Продолжить</Button>

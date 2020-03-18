@@ -3,6 +3,7 @@ import { Route } from 'react-router'
 
 import api from '../../services/api'
 import ApplicationContext from '../../ApplicationContext'
+import { notification } from 'antd'
 import { Header, ScrollTop, Aside, Footer } from '../'
 import { useReducerWithLogger } from '../../hooks'
 
@@ -55,12 +56,19 @@ export default function ({ component: Component, ...rest }) {
     if (isUserAuthorized) {
       api.user.getUser()
         .then(response => {
-          const { success, data } = response.data
+          const { success, data, error } = response.data
 
           if (success) {
             dispatch({ type: 'GET_USER_FETCHING', payload: false })
             dispatch({ type: 'GET_USER_SUCCESS', payload: data })
+          } else {
+            throw new Error(error)
           }
+        })
+        .catch(error => {
+          notification.error({
+            message: error.message
+          })
         })
     }
   }, [state.isUserAuthorized])

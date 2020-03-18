@@ -4,7 +4,7 @@ import history from '../../history'
 import FormContext from './context'
 import { images } from '../../resources'
 import { useImage, useReducerWithLogger } from '../../hooks'
-import { Text, Heading, Button } from '../../components'
+import { Text, Heading, AboutServiceBanner } from '../../components'
 import { LoginForm } from './internal'
 import { LoginContent } from './styled'
 
@@ -45,31 +45,7 @@ export default function ({ theme: { theme } }) {
   const { isLogin } = state
   return (
     <LoginContent>
-      <LoginContent.Aside>
-        <LoginContent.AsideContent>
-          <img style={{ maxWidth: 320 }} src={src} alt='Login Picture' />
-
-          <LoginContent.Description>
-            <Text style={{ fontWeight: 500, textAlign: 'left' }}>
-              Благодаря сервису <span style={{ color: theme['@primary-color'] }}>МТС</span>&nbsp;
-              <span style={{ color: theme['@secondary-color'] }}>Quidox</span>&nbsp;
-              Вы сможете с легкостью обмениваться
-              электронными документами с ЭЦП.
-              Доставка происходит мгновенно!
-            </Text>
-
-            <Button
-              type='secondary'
-              onClick={() => history.push('/')}
-              style={{ marginTop: '5rem' }}
-              ghost
-            >
-              Подробнее о сервисе
-            </Button>
-          </LoginContent.Description>
-        </LoginContent.AsideContent>
-      </LoginContent.Aside>
-
+      <AboutServiceBanner />
       <LoginContent.Main>
         <Heading level={3}>Войти в МТС Quidox</Heading>
         <Text>Обмен электронными документами с ЭЦП</Text>

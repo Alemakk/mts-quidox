@@ -13,6 +13,7 @@ import ScrollTop from './ScrollTop'
 import NewsItem from './NewsItem'
 import VideoPlayer from './VideoPlayer'
 import Alert from './Alert'
+import AboutServiceBanner from './AboutServiceBanner'
 
 export {
   PublicRoute,
@@ -29,5 +30,6 @@ export {
   ScrollTop,
   NewsItem,
   VideoPlayer,
-  Alert
+  Alert,
+  AboutServiceBanner
 }

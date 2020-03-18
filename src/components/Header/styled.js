@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { styleguide } from '../../constants'
+import colors from 'less/lib/less/data/colors'
 
 const { sizes } = styleguide
 
@@ -22,21 +23,33 @@ ThemeHeader.Bottom = styled.div`
 `
 
 ThemeHeader.Logo = styled.img`
-  max-width: 18rem;
+  max-width: 30rem;;
   height: auto;
   cursor: pointer;
   background: url(${({ src }) => src}) center no-repeat;
   background-size: cover;
-  
-  @media screen and (min-width: ${sizes.laptop}) {
-    max-width: 30rem;
-  }
 `
 
 ThemeHeader.AlignBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+`
+
+ThemeHeader.Avatar = styled.div`
+  width: 6rem;
+  min-width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  background-color: ${({ color }) => color};
+  color: ${colors.white};
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 ThemeHeader.Text = styled.p`

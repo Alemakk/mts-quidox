@@ -24,9 +24,10 @@ export default function Header (props) {
 
   const { pathname } = useLocation()
   const { width } = useWindowDimension()
-  const { dispatch } = useContext(ApplicationContext)
+  const { state: { user }, dispatch } = useContext(ApplicationContext)
 
-  const isSecondaryRoute = pathname === '/login'
+  const isSecondaryRoute =  ['/login', '/registration'].includes(pathname)
+  console.log(user)
   return (
     <ThemeHeader>
       <ThemeHeader.Top
@@ -53,13 +54,15 @@ export default function Header (props) {
               {width > 1350 &&
                 <Nav />}
               <ThemeHeader.AlignBlock>
-                <Button
-                  type='secondary'
-                  onClick={() => history.push('/login')}
-                  ghost
-                >Войти
-                </Button>
-
+                {Object.keys(user).length
+                  ? <ThemeHeader.Avatar color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
+                  : <Button
+                    type='secondary'
+                    onClick={() => history.push('/login')}
+                    ghost
+                  >
+                    Войти
+                  </Button>}
                 <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
               </ThemeHeader.AlignBlock>
             </>}

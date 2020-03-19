@@ -29,6 +29,8 @@ RegistrationContent.Types = styled.div`
 
 RegistrationContent.FormWrapp = styled.div`
   background-color: ${colors.white};
+  padding: 2rem;
+  margin-top: 3rem;
 `
 
 export default RegistrationContent

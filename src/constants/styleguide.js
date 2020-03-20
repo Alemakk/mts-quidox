@@ -4,7 +4,7 @@ const colors = {
   red: '#E30611',
   silver_sand: '#e5e5e5',
   alabaster: '#F9F9F9',
-  rolling_stone: '#808285'
+  rolling_stone: '#808285',
 }
 
 const sizes = {

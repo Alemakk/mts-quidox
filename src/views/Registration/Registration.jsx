@@ -63,7 +63,7 @@ export default function () {
 
                 <Button onClick={handleStartRegistration} style={{ display: 'block', marginTop: '3rem ' }} type='primary'>Продолжить</Button>
               </>
-              : <RegisterContext.Provider>
+              : <RegisterContext.Provider value={{ state, dispatch }}>
                 <RegistrationContent.FormWrapp>
                   {registrationType === 'phone' && <Phone />}
                 </RegistrationContent.FormWrapp>}

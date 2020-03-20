@@ -41,7 +41,8 @@
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.0.0",
-    "use-reducer-logger": "^1.0.1"
+    "use-reducer-logger": "^1.0.1",
+    "use-timer": "^1.0.7"
   },
   "scripts": {
     "start": "react-app-rewired start",

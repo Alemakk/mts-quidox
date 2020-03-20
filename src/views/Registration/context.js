@@ -1,13 +1,28 @@
 import React from 'react'
 
 const initialState = {
-  isMethodsVisible: true,
+  isMethodsVisible: false,
+  isFetching: false,
   registrationType: 'phone',
-  activeStep: 0
+  activeStep: 1,
+  data: {}
 }
 
 function reducer (state, action) {
   switch (action.type) {
+    case 'FETCHING_INIT':
+      return {
+        ...state,
+        isFetching: action.payload
+      }
+    case 'SAVE_FORM_DATA':
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          ...action.payload
+        }
+      }
     case 'CHANGE_REGISTRATION_TYPE':
       return {
         ...state,

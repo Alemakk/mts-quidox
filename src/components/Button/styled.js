@@ -14,6 +14,7 @@ const ThemeButton = styled.button`
   border-radius: .6rem;
   outline: none;
   transition: .2s linear;
+  
   &.button_primary {
     border-color: ${({ primaryColor }) => primaryColor};
     background-color: ${({ primaryColor }) => primaryColor};
@@ -64,6 +65,18 @@ const ThemeButton = styled.button`
       left: 0;
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+  
+  &[disabled] {
+    color: ${colors.silver_sand};
+    background-color: ${colors.alabaster};
+    cursor: not-allowed;
+    border-color: ${colors.silver_sand};
+    &:hover {
+      color: ${colors.silver_sand};
+      background-color: ${colors.alabaster};
+      border-color: ${colors.silver_sand};
     }
   }
 `

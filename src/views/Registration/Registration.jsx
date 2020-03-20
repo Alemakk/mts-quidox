@@ -66,7 +66,7 @@ export default function () {
               : <RegisterContext.Provider value={{ state, dispatch }}>
                 <RegistrationContent.FormWrapp>
                   {registrationType === 'phone' && <Phone />}
-                </RegistrationContent.FormWrapp>}
+                </RegistrationContent.FormWrapp>
               </RegisterContext.Provider>}
           </RegistrationContent.Types>
         </RegistrationContent.Content>

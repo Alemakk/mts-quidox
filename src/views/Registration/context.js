@@ -1,10 +1,11 @@
 import React from 'react'
 
 const initialState = {
-  isMethodsVisible: false,
+  isMethodsVisible: true,
   isFetching: false,
+  isRegisterEnd: false,
   registrationType: 'phone',
-  activeStep: 1,
+  activeStep: 0,
   data: {}
 }
 
@@ -32,6 +33,11 @@ function reducer (state, action) {
       return {
         ...state,
         isMethodsVisible: action.payload
+      }
+    case 'FINISH_REGISTER':
+      return {
+        ...state,
+        isRegisterEnd: true
       }
     case 'CHANGE_ACTIVE_STEP':
       return {

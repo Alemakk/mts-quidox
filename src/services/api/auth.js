@@ -16,7 +16,16 @@ function confirmSmsCode (data) {
   })
 }
 
+function createUser (data) {
+  return http({
+    url: '/register',
+    method: 'POST',
+    data
+  })
+}
+
 export {
   sendPhone,
-  confirmSmsCode
+  confirmSmsCode,
+  createUser
 }

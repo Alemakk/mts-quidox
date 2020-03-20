@@ -25,6 +25,7 @@ export default function () {
             message: 'СМС код подтвержден'
           })
           dispatch({ type: 'FETCHING_INIT', payload: false })
+          dispatch({ type: 'SAVE_FORM_DATA', payload: values })
           dispatch({ type: 'CHANGE_ACTIVE_STEP' })
         } else {
           throw new Error(error)

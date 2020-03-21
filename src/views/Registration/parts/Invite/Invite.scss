@@ -1,0 +1,43 @@
+.invite {
+  text-align: left;
+
+  .invite__success {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  .invites__list {
+    height: 30rem;
+    margin: 0;
+    padding: 0 2rem 0 0;
+    list-style: none;
+  }
+
+  .invites {
+
+    .invites__item {
+      font-size: 1.6rem;
+      width: 100%;
+      padding: .65rem 1.1rem;
+      border: .1rem solid #DBDCDD;
+      border-radius: .3rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &.invites__item--hover {
+        cursor: pointer;
+        &:hover {
+          background: #F9F9F9;
+        }
+      }
+    }
+
+    .invites__item-icon {
+      cursor: pointer;
+    }
+  }
+}

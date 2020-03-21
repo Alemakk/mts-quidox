@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import { useLocation } from 'react-router'
 import logger from 'use-reducer-logger'
 
-import { Phone } from './parts'
+import { Phone, Invite } from './parts'
 import { Steps, Radio } from 'antd'
 import { RegisterContext, reducer, initialState } from './context'
 import { registrationSteps, registrationTypes } from './static'
@@ -34,7 +34,7 @@ export default function () {
     dispatch({ type: 'CHANGE_ACTIVE_STEP' })
   }
 
-  const { isMethodsVisible, registrationType, activeStep } = state
+  const { isMethodsVisible, registrationType, activeStep, isRegisterEnd } = state
   return (
     <RegistrationContent>
       <AboutServiceBanner />
@@ -42,34 +42,38 @@ export default function () {
       <RegistrationContent.Main>
         <Heading level={2}>Регистрация в МТС Quidox</Heading>
         <Text>Обмен электронными документами с ЭЦП</Text>
+        {isRegisterEnd
+          ? <>
+            <RegistrationContent.Content>
+              <Steps size='small' current={activeStep}>
+                {registrationSteps
+                  .find(i => i.type === registrationType)
+                  .steps
+                  .map(({ step }, idx) => <Step key={idx} title={step} />)}
+              </Steps>
 
-        <RegistrationContent.Content>
-          <Steps size='small' current={activeStep}>
-            {registrationSteps
-              .find(i => i.type === registrationType)
-              .steps
-              .map(({ step }, idx) => <Step key={idx} title={step} />)}
-          </Steps>
+              <RegistrationContent.Types>
+                {isMethodsVisible
+                  ? <>
+                    <Text bolder style={{ textAlign: 'left' }}>Выберите способ регистрации</Text>
+                    <Radio.Group style={{ marginTop: '3rem' }} defaultValue={registrationType}>
+                      {registrationTypes.map(({ name, type, disabled }, idx) =>
+                        <Radio style={radioStyle} key={idx} value={type} disabled={disabled}>{name}</Radio>)}
+                    </Radio.Group>
 
-          <RegistrationContent.Types>
-            <Text bolder style={{ textAlign: 'left' }}>Выберите способ регистрации</Text>
-
-            {isMethodsVisible
-              ? <>
-                <Radio.Group style={{ marginTop: '3rem' }} defaultValue={registrationType}>
-                  {registrationTypes.map(({ name, type, disabled }, idx) =>
-                    <Radio style={radioStyle} key={idx} value={type} disabled={disabled}>{name}</Radio>)}
-                </Radio.Group>
-
-                <Button onClick={handleStartRegistration} style={{ display: 'block', marginTop: '3rem ' }} type='primary'>Продолжить</Button>
-              </>
-              : <RegisterContext.Provider value={{ state, dispatch }}>
-                <RegistrationContent.FormWrapp>
-                  {registrationType === 'phone' && <Phone />}
-                </RegistrationContent.FormWrapp>
-              </RegisterContext.Provider>}
-          </RegistrationContent.Types>
-        </RegistrationContent.Content>
+                    <Button onClick={handleStartRegistration} style={{ display: 'block', marginTop: '3rem ' }} type='primary'>Продолжить</Button>
+                  </>
+                  : <RegisterContext.Provider value={{ state, dispatch }}>
+                    <RegistrationContent.FormWrapp>
+                      {registrationType === 'phone' && <Phone />}
+                    </RegistrationContent.FormWrapp>
+                  </RegisterContext.Provider>}
+              </RegistrationContent.Types>
+            </RegistrationContent.Content>
+          </>
+          : <RegistrationContent.Invite>
+            <Invite />
+          </RegistrationContent.Invite>}
       </RegistrationContent.Main>
     </RegistrationContent>
   )

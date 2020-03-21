@@ -8,8 +8,8 @@ import { Button, Alert } from '../../../../../../components'
 
 export default function () {
   const [codeError, setCodeError] = useState('')
-  const { time, start } = useTimer({ initialTime: 5, endTime: 0, timerType: 'DECREMENTAL' })
-  const { state: { data: { phone } }, dispatch } = useContext(RegisterContext)
+  const { time, start } = useTimer({ initialTime: 60, endTime: 0, timerType: 'DECREMENTAL' })
+  const { state: { data }, dispatch } = useContext(RegisterContext)
 
   useEffect(() => {
     start()
@@ -18,7 +18,7 @@ export default function () {
   const handleConfirmCode = values => {
     dispatch({ type: 'FETCHING_INIT', payload: true })
 
-    api.auth.confirmSmsCode(values)
+    api.auth.confirmSmsCode({ ...values, ...data })
       .then(({ data: { success, error } }) => {
         if (success) {
           notification.success({
@@ -40,7 +40,7 @@ export default function () {
   const handleSendPhone = () => {
     dispatch({ type: 'FETCHING_INIT', payload: true })
 
-    api.auth.sendPhone({ phone: phone })
+    api.auth.sendPhone(data)
       .then(({ data: { success, error } }) => {
         if (success) {
           notification.success({

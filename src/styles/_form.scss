@@ -44,4 +44,10 @@
     max-width: 40rem;
     margin: 0 auto;
   }
+
+  &.theme-form--invite {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }

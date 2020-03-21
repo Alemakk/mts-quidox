@@ -33,4 +33,11 @@ RegistrationContent.FormWrapp = styled.div`
   margin-top: 3rem;
 `
 
+RegistrationContent.Invite = styled.div`
+  max-width: 90rem;
+  background-color: ${colors.white};
+  padding: 2rem;
+  margin: 3rem auto 0 auto;
+`
+
 export default RegistrationContent

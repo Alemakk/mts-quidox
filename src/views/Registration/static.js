@@ -15,6 +15,17 @@ const registrationSteps = [
         step: 'Почта и пароль'
       }
     ]
+  },
+  {
+    type: 'email',
+    steps: [
+      {
+        step: 'Способ регистрации'
+      },
+      {
+        step: 'Почта'
+      }
+    ]
   }
 ]
 
@@ -27,7 +38,7 @@ const registrationTypes = [
   {
     name: 'Электронная почта',
     type: 'email',
-    disabled: true
+    disabled: false
   },
   {
     name: 'МТС ID',

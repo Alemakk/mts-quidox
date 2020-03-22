@@ -22,6 +22,7 @@ export default function () {
             message: 'Поздравляем! Вы успешно зарегестрировались!'
           })
           dispatch({ type: 'FETCHING_INIT', payload: false })
+          dispatch({ type: 'SAVE_FORM_DATA', payload: values })
           dispatch({ type: 'FINISH_REGISTER' })
         } else {
           throw new Error(error)

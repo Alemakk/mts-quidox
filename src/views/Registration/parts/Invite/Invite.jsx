@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
+import { RegisterContext } from '../../context'
 import SuccessIcon from './icon'
 import { PlusOutlined, DownOutlined, UpOutlined } from '@ant-design/icons'
-import { Form, Input } from 'antd'
+import { Form, Input, notification } from 'antd'
 import { Text, Button } from '../../../../components'
 
 import 'react-perfect-scrollbar/dist/css/styles.css'
@@ -12,7 +13,22 @@ import './Invite.scss'
 export default function () {
   const [emails, setEmails] = useState([])
   const [isShowMore, setShowMore] = useState(false)
+  const { state: { data: { email } } } = useContext(RegisterContext)
+
+  useEffect(() => {
+    if (emails.length <= 2) {
+      setShowMore(false)
+    }
+  }, [emails])
+
   const handleSendInvites = values => {
+    const { email } = values
+    if (emails.includes(email)) {
+      notification.error({
+        message: 'Имейл уже добавлен!'
+      })
+      return
+    }
     setEmails([...emails, values.email])
   }
 
@@ -30,7 +46,7 @@ export default function () {
 
       <Text style={{ textAlign: 'left' }}>
         Подтвердите регистрацию, пройдя по ссылке в сообщении, которое мы выслали на почту&nbsp;
-        <span style={{ fontWeight: 500, color: '#000' }}>69quidoxov@gmail.com.</span>
+        <span style={{ fontWeight: 500, color: '#000' }}>{email}.</span>
       </Text>
 
       <Form

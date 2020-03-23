@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import posed from 'react-pose'
 
 import ApplicationContext from '../../ApplicationContext'
-import { Icon } from 'antd'
 import { useWindowDimension } from '../../hooks'
 import { navigations } from '../../constants'
 
@@ -48,6 +47,7 @@ export default function () {
                 key={title}
               >
                 <NavLink
+                  onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: false })}
                   to={route}
                   disabled={disabled}
                   activeStyle={{ color: '#E30611' }}
@@ -65,6 +65,7 @@ export default function () {
             className='aside__item'
           >
             <NavLink
+              onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: false })}
               to={route}
               disabled={disabled}
               exact={exact}

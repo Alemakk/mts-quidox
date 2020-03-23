@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 import { styleguide } from '../../constants'
-import colors from 'less/lib/less/data/colors'
 
-const { sizes } = styleguide
+const { colors } = styleguide
 
 const ThemeHeader = styled.header`
   position: relative;

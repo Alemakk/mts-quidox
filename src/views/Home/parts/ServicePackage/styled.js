@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Icon } from 'antd'
 
 import { styleguide } from '../../../../constants'
 

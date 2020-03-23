@@ -10,6 +10,7 @@ const initialState = {
 }
 
 function reducer (state, action) {
+  // eslint-disable-next-line default-case
   switch (action.type) {
     case 'FETCHING_INIT':
       return {

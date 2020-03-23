@@ -26,10 +26,8 @@ export default function () {
     if (locationState) {
       const { type } = locationState
       dispatch({ type: 'CHANGE_REGISTRATION_TYPE', payload: type })
-      // dispatch({ type: 'SWITCH_REGISTRATION_METHODS', payload: false })
-      // dispatch({ type: 'CHANGE_ACTIVE_STEP' })
     }
-  }, [])
+  }, [locationState])
 
   const handleStartRegistration = () => {
     dispatch({ type: 'SWITCH_REGISTRATION_METHODS', payload: false })

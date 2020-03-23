@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import ReactPlayer from 'react-player'
 import { linearGradient } from 'polished'
-import { Heading } from '../../../../components'
+
 import { styleguide } from '../../../../constants'
 
 const { colors } = styleguide

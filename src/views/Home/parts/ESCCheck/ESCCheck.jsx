@@ -29,7 +29,7 @@ export default function ESCCheck () {
                 C помощью сервиса «Проверка ЭЦП» можно проверить электронно-цифровые подписи (ЭЦП) в электронном документе.
               </Text>
 
-              <img className='esc-image' src={src} />
+              <img className='esc-image' src={src} alt='data' />
 
               <Button type='secondary' ghost>Проверить подпись</Button>
             </ESCCheckContent.Block>

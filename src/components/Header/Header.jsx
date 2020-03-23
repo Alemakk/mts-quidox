@@ -26,8 +26,7 @@ export default function Header (props) {
   const { width } = useWindowDimension()
   const { state: { user }, dispatch } = useContext(ApplicationContext)
 
-  const isSecondaryRoute =  ['/login', '/registration'].includes(pathname)
-  console.log(user)
+  const isSecondaryRoute = ['/login', '/registration'].includes(pathname)
   return (
     <ThemeHeader>
       <ThemeHeader.Top

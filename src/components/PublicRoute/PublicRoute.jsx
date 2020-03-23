@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { Route } from 'react-router'
+import React, { useEffect, useReducer } from 'react'
+import { Route } from 'react-router-dom'
+import logger from 'use-reducer-logger'
 
 import api from '../../services/api'
 import ApplicationContext from '../../ApplicationContext'
 import { notification } from 'antd'
 import { Header, ScrollTop, Aside, Footer } from '../'
-import { useReducerWithLogger } from '../../hooks'
 
 const initialState = {
   isAsideOpen: false,
@@ -15,6 +15,7 @@ const initialState = {
 }
 
 function reducer (state, action) {
+  // eslint-disable-next-line default-case
   switch (action.type) {
     case 'SWITCH_ASIDE':
       return {
@@ -42,18 +43,18 @@ function reducer (state, action) {
 }
 
 export default function ({ component: Component, ...rest }) {
-  const [state, dispatch] = useReducerWithLogger(reducer, initialState)
+  const [state, dispatch] = useReducer(logger(reducer), initialState)
 
   useEffect(() => {
     if (window.localStorage.getItem('authToken')) {
       dispatch({ type: 'USER_AUTHORIZED', payload: true })
     }
-  }, [])
+  }, [state.isUserAuthorized])
 
   useEffect(() => {
     const { isUserAuthorized } = state
-    dispatch({ type: 'GET_USER_FETCHING', payload: true })
     if (isUserAuthorized) {
+      dispatch({ type: 'GET_USER_FETCHING', payload: true })
       api.user.getUser()
         .then(response => {
           const { success, data, error } = response.data
@@ -66,6 +67,7 @@ export default function ({ component: Component, ...rest }) {
           }
         })
         .catch(error => {
+          dispatch({ type: 'GET_USER_FETCHING', payload: false })
           notification.error({
             message: error.message
           })

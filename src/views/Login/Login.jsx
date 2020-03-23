@@ -1,14 +1,10 @@
-import React from 'react'
+import React, { useReducer } from 'react'
+import logger from 'use-reducer-logger'
 
-import history from '../../history'
 import FormContext from './context'
-import { images } from '../../resources'
-import { useImage, useReducerWithLogger } from '../../hooks'
 import { Text, Heading, AboutServiceBanner } from '../../components'
 import { LoginForm } from './internal'
 import { LoginContent } from './styled'
-
-const { login } = images
 
 const initialState = {
   isLogin: true,
@@ -17,6 +13,7 @@ const initialState = {
 }
 
 function reducer (state, action) {
+  // eslint-disable-next-line default-case
   switch (action.type) {
     case 'CHANGE_FORM':
       return {
@@ -38,9 +35,8 @@ function reducer (state, action) {
   }
 }
 
-export default function ({ theme: { theme } }) {
-  const { src } = useImage(login)
-  const [state, dispatch] = useReducerWithLogger(reducer, initialState)
+export default function () {
+  const [state, dispatch] = useReducer(logger(reducer), initialState)
 
   const { isLogin } = state
   return (

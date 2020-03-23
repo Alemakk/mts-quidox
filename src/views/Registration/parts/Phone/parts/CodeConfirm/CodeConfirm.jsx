@@ -13,7 +13,7 @@ export default function () {
 
   useEffect(() => {
     start()
-  }, [])
+  }, [start])
 
   const handleConfirmCode = values => {
     dispatch({ type: 'FETCHING_INIT', payload: true })
@@ -83,7 +83,7 @@ export default function () {
         </Form.Item>
       }
 
-      <Form.Item>Мы отправили код подтверждения на указанный вами номе</Form.Item>
+      <Form.Item>Мы отправили код подтверждения на указанный вами номер</Form.Item>
 
       <Form.Item>
         Не получили код? &nbsp;

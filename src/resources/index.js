@@ -1,4 +1,4 @@
-import { menuIcons, homeIcons, footerIcons, ESCCheckIcon, player } from './icons'
+import { menuIcons, homeIcons, footerIcons, ESCCheckIcon, player, icons } from './icons'
 import images from './images'
 
 export {
@@ -7,5 +7,6 @@ export {
   footerIcons,
   ESCCheckIcon,
   player,
+  icons,
   images
 }

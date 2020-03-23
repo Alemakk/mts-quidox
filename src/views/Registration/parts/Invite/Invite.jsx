@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+import classNames from 'classnames'
 
 import { RegisterContext } from '../../context'
-import SuccessIcon from './icon'
+import { icons } from '../../../../resources'
 import { PlusOutlined, DownOutlined, UpOutlined } from '@ant-design/icons'
 import { Form, Input, notification } from 'antd'
 import { Text, Button } from '../../../../components'
@@ -10,10 +11,18 @@ import { Text, Button } from '../../../../components'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import './Invite.scss'
 
+const { SuccessIcon } = icons
+
 export default function () {
   const [emails, setEmails] = useState([])
   const [isShowMore, setShowMore] = useState(false)
   const { state: { data: { email } } } = useContext(RegisterContext)
+
+  const showMoreClass = classNames({
+    invites__item: true,
+    'invites__item--sep': true,
+    'invites__item--open': isShowMore
+  })
 
   useEffect(() => {
     if (emails.length <= 2) {
@@ -36,7 +45,6 @@ export default function () {
     setEmails(emails.filter(i => i !== mail))
   }
 
-  console.log(emails)
   return (
     <div className='invite'>
       <div className='invite__success'>
@@ -91,7 +99,7 @@ export default function () {
           ))}
 
           {emails.length > 2 &&
-            <div className='invites__item invites__item--hover' key='invites__item' onClick={() => setShowMore(!isShowMore)}>
+            <div className={showMoreClass} key='invites__item' onClick={() => setShowMore(!isShowMore)}>
               {emails.length - 2} more
               {isShowMore
                 ? <UpOutlined className='invites__item-icon' />

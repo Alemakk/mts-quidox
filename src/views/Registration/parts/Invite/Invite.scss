@@ -28,10 +28,36 @@
       justify-content: space-between;
       align-items: center;
 
-      &.invites__item--hover {
+      &.invites__item--sep {
         cursor: pointer;
+        position: relative;
         &:hover {
           background: #F9F9F9;
+        }
+        &:after, &:before {
+          display: block;
+          content: "";
+          position: absolute;
+          height: .7rem;
+          border: .1rem solid #DBDCDD;
+          border-top: 0;
+          border-bottom-left-radius: .3rem;
+          border-bottom-right-radius: .3rem;
+        }
+        &:after {
+          top: 100%;
+          left: 1rem;
+          right: 1rem;
+        }
+        &:before {
+          top: calc(100% + .7rem);
+          left: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+      &.invites__item--open {
+        &:before, &:after {
+          display: none;
         }
       }
     }

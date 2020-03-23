@@ -1,13 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
-import { Form, Input, Checkbox } from 'antd'
+import api from '../../../../services'
+import { Form, Input, Checkbox, notification } from 'antd'
 import { Button } from '../../../../components'
+import { RegisterContext } from '../../context'
 
 export default function () {
   const [isDisabled, setDisabled] = useState(true)
+  const { dispatch } = useContext(RegisterContext)
 
   const handleEmailSend = values => {
-    console.log(values)
+    api.auth.createUserByEmail(values)
+      .then(({ data: { success, error } }) => {
+        if (success) {
+          notification.success({
+            message: 'Поздравляем! Вы успешно зарегестрировались!'
+          })
+          dispatch({ type: 'SAVE_FORM_DATA', payload: values })
+          dispatch({ type: 'FINISH_REGISTER' })
+        } else {
+          throw new Error(error)
+        }
+      })
+      .catch(error => {
+        console.error(error.message)
+        notification.error({
+          message: error.message
+        })
+      })
   }
   return (
     <Form

@@ -30,7 +30,11 @@ export default function () {
     }
   }, [emails])
 
-  const handleSendInvites = values => {
+  const handleSendInvites = () => {
+    console.log(emails)
+  }
+
+  const handleSubmitInvite = values => {
     const { email } = values
     if (emails.includes(email)) {
       notification.error({
@@ -61,7 +65,7 @@ export default function () {
         style={{ marginTop: '3rem' }}
         layout='vertical'
         className='theme-form theme-form--invite'
-        onFinish={handleSendInvites}
+        onFinish={handleSubmitInvite}
         hideRequiredMark
       >
         <Form.Item
@@ -117,6 +121,8 @@ export default function () {
             </>}
         </ul>
       </PerfectScrollbar>
+      {!!emails.length &&
+        <Button style={{ marginTop: '3rem' }} type='primary' onClick={handleSendInvites}>Выслать приглашения</Button>}
     </div>
   )
 }

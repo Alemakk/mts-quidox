@@ -24,8 +24,26 @@ function createUser (data) {
   })
 }
 
+function createUserByEmail (data) {
+  return http({
+    url: '/register/simple',
+    method: 'POST',
+    data
+  })
+}
+
+function sendInvites (data) {
+  return http({
+    url: '',
+    method: 'POST',
+    data
+  })
+}
+
 export {
   sendPhone,
   confirmSmsCode,
-  createUser
+  createUser,
+  createUserByEmail,
+  sendInvites
 }

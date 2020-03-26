@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Row, Col } from 'antd'
+import { DropZone } from './internal'
 import { Container, Heading, Text } from '../../components'
 import { ESCCheckContent } from './styled'
 export default function ESCCheck () {
@@ -11,6 +13,15 @@ export default function ESCCheck () {
           электронном документе. Для проверки ЭЦП используется сертифицированное средство:<br />
           Программный комплекс криптографической защиты информации LWO Crypt. Версия 1.0
         </Text>
+
+        <Row gutter={[24, 24]}>
+          <Col md={12}>
+            <DropZone />
+          </Col>
+          <Col md={12}>
+            <DropZone />
+          </Col>
+        </Row>
       </Container>
     </ESCCheckContent>
   )

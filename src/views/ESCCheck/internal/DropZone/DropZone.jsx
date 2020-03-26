@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { useCountUp } from 'react-countup'
 
 import { ESCCheckContext } from '../../context'
-import { Text, Button } from '../../../../components'
+import { Button } from '../../../../components'
 import { FileIcon, CloseIcon } from './icons'
 import LoadStatus from './styled'
 import './DropZone.scss'
@@ -14,12 +14,13 @@ export default function ({ type }) {
   const { countUp, start } = useCountUp({
     start: 0,
     end: 100,
-    duration: Math.floor(1 + Math.random() * (5))
+    startOnMount: false,
+    duration: Math.floor(1 + Math.random() * 5)
   })
   const { state, dispatch } = useContext(ESCCheckContext)
 
   useEffect(() => {
-    if (countUp === 100) {
+    if (Number(countUp) === 100) {
       console.log('enter')
       setLoading(false)
       dispatch({ type: 'SWITCH_FILE_LOAD_STATUS', payload: { type } })
@@ -53,7 +54,6 @@ export default function ({ type }) {
 
   const doNothing = e => e.preventDefault()
 
-  console.log(countUp)
   return (
     <div
       data-text='Бросьте файл сюда'
@@ -64,7 +64,7 @@ export default function ({ type }) {
       onDrop={onDrop}
     >
       {isLoading && <LoadStatus width={countUp} />}
-      {isLoading
+      {isLoading || state[type].isLoaded
         ? <>
           {state[type].isLoaded
             ? <>

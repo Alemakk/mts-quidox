@@ -23,14 +23,14 @@ function reducer (state, action) {
         ...state,
         [type]: {
           ...state[type],
-          data: file,
+          data: file
         }
       }
     case 'SWITCH_FILE_LOAD_STATUS':
       return {
         ...state,
-        [action.payload]: {
-          ...state[action.payload],
+        [action.payload.type]: {
+          ...state[action.payload.type],
           isLoaded: true
         }
       }

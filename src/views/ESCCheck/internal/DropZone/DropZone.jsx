@@ -2,9 +2,10 @@ import React, { useContext, useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { useCountUp } from 'react-countup'
 
-import LoadStatus from './styled'
 import { ESCCheckContext } from '../../context'
 import { Text, Button } from '../../../../components'
+import { FileIcon, CloseIcon } from './icons'
+import LoadStatus from './styled'
 import './DropZone.scss'
 
 export default function ({ type }) {
@@ -19,7 +20,9 @@ export default function ({ type }) {
 
   useEffect(() => {
     if (countUp === 100) {
+      console.log('enter')
       setLoading(false)
+      dispatch({ type: 'SWITCH_FILE_LOAD_STATUS', payload: { type } })
     }
   }, [countUp])
 
@@ -50,6 +53,7 @@ export default function ({ type }) {
 
   const doNothing = e => e.preventDefault()
 
+  console.log(countUp)
   return (
     <div
       data-text='Бросьте файл сюда'
@@ -62,8 +66,20 @@ export default function ({ type }) {
       {isLoading && <LoadStatus width={countUp} />}
       {isLoading
         ? <>
-          <div className='dropzone__text'>Загрузка...</div>
-          <div className='dropzone__text dropzone__text--light'>{state[type].data.name}</div>
+          {state[type].isLoaded
+            ? <>
+              <div className='dropzone__file-item file'>
+                <FileIcon />
+                {state[type].data.name}
+                <CloseIcon />
+              </div>
+            </>
+            : <>
+              <div className='dropzone__text'>Загрузка...</div>
+              <div className='dropzone__text dropzone__text--light'>{state[type].data.name}</div>
+            </>
+
+          }
         </>
         : <>
           <div className='dropzone__text'>{state[type].defaultText}</div>

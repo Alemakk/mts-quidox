@@ -4,8 +4,9 @@
   border: .1rem dashed #808285;
   text-align: center;
   position: relative;
+  min-height: 20rem;
 
-  &.dropzone--status-drag {
+  &.dropzone--dragged {
     background-color: #fff;
     border-color: #E30611;
     box-shadow: 0 4px 30px rgba(227, 5, 15, 0.1);
@@ -25,6 +26,20 @@
       height: 100%;
       z-index: 5;
       background-color: #fff;
+    }
+  }
+
+  &.dropzone--loading {
+    border: none;
+  }
+
+  .dropzone__text {
+    font-size: 1.6rem;
+    color: #808285;
+    font-weight: bold;
+
+    .dropzone__text--light {
+      color: #BCBEC0;
     }
   }
 }

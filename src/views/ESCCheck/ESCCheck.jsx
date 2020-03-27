@@ -7,7 +7,7 @@ import { DropZone } from './internal'
 import { Container, Heading, Button, Text } from '../../components'
 import { ESCCheckContent } from './styled'
 
-const DropZoneTypes = [
+const dropZones = [
   {
     type: 'file',
     text: 'Перетяните подписанный документ (.pdf/.doc/.zip файл)'
@@ -26,7 +26,7 @@ export default function ESCCheck () {
     console.log('Sign', sign.data)
   }
 
-  const { types, file, sign } = state
+  const { file, sign } = state
   return (
     <ESCCheckContext.Provider value={{ state, dispatch }}>
       <ESCCheckContent>
@@ -38,7 +38,7 @@ export default function ESCCheck () {
           </Text>
 
           <Row style={{ marginTop: '3rem' }} gutter={[24, 24]}>
-            {DropZoneTypes.map(({ type, text }, idx) => (
+            {dropZones.map(({ type, text }, idx) => (
               <Col md={12} key={idx}>
                 <DropZone text={text} type={type} />
               </Col>

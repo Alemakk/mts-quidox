@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 import { useCountUp } from 'react-countup'
 
@@ -8,9 +8,10 @@ import { FileIcon, CloseIcon } from './icons'
 import LoadStatus from './styled'
 import './DropZone.scss'
 
-export default function ({ type }) {
+export default function ({ type = '', text = '' }) {
   const [status, setStatus] = useState(false)
   const [isLoading, setLoading] = useState(false)
+  const inputNode = useRef(null)
   const { countUp, start } = useCountUp({
     start: 0,
     end: 100,
@@ -52,6 +53,18 @@ export default function ({ type }) {
     e.preventDefault()
   }
 
+  const handleTriggerInputFile = () => {
+    inputNode.current.click()
+  }
+
+  const handleUploadFile = (e, type) => {
+    setStatus(false)
+    setLoading(true)
+    start()
+    dispatch({ type: 'GET_FILE', payload: { type, file: e.target.files[0] } })
+    e.preventDefault()
+  }
+
   const handleRemoveFile = type => {
     dispatch({ type: 'REMOVE_FILE', payload: { type } })
   }
@@ -75,7 +88,7 @@ export default function ({ type }) {
               <div className='dropzone__file-item file'>
                 <FileIcon style={{ marginRight: '1rem' }} />
                 {state[type].data.name}
-                <CloseIcon style={{ marginLeft: '1rem', cursor: 'pointer' }} onClick={() => handleRemoveFile(type)} />
+                <CloseIcon style={{ marginLeft: '3rem', cursor: 'pointer' }} onClick={() => handleRemoveFile(type)} />
               </div>
             </>
             : <>
@@ -86,9 +99,10 @@ export default function ({ type }) {
           }
         </>
         : <>
-          <div className='dropzone__text'>{state[type].defaultText}</div>
+          <div className='dropzone__text'>{text}</div>
           <div className='dropzone__text dropzone__text--light'>или</div>
-          <Button style={{ marginTop: '2rem' }} type='primary'>Выберите файл</Button>
+          <Button style={{ marginTop: '2rem' }} type='primary' onClick={() => handleTriggerInputFile()}>Выберите файл</Button>
+          <input type='file' ref={inputNode} onChange={e => handleUploadFile(e, type)} hidden />
         </>}
     </div>
   )

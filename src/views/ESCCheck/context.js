@@ -1,14 +1,11 @@
 import React from 'react'
 const initialState = {
-  types: ['file', 'sign'],
   file: {
     isLoaded: false,
-    defaultText: 'Перетяните подписанный документ (.pdf/.doc/.zip файл)',
     data: {}
   },
   sign: {
     isLoaded: false,
-    defaultText: 'Перетяните подпись ЭЦП (.sig файл)',
     data: {}
   }
 }
@@ -40,11 +37,6 @@ function reducer (state, action) {
           ...state[action.payload.type],
           isLoaded: true
         }
-      }
-    case 'INIT_LOADING':
-      return {
-        ...state,
-        isDropped: action.payload
       }
     default: return new Error('action error')
   }

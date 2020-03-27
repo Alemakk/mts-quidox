@@ -4,12 +4,29 @@ import logger from 'use-reducer-logger'
 import { Row, Col } from 'antd'
 import { ESCCheckContext, initialState, reducer } from './context'
 import { DropZone } from './internal'
-import { Container, Heading, Text } from '../../components'
+import { Container, Heading, Button, Text } from '../../components'
 import { ESCCheckContent } from './styled'
+
+const DropZoneTypes = [
+  {
+    type: 'file',
+    text: 'Перетяните подписанный документ (.pdf/.doc/.zip файл)'
+  },
+  {
+    type: 'sign',
+    text: 'Перетяните подпись ЭЦП (.sig файл)'
+  }
+]
+
 export default function ESCCheck () {
   const [state, dispatch] = useReducer(logger(reducer), initialState)
 
-  const { types } = state
+  const handleVerifySignature = () => {
+    console.log('File', file.data)
+    console.log('Sign', sign.data)
+  }
+
+  const { types, file, sign } = state
   return (
     <ESCCheckContext.Provider value={{ state, dispatch }}>
       <ESCCheckContent>
@@ -21,12 +38,15 @@ export default function ESCCheck () {
           </Text>
 
           <Row style={{ marginTop: '3rem' }} gutter={[24, 24]}>
-            {types.map((type, idx) => (
+            {DropZoneTypes.map(({ type, text }, idx) => (
               <Col md={12} key={idx}>
-                <DropZone type={type} />
+                <DropZone text={text} type={type} />
               </Col>
             ))}
           </Row>
+
+          {(file.isLoaded && sign.isLoaded) &&
+            <Button onClick={() => handleVerifySignature()} type='primary' style={{ margin: '3rem auto 0', display: 'block' }}>Проверить подлинность документа</Button>}
         </Container>
       </ESCCheckContent>
     </ESCCheckContext.Provider>

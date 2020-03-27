@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
 
+import history from '../../../../history'
 import { useWindowDimension } from '../../../../hooks'
 import { Container, Button, Text, CarouselArrow, Heading } from '../../../../components'
 import { ServicePackageContent, Package } from './styled'
@@ -104,7 +105,7 @@ export default function ServicePackage ({ theme: { theme } }) {
                 </Package.Item>
               </Package.List>
 
-              <Button type='primary'>Подключить</Button>
+              <Button onClick={() => history.push({ pathname: '/services', state: { type: i.type } })} type='primary'>Подключить</Button>
             </Package>
           )
         })}

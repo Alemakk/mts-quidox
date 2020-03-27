@@ -1,6 +1,7 @@
 const servicePackages = [
   {
     id: 1,
+    type: 'easy',
     title: 'Легкий',
     top: false,
     accessAPI: true,
@@ -13,6 +14,7 @@ const servicePackages = [
   },
   {
     title: 'Стандарт',
+    type: 'standard',
     top: true,
     accessAPI: true,
     timePeriod: 30,
@@ -24,6 +26,7 @@ const servicePackages = [
   },
   {
     title: 'Бизнес',
+    type: 'business',
     top: false,
     accessAPI: true,
     timePeriod: 30,

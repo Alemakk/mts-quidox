@@ -5,7 +5,10 @@
   text-align: center;
   position: relative;
   min-height: 20rem;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   &.dropzone--dragged {
     background-color: #fff;
     border-color: #E30611;
@@ -38,7 +41,7 @@
     color: #808285;
     font-weight: bold;
 
-    .dropzone__text--light {
+    &.dropzone__text--light {
       color: #BCBEC0;
     }
   }

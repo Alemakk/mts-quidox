@@ -10,6 +10,8 @@ const LoadStatus = styled.div`
   left: 0;
   width: 100%;
   height: .2rem;
+  will-change: transform;
+  transition: .1s linear;
   &:after {
     display: block;
     content: '';

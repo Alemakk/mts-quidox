@@ -20,7 +20,7 @@ export default function ESCCheck () {
             Программный комплекс криптографической защиты информации LWO Crypt. Версия 1.0
           </Text>
 
-          <Row gutter={[24, 24]}>
+          <Row style={{ marginTop: '3rem' }} gutter={[24, 24]}>
             {types.map((type, idx) => (
               <Col md={12} key={idx}>
                 <DropZone type={type} />

@@ -26,6 +26,13 @@ function reducer (state, action) {
           data: file
         }
       }
+    case 'REMOVE_FILE':
+      return {
+        ...state,
+        [action.payload.type]: {
+          ...initialState[action.payload.type]
+        }
+      }
     case 'SWITCH_FILE_LOAD_STATUS':
       return {
         ...state,

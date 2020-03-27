@@ -52,6 +52,10 @@ export default function ({ type }) {
     e.preventDefault()
   }
 
+  const handleRemoveFile = type => {
+    dispatch({ type: 'REMOVE_FILE', payload: { type } })
+  }
+
   const doNothing = e => e.preventDefault()
 
   return (
@@ -69,9 +73,9 @@ export default function ({ type }) {
           {state[type].isLoaded
             ? <>
               <div className='dropzone__file-item file'>
-                <FileIcon />
+                <FileIcon style={{ marginRight: '1rem' }} />
                 {state[type].data.name}
-                <CloseIcon />
+                <CloseIcon style={{ marginLeft: '1rem', cursor: 'pointer' }} onClick={() => handleRemoveFile(type)} />
               </div>
             </>
             : <>
@@ -84,7 +88,7 @@ export default function ({ type }) {
         : <>
           <div className='dropzone__text'>{state[type].defaultText}</div>
           <div className='dropzone__text dropzone__text--light'>или</div>
-          <Button type='primary'>Выберите файл</Button>
+          <Button style={{ marginTop: '2rem' }} type='primary'>Выберите файл</Button>
         </>}
     </div>
   )

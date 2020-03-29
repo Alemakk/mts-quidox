@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Switch } from 'react-router-dom'
 import history from './history'
 
-import { PublicRoute } from './components'
+import { PublicRoute, SecondaryRoute } from './components'
 import {
   Home,
   News,
@@ -35,7 +35,7 @@ function App () {
             <PublicRoute path='/contacts' component={Contacts} />
             <PublicRoute path='/registration' component={Registration} />
 
-            <PublicRoute path='/login' component={Login} />
+            <SecondaryRoute path='/login' component={Login} />
           </Switch>
         </main>
       </div>

@@ -1,4 +1,5 @@
 import PublicRoute from './PublicRoute'
+import SecondaryRoute from './SecondaryRoute'
 import Loading from './Loading'
 import Header from './Header'
 import Footer from './Footer'
@@ -17,6 +18,7 @@ import AboutServiceBanner from './AboutServiceBanner'
 
 export {
   PublicRoute,
+  SecondaryRoute,
   Loading,
   Header,
   Footer,

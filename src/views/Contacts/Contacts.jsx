@@ -49,11 +49,11 @@ export default function Contact ({ theme: { theme } }) {
 
             <Col md={24} lg={12}>
               <Form.Item
-                label='Телефон'
-                nome='phone'
-                rules={[{ required: true, pattern: new RegExp('^[-+\\/\\s]*([0-9][-+\\/\\s]*){9,}$'), message: 'Введите номер телефона' }]}
+                name='phone'
+                label='Номер мобильного телефона'
+                rules={[{ required: true, message: 'Обязательное поле' }]}
               >
-                <MaskedInput addonBefore='+375' mask='11-111-11-11' size='large' placeholder='Номер телефона' />
+                <MaskedInput size='large' addonBefore='+375' mask='11-111-11-11' />
               </Form.Item>
             </Col>
 

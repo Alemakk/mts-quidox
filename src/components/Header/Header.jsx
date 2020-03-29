@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { useLocation } from 'react-router-dom'
 
 import ApplicationContext from '../../ApplicationContext'
 import history from '../../history'
@@ -22,11 +21,9 @@ export default function Header (props) {
     theme: { theme }
   } = props
 
-  const { pathname } = useLocation()
   const { width } = useWindowDimension()
   const { state: { user }, dispatch } = useContext(ApplicationContext)
 
-  const isSecondaryRoute = ['/login', '/registration'].includes(pathname)
   return (
     <ThemeHeader>
       <ThemeHeader.Top
@@ -34,8 +31,8 @@ export default function Header (props) {
       >
         <Container>
           <ThemeHeader.Text>
-            {isSecondaryRoute ? 'Пакет услуг "Легкий"' : 'В mtsquidoх.by появилась новая функциональность. Теперь вы можете'}
-            <span> {isSecondaryRoute ? ' БЕСЛПАТНО первые 90 дней!' : ' подключить ЭЦП к своему мобильному телефону или планшету!'}</span>
+            В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp;
+            <span>подключить ЭЦП к своему мобильному телефону или планшету!</span>
           </ThemeHeader.Text>
         </Container>
       </ThemeHeader.Top>
@@ -48,23 +45,20 @@ export default function Header (props) {
             />
           </ThemeHeader.AlignBlock>
 
-          {!isSecondaryRoute &&
-            <>
-              {width > 1350 &&
-                <Nav />}
-              <ThemeHeader.AlignBlock>
-                {Object.keys(user).length
-                  ? <ThemeHeader.Avatar color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
-                  : <Button
-                    type='secondary'
-                    onClick={() => history.push('/login')}
-                    ghost
-                  >
-                    Войти
-                  </Button>}
-                <BurgerButton onClick={() => isSecondaryRoute ? null : dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
-              </ThemeHeader.AlignBlock>
-            </>}
+          {width > 1350 &&
+            <Nav />}
+          <ThemeHeader.AlignBlock>
+            {Object.keys(user).length
+              ? <ThemeHeader.Avatar color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
+              : <Button
+                type='secondary'
+                onClick={() => history.push('/login')}
+                ghost
+              >
+                Войти
+              </Button>}
+            <BurgerButton onClick={() => dispatch({ type: 'SWITCH_ASIDE', payload: true })} />
+          </ThemeHeader.AlignBlock>
         </ThemeHeader.Bottom>
       </Container>
     </ThemeHeader>

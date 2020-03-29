@@ -5,7 +5,6 @@ import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
 import FormContext from '../../context'
-import ApplicationContext from '../../../../ApplicationContext'
 import { Form, Input, Checkbox } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
@@ -13,7 +12,6 @@ import LoginFormContent from './styled'
 export default function () {
   const history = useHistory()
   const { state, dispatch } = useContext(FormContext)
-  const { dispatch: userLogin } = useContext(ApplicationContext)
 
   const handleLogin = values => {
     dispatch({ type: 'LOGIN_INIT', payload: true })
@@ -24,14 +22,13 @@ export default function () {
     delete values.secret_key
     api.user.userLogin(values)
       .then(({ data }) => {
-        const { data: { token }, success } = data
+        const { data: { token }, success, error } = data
         if (success) {
           dispatch({ type: 'LOGIN_INIT', payload: false })
           window.localStorage.setItem('authToken', token)
-          userLogin({ type: 'USER_AUTHORIZED', payload: true })
           history.push('/')
         } else {
-          throw new Error(data.error)
+          throw new Error(error)
         }
       })
       .catch(error => {

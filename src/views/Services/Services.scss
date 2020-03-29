@@ -67,7 +67,7 @@
 .step-content {
   background-color: #fff;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  max-width: 100rem;
   padding: 2rem;
+  margin: 3rem auto 0;
 }

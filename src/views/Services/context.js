@@ -15,7 +15,7 @@ function reducer (state, action) {
     case 'INCREMENT_ACTIVE_STEP':
       return {
         ...state,
-        activeService: state.activeStep + 1
+        activeStep: state.activeStep + 1
       }
     default: return new Error('action error')
   }

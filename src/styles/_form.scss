@@ -29,8 +29,9 @@
   }
 
   .ant-input,
+  .ant-select-selector,
   .ant-input-password {
-    border-radius: .3rem;
+    border-radius: .3rem !important;
     border: 1px solid #BCBEC0;
   }
 

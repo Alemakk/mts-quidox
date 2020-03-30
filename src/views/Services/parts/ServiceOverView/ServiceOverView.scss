@@ -1,0 +1,9 @@
+.about-service-list {
+  padding: 0 2rem;
+  margin: 3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  .about-service-item {
+    flex-basis: 50%;
+  }
+}

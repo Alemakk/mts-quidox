@@ -17,7 +17,7 @@ News.UselessLine = styled.div`
   top: 0;
   height: 2rem;
   width: 100%;
-  max-width: 45rem;
+  // max-width: 45rem;
   &:after {
     display: block;
     content: '';

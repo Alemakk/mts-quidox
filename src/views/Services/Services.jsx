@@ -11,6 +11,8 @@ import { ServicesContent } from './styled'
 
 import { servicePackages, serviceOptions } from './static'
 import './Services.scss'
+import history from "../../history";
+import {Package} from "../Home/parts/ServicePackage/styled";
 
 const { Step } = Steps
 
@@ -71,7 +73,7 @@ export default function () {
                   <li className='list__item'>{i.amountOut}</li>
                   <li className='list__item'>{i.amountIn}</li>
                   <li className='list__item'>{i.diskSpace}GB</li>
-                  <Button onClick={() => handleChooseService(i.type)} type='primary'>Подключить</Button>
+                  <Button onClick={() => history.push({ pathname: '/services', state: { type: i.type } })} type='primary'>Подключить</Button>
                 </ul>
               ))}
             </div>}

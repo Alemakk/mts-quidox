@@ -7,6 +7,7 @@ import { Container, Text, Heading, Button } from '../../../../components'
 import { ESCCheckContent } from './styled'
 
 import './esc.scss'
+import history from "../../../../history";
 
 const { esc } = images
 
@@ -26,12 +27,12 @@ export default function ESCCheck () {
               </Heading>
 
               <Text style={{ textAlign: 'center' }}>
-                C помощью сервиса «Проверка ЭЦП» можно проверить электронно-цифровые подписи (ЭЦП) в электронном документе.
+                C встроенного помощью сервиса «Проверка ЭЦП» можно проверить электронные цифровые подписи (ЭЦП) в электронном документе.
               </Text>
 
               <img className='esc-image' src={src} alt='data' />
 
-              <Button type='secondary' ghost>Проверить подпись</Button>
+              <Button type='secondary' ghost onClick={() => history.push('/esc-check')}>Проверить подпись</Button>
             </ESCCheckContent.Block>
           </Col>
         </Row>

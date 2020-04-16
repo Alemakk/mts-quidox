@@ -13,7 +13,8 @@ import {
   FAQ,
   Services,
   ESCCheck,
-  Login
+  Login,
+  Terms
 } from './views'
 
 function App () {
@@ -32,6 +33,7 @@ function App () {
             <PublicRoute path='/esc-check' component={ESCCheck} />
             <PublicRoute path='/services' component={Services} />
             <PublicRoute path='/faq' component={FAQ} />
+            <PublicRoute path='/terms' component={Terms} />
             <PublicRoute path='/contacts' component={Contacts} />
             <PublicRoute path='/registration' component={Registration} />
 

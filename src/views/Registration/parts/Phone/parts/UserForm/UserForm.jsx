@@ -19,7 +19,7 @@ export default function () {
       .then(({ data: { success, error } }) => {
         if (success) {
           notification.success({
-            message: 'Поздравляем! Вы успешно зарегестрировались!'
+            message: 'Поздравляем! Вы успешно зарегистрировались!'
           })
           dispatch({ type: 'FETCHING_INIT', payload: false })
           dispatch({ type: 'SAVE_FORM_DATA', payload: values })

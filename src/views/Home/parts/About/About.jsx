@@ -26,7 +26,7 @@ export default function () {
                 подписанными электронной цифровой подписью
               </Text>
 
-              <Button type='primary' style={{ marginTop: '1rem' }}>Подключить</Button>
+              <Button type='primary' style={{ marginTop: '4rem' }}>Подключить</Button>
             </Col>
 
             <Col md={24} lg={12}>

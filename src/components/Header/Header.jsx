@@ -31,8 +31,8 @@ export default function Header (props) {
       >
         <Container>
           <ThemeHeader.Text>
-            В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp;
-            <span>подключить ЭЦП к своему мобильному телефону или планшету!</span>
+            {/*В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp;*/}
+            {/*<span>подключить ЭЦП к своему мобильному телефону или планшету!</span>*/}
           </ThemeHeader.Text>
         </Container>
       </ThemeHeader.Top>

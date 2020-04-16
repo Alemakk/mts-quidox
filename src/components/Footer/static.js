@@ -53,7 +53,7 @@ const footerNav = [
   },
   {
     title: 'Проверка подписи',
-    route: '/esc',
+    route: '/esc-check',
     position: 'right'
   },
   {

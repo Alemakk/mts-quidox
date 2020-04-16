@@ -92,8 +92,8 @@ export default function () {
         </Form.Item>
       </Form>
 
-      <Text style={{ color: '#000', textAlign: 'left' }}>Нет аккаунта?</Text>
-      <Button onClick={() => history.push('/registration')} disabled={isFetching} loading={isFetching} style={{ marginTop: 30 }} type='secondary' ghost>Зарегестрироваться</Button>
+      <Text style={{ color: '#000', textAlign: 'left' }}>Еще нет учетной записи?</Text>
+      <Button onClick={() => history.push('/registration')} disabled={isFetching} loading={isFetching} style={{ marginTop: 30 }} type='secondary' ghost>Зарегистрироваться</Button>
     </LoginFormContent>
   )
 }

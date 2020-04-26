@@ -26,7 +26,7 @@ export default function () {
         if (success) {
           dispatch({ type: 'LOGIN_INIT', payload: false })
           window.localStorage.setItem('authToken', token)
-          history.push('/')
+          window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${token}`, '_self')
         } else {
           throw new Error(error)
         }
@@ -60,7 +60,7 @@ export default function () {
             }
           ]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -73,13 +73,13 @@ export default function () {
             }
           ]}
         >
-          <Input.Password size='large' />
+          <Input.Password size='large'/>
         </Form.Item>
 
         {error &&
-          <Form.Item>
-            <Alert>{error}</Alert>
-          </Form.Item>}
+        <Form.Item>
+          <Alert>{error}</Alert>
+        </Form.Item>}
 
         <Form.Item name='remember' valuePropName='checked'>
           <Checkbox>Запомнить меня</Checkbox>
@@ -93,7 +93,8 @@ export default function () {
       </Form>
 
       <Text style={{ color: '#000', textAlign: 'left' }}>Еще нет учетной записи?</Text>
-      <Button onClick={() => history.push('/registration')} disabled={isFetching} loading={isFetching} style={{ marginTop: 30 }} type='secondary' ghost>Зарегистрироваться</Button>
+      <Button onClick={() => history.push('/registration')} disabled={isFetching} loading={isFetching}
+              style={{ marginTop: 30 }} type='secondary' ghost>Зарегистрироваться</Button>
     </LoginFormContent>
   )
 }

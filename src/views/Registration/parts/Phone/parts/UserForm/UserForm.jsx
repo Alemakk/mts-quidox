@@ -13,7 +13,7 @@ export default function () {
     delete values.confirm
     dispatch({ type: 'FETCHING_INIT', payload: true })
 
-    const userData = { ...values, ...data }
+    const userData = { ...values, co_brand_id: 1, ...data }
 
     api.auth.createUser(userData)
       .then(({ data: { success, error } }) => {

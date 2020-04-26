@@ -49,7 +49,7 @@ export default function Header (props) {
             <Nav />}
           <ThemeHeader.AlignBlock>
             {Object.keys(user).length
-              ? <ThemeHeader.Avatar color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
+              ? <ThemeHeader.Avatar onClick={() => window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${window.localStorage.getItem('authToken')}`)} color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
               : <Button
                 type='secondary'
                 onClick={() => history.push('/login')}

@@ -17,7 +17,7 @@ export default function ({ theme: { theme }, ...rest }) {
 
         <Text style={{ fontWeight: 500, textAlign: 'left' }}>
           Благодаря сервису <span style={{ color: theme['@primary-color'] }}>МТС</span>&nbsp;
-          <span style={{ color: theme['@secondary-color'] }}>Quidox</span>&nbsp;
+          <span style={{ color: theme['@secondary-color'] }}>SmartDoc</span>&nbsp;
           Вы сможете с легкостью обмениваться
           электронными документами с ЭЦП.
           Доставка происходит мгновенно!

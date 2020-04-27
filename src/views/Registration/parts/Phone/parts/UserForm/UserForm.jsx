@@ -51,7 +51,7 @@ export default function () {
         rules={[
           {
             type: 'email',
-            message: 'Не валидный имейл'
+            message: 'Неверный адрес электронной почты!'
           },
           {
             required: true,
@@ -105,7 +105,7 @@ export default function () {
                 return Promise.resolve()
               }
               // eslint-disable-next-line prefer-promise-reject-errors
-              return Promise.reject('Пароль введён неверно')
+              return Promise.reject('Повторный ввод пароля выполнен с ошибкой!')
             }
           })
         ]}

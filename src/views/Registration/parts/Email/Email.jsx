@@ -48,7 +48,7 @@ export default function () {
           },
           {
             type: 'email',
-            message: 'Не валидный имейл!'
+            message: 'Неверный адрес электронной почты!'
           }
         ]}
       >

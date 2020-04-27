@@ -10,7 +10,7 @@ import { Text, Button } from '../../../../components'
 
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import './Invite.scss'
-import api from "../../../../services";
+import api from '../../../../services'
 
 const { SuccessIcon } = icons
 
@@ -32,35 +32,33 @@ export default function () {
   }, [emails])
 
   const handleSendInvites = () => {
-      //ssss
-    console.log(emails)
-      emails.forEach((email) => {
-          let data = {};
-          data.email = email;
-          api.auth.createUserByEmail(data)
-              .then(({data: {success, error}}) => {
-                  if (success) {
-                  } else {
-                      throw new Error(error)
-                  }
-              })
-              .catch(error => {
-                  console.error(error.message)
-                  notification.error({
-                      message: error.message
-                  })
-              })
-      });
-      notification.success({
-          message: 'Спасибо! Вы успешно пригласили друзей!'
-      })
+    emails.forEach((email) => {
+      const data = {}
+      data.email = email
+      api.auth.createUserByEmail(data)
+        .then(({ data: { success, error } }) => {
+          if (success) {
+          } else {
+            throw new Error(error)
+          }
+        })
+        .catch(error => {
+          console.error(error.message)
+          notification.error({
+            message: error.message
+          })
+        })
+    })
+    notification.success({
+      message: 'Спасибо! Вы успешно пригласили друзей!'
+    })
   }
 
   const handleSubmitInvite = values => {
     const { email } = values
     if (emails.includes(email)) {
       notification.error({
-        message: 'Имейл уже добавлен!'
+        message: 'Данный адрес уже указан в приглашении!'
       })
       return
     }
@@ -101,7 +99,7 @@ export default function () {
             },
             {
               type: 'email',
-              message: 'Не валидный имейл!'
+              message: 'Неверный адрес электронной почты!'
             }
           ]}
         >
@@ -142,7 +140,7 @@ export default function () {
               ))}
             </>}
         </ul>
-          {!!emails.length &&
+        {!!emails.length &&
           <Button style={{ marginTop: '1rem' }} type='primary' onClick={handleSendInvites}>Выслать приглашения</Button>}
       </PerfectScrollbar>
 

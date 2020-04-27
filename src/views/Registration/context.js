@@ -3,7 +3,7 @@ import React from 'react'
 const initialState = {
   isMethodsVisible: true,
   isFetching: false,
-  isRegisterEnd: false,
+  isRegisterEnd: true,
   registrationType: 'phone',
   activeStep: 0,
   data: {}

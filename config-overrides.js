@@ -15,10 +15,10 @@ module.exports = override(
     javascriptEnabled: true,
     modifyVars: {
       '@primary-color': '#000',
-      '@link-color': '#808285',
+      '@link-color': '#58595B',
       '@success-color': '#3CBF86',
       '@border-radius-base': '6px',
-      '@text-color': '#808285',
+      '@text-color': '#58595B',
       '@border-color-base': '#DDDDDD'
     }
   })

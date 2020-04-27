@@ -44,7 +44,7 @@ export default function () {
       <AboutServiceBanner />
 
       <RegistrationContent.Main>
-        <Heading level={2}>Регистрация в МТС Quidox</Heading>
+        <Heading level={2}>Регистрация в МТС SmartDoc</Heading>
         <Text>Обмен электронными документами с ЭЦП</Text>
         <RegisterContext.Provider value={{ state, dispatch }}>
           {!isRegisterEnd

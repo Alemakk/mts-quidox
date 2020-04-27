@@ -31,8 +31,8 @@ export default function Header (props) {
       >
         <Container>
           <ThemeHeader.Text>
-            {/*В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp;*/}
-            {/*<span>подключить ЭЦП к своему мобильному телефону или планшету!</span>*/}
+            {/* В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp; */}
+            {/* <span>подключить ЭЦП к своему мобильному телефону или планшету!</span> */}
           </ThemeHeader.Text>
         </Container>
       </ThemeHeader.Top>
@@ -49,7 +49,12 @@ export default function Header (props) {
             <Nav />}
           <ThemeHeader.AlignBlock>
             {Object.keys(user).length
-              ? <ThemeHeader.Avatar onClick={() => window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${window.localStorage.getItem('authToken')}`)} color={theme['@primary-color']}>{user.name.charAt(0)}</ThemeHeader.Avatar>
+              ? <ThemeHeader.Avatar
+                onClick={() => window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${window.localStorage.getItem('authToken')}`)}
+                color={theme['@primary-color']}
+              >
+                {user.name.charAt(0)}
+              </ThemeHeader.Avatar>
               : <Button
                 type='secondary'
                 onClick={() => history.push('/login')}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 
+import history from '../../../../history'
 import { Container, Heading, Text, Button } from '../../../../components'
 import { images } from '../../../../resources'
 import { AboutContent } from './styled'
@@ -26,7 +27,7 @@ export default function () {
                 подписанными электронной цифровой подписью.
               </Text>
 
-              <Button type='primary' style={{ marginTop: '4rem' }}>Подключить</Button>
+              <Button onClick={() => history.push('/services')} type='primary' style={{ marginTop: '4rem' }}>Подключить</Button>
             </Col>
 
             <Col md={24} lg={12}>

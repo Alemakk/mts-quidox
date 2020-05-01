@@ -18,7 +18,7 @@ export default function () {
                 level={2}
                 style={{ textAlign: 'left' }}
                 brandText='MTC'
-              >QuiDox
+              >SmartDoc
               </Heading>
 
               <Text style={{ color: '#000', textAlign: 'left', fontWeight: 500 }}>

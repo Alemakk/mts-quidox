@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { rgba } from 'polished'
 
 import { styleguide } from '../../../../constants'
 
@@ -67,7 +68,7 @@ Package.Item = styled.li`
   align-items: center;
   padding: 1rem 2rem;
   &:nth-child(even) {
-    background-color: ${colors.alabaster};
+    background-color: ${rgba(colors.black, 0.1)};
   }
 `
 

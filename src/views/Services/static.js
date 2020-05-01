@@ -2,15 +2,16 @@ const servicePackages = [
   {
     id: 1,
     type: 'easy',
-    title: 'Легкий',
+    title: 'Лайт',
     top: false,
-    accessAPI: true,
+    accessAPI: false,
     timePeriod: 30,
-    usersCount: 4,
+    usersCount: 2,
     amountInner: '∞',
     amountOut: 100,
     amountIn: '∞',
-    diskSpace: 5
+    diskSpace: 1,
+    price: 25
   },
   {
     title: 'Стандарт',
@@ -22,7 +23,8 @@ const servicePackages = [
     amountInner: '∞',
     amountOut: 1000,
     amountIn: '∞',
-    diskSpace: 5
+    diskSpace: 5,
+    price: 180
   },
   {
     title: 'Бизнес',
@@ -30,11 +32,12 @@ const servicePackages = [
     top: false,
     accessAPI: true,
     timePeriod: 30,
-    usersCount: 4,
+    usersCount: 10,
     amountInner: '∞',
     amountOut: 5000,
     amountIn: '∞',
-    diskSpace: 5
+    diskSpace: 5,
+    price: 500
   }
 ]
 

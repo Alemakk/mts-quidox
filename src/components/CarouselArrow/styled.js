@@ -29,11 +29,10 @@ const CarouselButton = styled.div`
     display: none;
   }
   &.slick-next {
-    left: 40%;
+    right: 40%;
   }
   &.slick-prev {
-    left: unset;
-    right: 40%;
+    left: 40%;
   }
 `
 

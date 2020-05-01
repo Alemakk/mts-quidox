@@ -16,7 +16,7 @@ export default function ({ component: Component, ...rest }) {
         <div className='secondary-route'>
           <header className='header-secondary'>
             <div className='header-secondary_top'>
-              <Text white>Пакет услуг "Легкий" <span style={{ color: '#000' }}>БЕСПЛАТНО первые 90 дней! </span></Text>
+              <Text white>Воспользуйтесь возможностями услуги МТС SmartDoc Лайт со 100% скидкой&nbsp; <span style={{ color: '#000' }}>первые 30 дней</span></Text>
             </div>
             <Container>
               <div className='header-secondary_bottom'>

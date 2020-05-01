@@ -1,5 +1,6 @@
 import React from 'react'
 
+import history from '../../../../history'
 import { useImage } from '../../../../hooks'
 import { Row, Col } from 'antd'
 import { images } from '../../../../resources'
@@ -7,7 +8,6 @@ import { Container, Text, Heading, Button } from '../../../../components'
 import { ESCCheckContent } from './styled'
 
 import './esc.scss'
-import history from "../../../../history";
 
 const { esc } = images
 
@@ -27,7 +27,7 @@ export default function ESCCheck () {
               </Heading>
 
               <Text style={{ textAlign: 'center' }}>
-                C встроенного помощью сервиса «Проверка ЭЦП» можно проверить электронные цифровые подписи (ЭЦП) в электронном документе.
+                С помощью встроенного сервиса «Проверка ЭЦП» можно проверить электронную цифровую подпись в документе.
               </Text>
 
               <img className='esc-image' src={src} alt='data' />

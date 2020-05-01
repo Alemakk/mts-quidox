@@ -9,7 +9,7 @@ const menu = [
     icon: AboutIcon
   },
   {
-    title: 'Пакеты услуг',
+    title: 'Тарифы',
     route: '/services',
     disabled: false,
     icon: PricesIcon
@@ -36,7 +36,7 @@ const menu = [
 
 const aside = [
   {
-    title: 'Контакты',
+    title: 'Служба поддержки',
     disabled: false,
     route: '/contacts'
   },

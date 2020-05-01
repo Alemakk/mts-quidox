@@ -45,7 +45,7 @@ export default function () {
     <ServiceContext.Provider value={{ state, dispatch }}>
       <ServicesContent style={{ backgroundColor: activeService ? '#F9F9F9' : '#fff' }}>
         <Container>
-          <Heading brandText='Пакеты'>услуг</Heading>
+          <Heading brandPosition='right' brandText='MTC SmartDoc'>Услуги</Heading>
           {activeService
             ? <>
               <Steps style={{ maxWidth: '75rem', margin: '0 auto' }} current={activeStep}>
@@ -66,13 +66,14 @@ export default function () {
               {servicePackages.map((i, idx) => (
                 <ul className={`services__item list ${i.top ? 'list--top' : ''}`} key={idx}>
                   <li className='list__item list__item--head'>{i.title}</li>
-                  <li className='list__item'>{i.accessAPI && 'есть'}</li>
-                  <li className='list__item'>{i.timePeriod}</li>
+                  <li className='list__item'>{i.accessAPI ? 'есть' : 'нету'}</li>
+                  <li className='list__item'>{i.timePeriod} дней</li>
                   <li className='list__item'>{i.usersCount}</li>
                   <li className='list__item'>{i.amountInner}</li>
                   <li className='list__item'>{i.amountOut}</li>
                   <li className='list__item'>{i.amountIn}</li>
-                  <li className='list__item'>{i.diskSpace}GB</li>
+                  <li className='list__item'>{i.diskSpace} ГБ</li>
+                  <li className='list__item'>{i.price} BYN</li>
                   <Button onClick={() => history.push({ pathname: '/services', state: { type: i.type } })} type='primary'>Подключить</Button>
                 </ul>
               ))}

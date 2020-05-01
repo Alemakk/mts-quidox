@@ -20,8 +20,8 @@ const settings = {
   slidesToShow: 1,
   speed: 500,
   variableWidth: true,
-  nextArrow: <CarouselArrow />,
-  prevArrow: <CarouselArrow direction='right' />,
+  nextArrow: <CarouselArrow direction='right' />,
+  prevArrow: <CarouselArrow />,
   initialSlide: 1,
   responsive: [
     {
@@ -39,7 +39,7 @@ const settings = {
         arrows: false,
         slidesToShow: 1,
         centerMode: false,
-        variableWidth: false,
+        variableWidth: false
       }
     }
   ]
@@ -51,10 +51,11 @@ export default function ServicePackage ({ theme: { theme } }) {
     <ServicePackageContent className='section-with-slider'>
       <Container>
         <Heading
-          brandText='Подключить'
+          brandPosition='right'
+          brandText='МТС SmartDoc'
           level={2}
         >
-          пакет услуг
+          Подключить услугу
         </Heading>
       </Container>
       <Slider {...settings} style={{ marginTop: '5rem' }}>
@@ -70,38 +71,43 @@ export default function ServicePackage ({ theme: { theme } }) {
               </Package.Header>
               <Package.List>
                 <Package.Item>
-                  <Text small>Доступ по API</Text>
-                  <Text small style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'Нету'}</Text>
+                  <Text>Доступ по API</Text>
+                  <Text style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'Нету'}</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Срок действия пакета</Text>
-                  <Text small style={{ color: '#000' }}>{i.timePeriod}</Text>
+                  <Text>Срок действия пакета</Text>
+                  <Text style={{ color: '#000' }}>{i.timePeriod} дней</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Количество пользователей компании</Text>
-                  <Text small style={{ color: '#000' }}>{i.usersCount}</Text>
+                  <Text>Количество пользователей компании</Text>
+                  <Text style={{ color: '#000' }}>{i.usersCount}</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Количество внутренних отправлений</Text>
-                  <Text small style={{ color: '#000' }}>{i.amountInner}</Text>
+                  <Text>Количество внутренних отправлений</Text>
+                  <Text style={{ color: '#000' }}>{i.amountInner}</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Количество внешних отправлений</Text>
-                  <Text small style={{ color: '#000' }}>{i.amountOut}</Text>
+                  <Text>Количество внешних отправлений</Text>
+                  <Text style={{ color: '#000' }}>{i.amountOut}</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Количество входящих отправлений</Text>
-                  <Text small style={{ color: '#000' }}>{i.amountIn}</Text>
+                  <Text>Количество входящих отправлений</Text>
+                  <Text style={{ color: '#000' }}>{i.amountIn}</Text>
                 </Package.Item>
 
                 <Package.Item>
-                  <Text small>Объём рабочего дискового пространства</Text>
-                  <Text small style={{ color: '#000' }}>{i.diskSpace}</Text>
+                  <Text>Объём рабочего дискового пространства</Text>
+                  <Text style={{ color: '#000' }}>{i.diskSpace} ГБ</Text>
+                </Package.Item>
+
+                <Package.Item>
+                  <Text>Стоимость пакета</Text>
+                  <Text style={{ color: '#000' }}>{i.price} BYN</Text>
                 </Package.Item>
               </Package.List>
 

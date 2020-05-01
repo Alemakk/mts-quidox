@@ -16,8 +16,8 @@ const settings = {
   slidesToShow: 1,
   speed: 500,
   variableWidth: true,
-  nextArrow: <CarouselArrow />,
-  prevArrow: <CarouselArrow direction='right' />,
+  nextArrow: <CarouselArrow direction='right' />,
+  prevArrow: <CarouselArrow />,
   initialSlide: 1,
   responsive: [
     {
@@ -35,7 +35,7 @@ const settings = {
         arrows: false,
         slidesToShow: 1,
         centerMode: false,
-        variableWidth: false,
+        variableWidth: false
       }
     }
   ]
@@ -50,14 +50,11 @@ export default function () {
           <Heading
             level={2}
             brandPosition='right'
-            brandText='MTC Quidox'
+            brandText='MTC SmartDoc'
           >
-            Как работает
+            Преимущества
           </Heading>
 
-          <Text>Мы создали серию видеоуроков, чтобы помочь вам быстрее разобраться с <br />
-            сервисом, отправлять и получать документы с ЭЦП.
-          </Text>
         </Container>
         <Slider {...settings}>
           {quidoxProcess.map(({ text, image }, idx) => {

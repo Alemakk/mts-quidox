@@ -9,10 +9,10 @@ export default function () {
   return (
     <NewsContent>
       <Heading
-        brandText='Новости'
+        brandText='Актуальная'
         level={2}
       >
-        проекта
+        информация
       </Heading>
       <Container medium>
         <Row gutter={[24, 24]}>

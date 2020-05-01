@@ -19,8 +19,8 @@ export default function HowItsWork ({ theme: { theme } }) {
     centerPadding: '70px',
     speed: 500,
     variableWidth: true,
-    nextArrow: <CarouselArrow />,
-    prevArrow: <CarouselArrow direction='right' />,
+    nextArrow: <CarouselArrow direction='right'  />,
+    prevArrow: <CarouselArrow />,
     afterChange: (current) => setPause(current),
     initialSlide: 1,
     responsive: [

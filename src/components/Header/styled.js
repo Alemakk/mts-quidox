@@ -19,6 +19,7 @@ ThemeHeader.Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1.3rem 0;
 `
 
 ThemeHeader.Logo = styled.img`

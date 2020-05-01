@@ -43,7 +43,7 @@ export default function () {
     <LoginContent>
       <AboutServiceBanner />
       <LoginContent.Main>
-        <Heading level={3}>Войти в МТС Quidox</Heading>
+        <Heading level={3}>Войти в SmartDoc</Heading>
         <Text>Обмен электронными документами с ЭЦП</Text>
         <LoginContent.FormWrapp>
           <FormContext.Provider value={{ state, dispatch }}>

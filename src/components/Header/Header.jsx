@@ -50,7 +50,6 @@ export default function Header (props) {
           <ThemeHeader.AlignBlock>
             {Object.keys(user).length
               ? <ThemeHeader.Avatar
-                onClick={() => window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${window.localStorage.getItem('authToken')}`)}
                 color={theme['@primary-color']}
               >
                 {user.name.charAt(0)}

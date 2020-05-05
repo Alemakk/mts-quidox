@@ -26,7 +26,7 @@ export default function () {
         if (success) {
           dispatch({ type: 'LOGIN_INIT', payload: false })
           window.localStorage.setItem('authToken', token)
-          window.open(`${process.env.REACT_APP_QUIDOX_URL}/external/auth?token=${token}`, '_self')
+          window.open(`${process.env.REACT_APP_QUIDOX_URL}/login/?user=${JSON.stringify(values)}`, '_self')
         } else {
           throw new Error(error)
         }

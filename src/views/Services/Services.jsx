@@ -61,7 +61,6 @@ export default function () {
               <ul className='services__item list list--description'>
                 <li className='list__item list__item--head list__item--transparent' />
                 {serviceOptions.map((i, idx) => <li className='list__item' key={idx}>{i}</li>)}
-                <Button style={{ marginLeft: '2rem' }} type='secondary' ghost>Поподробнее</Button>
               </ul>
               {servicePackages.map((i, idx) => (
                 <ul className={`services__item list ${i.top ? 'list--top' : ''}`} key={idx}>

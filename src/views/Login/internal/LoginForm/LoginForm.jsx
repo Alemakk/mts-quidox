@@ -5,6 +5,7 @@ import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
 import FormContext from '../../context'
+import { handleLoginWithSimECP, handleLoginWithECP } from '../../../utils'
 import { Form, Input, Checkbox } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
@@ -93,9 +94,27 @@ export default function () {
         </Form.Item>
       </Form>
 
+      <div style={{ marginBottom: '2rem' }}>
+        <Button style={{ fontSize: '1.4rem', }} onClick={handleLoginWithECP} type='primary'>
+          Войти по ЭЦП
+        </Button>
+
+        <Button onClick={handleLoginWithSimECP} style={{ fontSize: '1.4rem', marginLeft: '1rem' }} type='primary'>
+          Войти по simЭЦП
+        </Button>
+      </div>
+
       <Text style={{ color: '#000', textAlign: 'left' }}>Еще нет учетной записи?</Text>
-      <Button onClick={() => history.push('/registration')} disabled={isFetching} loading={isFetching}
-              style={{ marginTop: 30 }} type='secondary' ghost>Зарегистрироваться</Button>
+      <Button
+        onClick={() => history.push('/registration')}
+        disabled={isFetching}
+        loading={isFetching}
+        style={{ marginTop: 30 }}
+        type='secondary'
+        ghost
+      >
+        Зарегистрироваться
+      </Button>
     </LoginFormContent>
   )
 }

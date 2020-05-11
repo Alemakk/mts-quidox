@@ -26,6 +26,14 @@ const registrationSteps = [
         step: 'Почта'
       }
     ]
+  },
+  {
+    type: 'id',
+    steps: []
+  },
+  {
+    type: 'usb',
+    steps: []
   }
 ]
 
@@ -43,12 +51,12 @@ const registrationTypes = [
   {
     name: 'МТС ID',
     type: 'id',
-    disabled: true
+    disabled: false
   },
   {
     name: 'USB ЭЦП',
     type: 'usb',
-    disabled: true
+    disabled: false
   }
 ]
 

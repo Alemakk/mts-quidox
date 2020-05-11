@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import { useLocation } from 'react-router'
 import logger from 'use-reducer-logger'
 
+import { handleLoginWithECP, handleLoginWithSimECP } from '../utils'
 import { Phone, Email, Invite } from './parts'
 import { Steps, Radio } from 'antd'
 import { RegisterContext, reducer, initialState } from './context'
@@ -38,6 +39,14 @@ export default function () {
     dispatch({ type: 'CHANGE_REGISTRATION_TYPE', payload: e.target.value })
   }
 
+  const externalRegistration = (type) => {
+    if (type === 'id') {
+      handleLoginWithSimECP()
+    } else {
+      handleLoginWithECP()
+    }
+  }
+
   const { isMethodsVisible, registrationType, activeStep, isRegisterEnd } = state
   return (
     <RegistrationContent>
@@ -66,7 +75,7 @@ export default function () {
                           <Radio style={radioStyle} key={idx} value={type} disabled={disabled}>{name}</Radio>)}
                       </Radio.Group>
 
-                      <Button onClick={handleStartRegistration} style={{ display: 'block', marginTop: '3rem ' }} type='primary'>Продолжить</Button>
+                      <Button onClick={() => ['phone', 'email'].includes(registrationType) ? handleStartRegistration() : externalRegistration(registrationType)} style={{ display: 'block', marginTop: '3rem ' }} type='primary'>Продолжить</Button>
                     </>
                     : <RegistrationContent.FormWrapp>
                       {registrationType === 'phone' && <Phone />}

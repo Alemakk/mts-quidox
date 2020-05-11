@@ -21,14 +21,14 @@ const auth = [
     type: 'id',
     image: auth_id,
     disabledImage: d3,
-    disabled: true
+    disabled: false
   },
   {
     text: 'USB ЭЦП',
     type: 'usb',
     image: auth_usb,
     disabledImage: d2,
-    disabled: true
+    disabled: false
   }
 ]
 

@@ -21,8 +21,8 @@ export default function () {
     delete values.password
     delete values.secret_key
     api.user.userLogin(values)
-      .then(({ data }) => {
-        const { data: { token }, success, error } = data
+      .then(data => {
+        const { data: { token, success, error } } = data
         if (success) {
           dispatch({ type: 'LOGIN_INIT', payload: false })
           window.localStorage.setItem('authToken', token)

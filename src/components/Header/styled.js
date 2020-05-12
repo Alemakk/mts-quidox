@@ -23,7 +23,8 @@ ThemeHeader.Bottom = styled.div`
 `
 
 ThemeHeader.Logo = styled.img`
-  max-width: 30rem;;
+  margin-top: -12px;
+  max-width: 30rem;
   height: auto;
   cursor: pointer;
   background: url(${({ src }) => src}) center no-repeat;

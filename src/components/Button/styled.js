@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { darken } from 'polished'
 import { styleguide } from '../../constants'
 
 const { colors } = styleguide
@@ -16,12 +17,11 @@ const ThemeButton = styled.button`
   transition: .2s linear;
   
   &.button_primary {
-    border-color: ${({ primaryColor }) => primaryColor};
-    background-color: ${({ primaryColor }) => primaryColor};
+    background-color: #E01021;
     color: ${colors.white};
     &:hover {
-      background-color: ${colors.white};
-      color: ${({ primaryColor }) => primaryColor};
+    
+      background-color: ${darken(0.1, '#E01021')};
     }
   }
   

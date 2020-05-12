@@ -26,16 +26,6 @@ export default function Header (props) {
 
   return (
     <ThemeHeader>
-      <ThemeHeader.Top
-        color={theme['@primary-color']}
-      >
-        <Container>
-          <ThemeHeader.Text>
-            {/* В mtsquidoх.by появилась новая функциональность. Теперь вы можете &nbsp; */}
-            {/* <span>подключить ЭЦП к своему мобильному телефону или планшету!</span> */}
-          </ThemeHeader.Text>
-        </Container>
-      </ThemeHeader.Top>
       <Container>
         <ThemeHeader.Bottom>
           <ThemeHeader.AlignBlock>

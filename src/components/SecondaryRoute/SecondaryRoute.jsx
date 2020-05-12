@@ -15,12 +15,9 @@ export default function ({ component: Component, ...rest }) {
       render={props => (
         <div className='secondary-route'>
           <header className='header-secondary'>
-            <div className='header-secondary_top'>
-              <Text white>Воспользуйтесь возможностями услуги МТС SmartDoc Лайт со 100% скидкой&nbsp; <span style={{ color: '#000' }}>первые 30 дней</span></Text>
-            </div>
             <Container>
               <div className='header-secondary_bottom'>
-                <img src={logo} alt='logo' onClick={() => history.push('/')}/>
+                <img style={{ marginTop: '-12px' }} src={logo} alt='logo' onClick={() => history.push('/')}/>
               </div>
             </Container>
           </header>

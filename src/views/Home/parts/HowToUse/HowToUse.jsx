@@ -29,7 +29,7 @@ export default function HowToUse () {
               <HowToUseContent.Block>
                 <Icon component={icon} />
                 <Text
-                  style={{ marginTop: '3rem' }}
+                  style={{ marginTop: '3rem', minHeight: '5.1rem' }}
                   dangerouslySetInnerHTML={{ __html: text }}
                   bolder
                 />

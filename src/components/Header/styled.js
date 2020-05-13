@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Icon } from '@ant-design/compatible'
 
 import { styleguide } from '../../constants'
 
@@ -22,7 +23,7 @@ ThemeHeader.Bottom = styled.div`
   padding: 1.3rem 0;
 `
 
-ThemeHeader.Logo = styled.img`
+ThemeHeader.Logo = styled(Icon)`
   margin-top: -12px;
   max-width: 30rem;
   height: auto;

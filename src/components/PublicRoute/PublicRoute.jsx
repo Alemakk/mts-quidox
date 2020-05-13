@@ -68,9 +68,9 @@ export default function ({ component: Component, ...rest }) {
         })
         .catch(error => {
           dispatch({ type: 'GET_USER_FETCHING', payload: false })
-          notification.error({
-            message: error.message
-          })
+          // notification.error({
+          //   message: error.message
+          // })
         })
     }
   }, [state.isUserAuthorized])

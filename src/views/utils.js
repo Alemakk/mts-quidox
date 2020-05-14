@@ -2,7 +2,7 @@ const handleLoginWithSimECP = () => {
   const newPageUrl = `${process.env.REACT_APP_SIM_SCEP_URL}?`+
     `client_id=${process.env.REACT_APP_SIM_SCEP_CLIENT_ID}&`+
     `response_type=code&`+
-    `state=1df12rt96cv12&`+
+    `state=mts&`+
     `authentication=phone&`+
     `scope=sign&`+
     `redirect_uri=${process.env.REACT_APP_SIM_SCEP_CALLBACK}`

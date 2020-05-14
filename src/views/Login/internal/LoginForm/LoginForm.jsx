@@ -100,7 +100,7 @@ export default function () {
         </Button>
 
         <Button onClick={handleLoginWithSimECP} style={{ fontSize: '1.4rem', marginLeft: '1rem' }} type='primary'>
-          Войти по simЭЦП
+          Войти по MTC ID
         </Button>
       </div>
 

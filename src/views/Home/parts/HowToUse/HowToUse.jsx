@@ -25,7 +25,7 @@ export default function HowToUse () {
         </Heading>
         <Row gutter={[24, 24]} align='middle'>
           {howItsWork.map(({ text, icon }, idx) => (
-            <Col {...sizes}>
+            <Col key={icon} {...sizes}>
               <HowToUseContent.Block>
                 <Icon component={icon} />
                 <Text

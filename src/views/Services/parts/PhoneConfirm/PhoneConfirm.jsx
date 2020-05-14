@@ -1,20 +1,33 @@
 import React, { useState, useContext } from 'react'
 import MaskedInput from 'antd-mask-input'
 
+import api from '../../../../services'
 import { ServiceContext } from '../../context'
 import { icons } from '../../../../resources'
-import { Form } from 'antd'
-import { Button, Text } from '../../../../components'
+import {Form, notification} from 'antd'
+import { Button, Text, Alert } from '../../../../components'
 
 const { SuccessIcon } = icons
 
 export default function () {
   const { dispatch } = useContext(ServiceContext)
   const [isPhoneConfirm, setPhoneConfirm] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleSendPhone = values => {
-    const phone = `375${values.phone.split('-').join('')}`
-    setPhoneConfirm(true)
+    const phone = `+375${values.phone.split('-').join('')}`
+
+    api.auth.sendPhone({ phone })
+      .then(({ data: { success, error } }) => {
+        if (success) {
+          setPhoneConfirm(true)
+        } else {
+          throw new Error(error)
+        }
+      })
+      .catch(error => {
+        setError(error.message)
+      })
   }
 
   return (
@@ -40,6 +53,11 @@ export default function () {
         >
           <MaskedInput size='large' addonBefore='+375' mask='11-111-11-11' />
         </Form.Item>
+
+        {error &&
+        <Form.Item>
+          <Alert>{error}</Alert>
+        </Form.Item>}
 
         <Form.Item>
           <Button style={{ display: 'block', margin: '0 auto' }} type='primary' htmlType='submit'>Проверить</Button>

@@ -4,7 +4,7 @@ import MaskedInput from 'antd-mask-input'
 import ApplicationContext from '../../../../ApplicationContext'
 import { ServiceContext } from '../../context'
 import { servicePackages } from '../../static'
-import { Form, Input, Select, Checkbox } from 'antd'
+import { Form, Input, Select, Checkbox, notification } from 'antd'
 import { Text, Button } from '../../../../components'
 
 export default function () {
@@ -13,6 +13,9 @@ export default function () {
   const { state } = useContext(ApplicationContext)
   const handleSubscribe = values => {
     console.log(values)
+    notification.success({
+      message: 'Заявка успешно отправлена!'
+    })
   }
   const { user } = state
   const { activeService } = serviceState
@@ -25,10 +28,8 @@ export default function () {
       onFinish={handleSubscribe}
       hideRequiredMark
       initialValues={{
-        company: user.companies[0].company_name || '',
-        user: `${user.lastname ? user.lastname : ''} ${user.name ? user.name : ''} ${user.patronymic ? user.patronymic : ''}`,
         type: 'Устава',
-        phone: user.phone.split('').slice(4).join(''),
+        // phone: user.phone.split('').slice(4).join(''),
         service: activeService
       }}
     >

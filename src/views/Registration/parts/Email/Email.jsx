@@ -16,7 +16,7 @@ export default function () {
       .then(({ data: { success, error } }) => {
         if (success) {
           notification.success({
-            message: 'Поздравляем! Вы успешно зарегистрировались!'
+            message: 'Завершите процесс регистрации, пройдя по ссылке в сообщении, которое мы выслали на почту.'
           })
           dispatch({ type: 'SAVE_FORM_DATA', payload: values })
           dispatch({ type: 'FINISH_REGISTER' })

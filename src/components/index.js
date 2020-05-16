@@ -15,6 +15,7 @@ import NewsItem from './NewsItem'
 import VideoPlayer from './VideoPlayer'
 import Alert from './Alert'
 import AboutServiceBanner from './AboutServiceBanner'
+import ContactForm from './ContactForm'
 
 export {
   PublicRoute,
@@ -33,5 +34,6 @@ export {
   NewsItem,
   VideoPlayer,
   Alert,
-  AboutServiceBanner
+  AboutServiceBanner,
+  ContactForm
 }

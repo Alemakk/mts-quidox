@@ -16,13 +16,14 @@ const sizes = {
 export default function () {
   return (
     <NewsContent>
-      <Heading
-        brandText='Актуальная'
-        level={2}
-      >
-        информация
-      </Heading>
       <Container medium>
+        <Heading
+          brandText='Актуальная'
+          level={2}
+        >
+          информация
+        </Heading>
+
         <Row gutter={[24, 24]}>
           {news.map(({ text, image, id }, idx) => (
             <Col {...sizes} key={idx}>

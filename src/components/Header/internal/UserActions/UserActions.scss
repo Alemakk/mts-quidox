@@ -1,0 +1,22 @@
+.c-userActions {
+  width: 20rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 1rem);
+  border-radius: .4rem;
+  background-color: #fff;
+  box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  &__item {
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #E01021;
+    }
+  }
+}

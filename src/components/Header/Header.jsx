@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 
 import ApplicationContext from '../../ApplicationContext'
 import history from '../../history'
 import { useWindowDimension } from '../../hooks'
 import { Container, Nav, Button } from '../'
+import { UserActions } from './internal'
 import { ThemeHeader } from './styled'
 
 import './Header.scss'
@@ -38,6 +39,8 @@ export default function Header (props) {
   const { width } = useWindowDimension()
   const { state: { user }, dispatch } = useContext(ApplicationContext)
 
+  const [isUserActionsVisible, setUserActionsVisible] = useState(false)
+
   return (
     <ThemeHeader>
       <Container>
@@ -53,11 +56,15 @@ export default function Header (props) {
             <Nav />}
           <ThemeHeader.AlignBlock>
             {Object.keys(user).length
-              ? <ThemeHeader.Avatar
-                color={theme['@primary-color']}
-              >
-                {user.name.charAt(0)}
-              </ThemeHeader.Avatar>
+              ? <div style={{ position: 'relative' }}>
+                <ThemeHeader.Avatar
+                  onClick={() => setUserActionsVisible(!isUserActionsVisible)}
+                  color={theme['@primary-color']}
+                >
+                  {user.name.charAt(0)}
+                </ThemeHeader.Avatar>
+                {isUserActionsVisible && <UserActions />}
+              </div>
               : <Button
                 type='secondary'
                 onClick={() => history.push('/login')}

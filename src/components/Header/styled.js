@@ -36,6 +36,7 @@ ThemeHeader.AlignBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
 `
 
 ThemeHeader.Avatar = styled.div`
@@ -52,6 +53,7 @@ ThemeHeader.Avatar = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `
 
 ThemeHeader.Text = styled.p`

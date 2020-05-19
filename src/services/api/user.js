@@ -8,6 +8,13 @@ function userLogin (data) {
   })
 }
 
+const userLogout = () => {
+  return http({
+    url: 'logout',
+    method: 'POST'
+  })
+}
+
 function getUser () {
   return http({
     url: '/user',
@@ -17,5 +24,6 @@ function getUser () {
 
 export {
   userLogin,
+  userLogout,
   getUser
 }

@@ -4,10 +4,10 @@ import logger from 'use-reducer-logger'
 
 import api from '../../services/api'
 import ApplicationContext from '../../ApplicationContext'
-import { notification } from 'antd'
 import { Header, ScrollTop, Aside, Footer } from '../'
 
 const initialState = {
+  isUserActionsOpen: false,
   isAsideOpen: false,
   isFetching: false,
   isUserAuthorized: false,
@@ -17,6 +17,17 @@ const initialState = {
 function reducer (state, action) {
   // eslint-disable-next-line default-case
   switch (action.type) {
+    case 'USER_LOGOUT':
+      return {
+        ...state,
+        isUserActionsOpen: false,
+        user: {}
+      }
+    case 'SWITCH_USER_ACTION':
+      return {
+        ...state,
+        isUserActionsOpen: action.payload
+      }
     case 'SWITCH_ASIDE':
       return {
         ...state,

@@ -8,8 +8,8 @@ import { Button } from '../../components'
 const { TextArea } = Input
 const sizes = { xs: 24, sm: 24, md: 24, lg: 12 }
 const sizesTextArea = { xs: 24, sm: 24, md: 24, lg: 24 }
-export default function () {
 
+export default function () {
   const handleSendMessage = value => {
     api.mts.sendInvoice(value)
       .then(({ data: { success, error } }) => {

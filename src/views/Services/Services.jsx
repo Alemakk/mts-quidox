@@ -65,7 +65,7 @@ export default function () {
               {servicePackages.map((i, idx) => (
                 <ul className={`services__item list ${i.top ? 'list--top' : ''}`} key={idx}>
                   <li className='list__item list__item--head'>{i.title}</li>
-                  <li className='list__item'>{i.accessAPI ? 'есть' : 'нету'}</li>
+                  <li className='list__item'>{i.accessAPI ? 'есть' : 'нет'}</li>
                   <li className='list__item'>{i.timePeriod} дней</li>
                   <li className='list__item'>{i.usersCount}</li>
                   <li className='list__item'>{i.amountInner}</li>

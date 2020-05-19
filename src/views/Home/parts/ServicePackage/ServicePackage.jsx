@@ -72,7 +72,7 @@ export default function ServicePackage ({ theme: { theme } }) {
               <Package.List>
                 <Package.Item>
                   <Text>Доступ по API</Text>
-                  <Text style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'Нету'}</Text>
+                  <Text style={{ color: '#000' }}>{i.accessAPI ? 'Есть' : 'нет'}</Text>
                 </Package.Item>
 
                 <Package.Item>

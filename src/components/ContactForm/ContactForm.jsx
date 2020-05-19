@@ -1,6 +1,7 @@
 import React from 'react'
 import MaskedInput from 'antd-mask-input'
 
+import api from '../../services'
 import { Row, Col, Form, Input, notification } from 'antd'
 import { Button } from '../../components'
 
@@ -10,11 +11,24 @@ const sizesTextArea = { xs: 24, sm: 24, md: 24, lg: 24 }
 export default function () {
 
   const handleSendMessage = value => {
-    notification.success({
-      message: `Уважаемый ${value.name}`,
-      description: 'В ближайшее время мы ознакомимся с вашим обращением'
-    })
+    api.mts.sendInvoice(value)
+      .then(({ data: { success, error } }) => {
+        if (success) {
+          notification.success({
+            message: `Уважаемый ${value.name}`,
+            description: 'В ближайшее время мы ознакомимся с вашим обращением'
+          })
+        } else {
+          throw new Error(error)
+        }
+      })
+      .catch(error => {
+        notification.error({
+          message: error.message
+        })
+      })
   }
+
   return (
     <Form className='theme-form' layout='vertical' onFinish={handleSendMessage} style={{ marginTop: '3rem' }} hideRequiredMark>
       <Row gutter={[24, 24]}>

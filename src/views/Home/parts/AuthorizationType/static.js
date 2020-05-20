@@ -1,13 +1,14 @@
 import { images } from '../../../../resources'
 
-const { auth_id, auth_phone, auth_usb, auth_email, d1, d2, d3 } = images
+const { auth_id, auth_phone, auth_usb, auth_email, d1, d2, d3, d4 } = images
 
 const auth = [
   {
     text: 'Номер телефона',
     type: 'phone',
     image: auth_phone,
-    disabled: false
+    disabledImage: d4,
+    disabled: true
   },
   {
     text: 'Электронная почта',

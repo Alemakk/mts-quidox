@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const AuthorizationItem = styled(Link)`
+const AuthorizationItem = styled.div`
   text-align: center;
   cursor: pointer;
   height: 100%;

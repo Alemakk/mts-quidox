@@ -16,6 +16,7 @@ import login from './login-img.png'
 import d1 from './disabled-1.png'
 import d2 from './disabled-2.png'
 import d3 from './disabled-3.png'
+import d4 from './disabled-4.png'
 import star from './star.png'
 
 export default {
@@ -37,5 +38,6 @@ export default {
   d1,
   d2,
   d3,
+  d4,
   star
 }

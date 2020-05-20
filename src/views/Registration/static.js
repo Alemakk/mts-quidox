@@ -47,16 +47,6 @@ const registrationTypes = [
     name: 'Электронная почта',
     type: 'email',
     disabled: false
-  },
-  {
-    name: 'МТС ID',
-    type: 'id',
-    disabled: false
-  },
-  {
-    name: 'USB ЭЦП',
-    type: 'usb',
-    disabled: false
   }
 ]
 

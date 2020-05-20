@@ -10,11 +10,11 @@ import { ESCCheckContent } from './styled'
 const dropZones = [
   {
     type: 'file',
-    text: 'Перетяните подписанный документ (.pdf/.doc/.zip файл)'
+    text: 'Перетяните подписанный документ (.pdf/.doc файл)'
   },
   {
     type: 'sign',
-    text: 'Перетяните подпись ЭЦП (.sig файл)'
+    text: 'Перетяните подпись ЭЦП (.p7s файл)'
   }
 ]
 

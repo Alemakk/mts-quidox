@@ -9,17 +9,19 @@ import FAQ from './FAQ'
 import Services from './Services'
 import ESCCheck from './ESCCheck'
 import Terms from './Terms'
+import FreeFunctionality from './FreeFunctionality'
 
 export {
-    Login,
-    Home,
-    News,
-    Video,
-    SingleNews,
-    Registration,
-    Contacts,
-    FAQ,
-    Services,
-    ESCCheck,
-    Terms
+  Login,
+  Home,
+  News,
+  Video,
+  SingleNews,
+  Registration,
+  Contacts,
+  FAQ,
+  Services,
+  ESCCheck,
+  Terms,
+  FreeFunctionality
 }

@@ -14,7 +14,8 @@ import {
   Services,
   ESCCheck,
   Login,
-  Terms
+  Terms,
+  FreeFunctionality
 } from './views'
 
 function App () {
@@ -34,6 +35,7 @@ function App () {
             <PublicRoute path='/services' component={Services} />
             <PublicRoute path='/faq' component={FAQ} />
             <PublicRoute path='/terms' component={Terms} />
+            <PublicRoute path='/free-functional' component={FreeFunctionality} />
             <PublicRoute path='/contacts' component={Contacts} />
             <PublicRoute path='/registration' component={Registration} />
 

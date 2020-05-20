@@ -1,13 +1,14 @@
 import React from 'react'
 
-import { Container, Heading, Text } from '../../components'
-import { FAQContent } from './styled'
+import { Header, Container, Text } from '../../components'
+import Heading from "../../components/Heading";
 
-export default function Terms({theme: {theme}}) {
+export default function () {
   return (
-    <FAQContent>
+    <section>
       <Container medium>
-        <Heading brandText='Правила'> использования</Heading>
+        <Heading brandText='бесплатно!' brandPosition='right'>Работайте с входящими электронными документами</Heading>
+
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna turpis, ullamcorper eget
           felis sit amet, vestibulum rutrum arcu. Suspendisse cursus gravida suscipit. Sed eleifend eros sed
@@ -92,6 +93,6 @@ export default function Terms({theme: {theme}}) {
           egestas auctor. Donec at dolor tellus.
         </Text>
       </Container>
-    </FAQContent>
+    </section>
   )
 }

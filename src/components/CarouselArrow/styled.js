@@ -15,10 +15,9 @@ const CarouselButton = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 8px rgba(125, 125, 125, 0.15);
-  top: unset;
-  bottom: -6.2rem;
+  box-shadow: 0 0 8px rgba(125, 125, 125, 0.15);
   z-index: 5;
+  top: 100%;
   &:hover {
     * {
       fill: ${({ color }) => color};

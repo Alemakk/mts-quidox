@@ -1,4 +1,5 @@
 @import "mixins";
+
 .slick-slider {
 
   &.slider-quidox-process {
@@ -42,5 +43,9 @@
         }
       }
     }
+  }
+
+  .slick-dots {
+    bottom: -1rem;
   }
 }

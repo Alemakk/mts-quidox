@@ -17,6 +17,7 @@ const Banner = styled.div`
 
 Banner.Content = styled.div`
   max-width: 45rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

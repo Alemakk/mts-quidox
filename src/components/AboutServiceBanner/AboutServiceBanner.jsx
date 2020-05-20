@@ -15,7 +15,7 @@ export default function ({ theme: { theme }, ...rest }) {
       <Banner.Content>
         <Banner.Image src={src} alt='Banner image' />
 
-        <Text style={{ fontWeight: 500, textAlign: 'left' }}>
+        <Text style={{ fontWeight: 500, textAlign: 'left', width: '100%' }}>
           Благодаря сервису <span style={{ color: theme['@primary-color'] }}>МТС</span>&nbsp;
           <span style={{ color: theme['@secondary-color'] }}>SmartDoc</span>&nbsp;
           Вы сможете с легкостью обмениваться

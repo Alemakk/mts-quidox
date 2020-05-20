@@ -12,24 +12,24 @@ const Video = styled.div`
 `
 
 Video.Player = styled.div`
-  flex-basis: 100%;
+  width: 100%;
   height: 45rem;
   border-radius: .6rem;
   overflow: hidden;
   box-shadow: 0px 4px 15px rgba(194, 194, 194, 0.2);
   @media screen and (min-width: ${sizes.laptop}) {
-    flex-basis: 50%;
+    max-width: 50%;
   }
 `
 
 Video.Content = styled.div`
-  flex-basis: 100%;
+  width: 100%;
   padding: 5rem;
   * {
     text-align: left;
   }
   @media screen and (min-width: ${sizes.laptop}) {
-    flex-basis: 50%;
+    max-width: 50%;
   }
 `
 

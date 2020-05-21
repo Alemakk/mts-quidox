@@ -21,6 +21,7 @@ export default function () {
       .then(({ data: { success, error } }) => {
         if (success) {
           setPhoneConfirm(true)
+          dispatch({ type: 'SAVE_PHONE', payload: values.phone })
         } else {
           throw new Error(error)
         }

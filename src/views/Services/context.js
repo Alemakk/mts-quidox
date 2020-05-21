@@ -2,7 +2,8 @@ import React from 'react'
 
 const initialState = {
   activeService: '',
-  activeStep: 0
+  phone: null,
+  activeStep: 2
 }
 
 function reducer (state, action) {
@@ -11,6 +12,11 @@ function reducer (state, action) {
       return {
         ...state,
         activeService: action.payload
+      }
+    case 'SAVE_PHONE':
+      return {
+        ...state,
+        phone: action.payload
       }
     case 'INCREMENT_ACTIVE_STEP':
       return {

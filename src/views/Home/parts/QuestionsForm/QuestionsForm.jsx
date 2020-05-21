@@ -3,7 +3,7 @@ import React from 'react'
 import { Heading, Text, Container, ContactForm } from '../../../../components'
 import { QuestionFormSection, QuestionForm } from './styled'
 
-const tel = 'tel:0890'
+const tel = 'tel:0990'
 
 export default function () {
   return (
@@ -17,7 +17,7 @@ export default function () {
         </Heading>
 
         <Text gray>Звоните по номеру</Text>
-        <QuestionForm.Link href={tel}>0890</QuestionForm.Link>
+        <QuestionForm.Link href={tel}>0990</QuestionForm.Link>
         <Text gray>или заполните форму обратной связи</Text>
 
         <ContactForm />

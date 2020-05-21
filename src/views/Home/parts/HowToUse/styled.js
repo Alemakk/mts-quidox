@@ -8,6 +8,11 @@ const HowToUseContent = styled.section`
   background-color: ${colors.alabaster};
 `
 
+HowToUseContent.Image = styled.img`
+  width: 20rem;
+  height: auto;
+`
+
 HowToUseContent.Block = styled.div`
   display: flex;
   flex-direction: column;

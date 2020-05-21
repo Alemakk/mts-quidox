@@ -27,7 +27,7 @@ export default function HowToUse () {
           {howItsWork.map(({ text, icon }, idx) => (
             <Col key={icon} {...sizes}>
               <HowToUseContent.Block>
-                <Icon component={icon} />
+                <HowToUseContent.Image src={icon} />
                 <Text
                   style={{ marginTop: '3rem', minHeight: '5.1rem' }}
                   dangerouslySetInnerHTML={{ __html: text }}

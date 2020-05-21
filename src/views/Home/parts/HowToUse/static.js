@@ -1,24 +1,23 @@
-import { homeIcons } from '../../../../resources'
-
-const { EasyReg, easyDoc, easyInclude, easyVerify } = homeIcons
+import { images } from '../../../../resources'
+const { register, sign, key, download } = images
 
 const howItsWork = [
   {
     text: 'Зарегистрируйтесь',
-    icon: EasyReg
+    icon: register
 
   },
   {
     text: 'Вставьте ключ к ЭЦП <br /> в компьютер',
-    icon: easyInclude
+    icon: key
   },
   {
     text: 'Загрузите документы',
-    icon: easyDoc
+    icon: download
   },
   {
     text: 'Нажмите кнопку “Подписать”, <br /> затем “Отправить”',
-    icon: easyVerify
+    icon: sign
   }
 ]
 

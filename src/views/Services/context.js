@@ -3,7 +3,7 @@ import React from 'react'
 const initialState = {
   activeService: '',
   phone: null,
-  activeStep: 2
+  activeStep: 0
 }
 
 function reducer (state, action) {

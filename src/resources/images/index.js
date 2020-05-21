@@ -18,6 +18,10 @@ import d2 from './disabled-2.png'
 import d3 from './disabled-3.png'
 import d4 from './disabled-4.png'
 import star from './star.png'
+import download from './download-documents.png'
+import key from './key.png'
+import register from './register.png'
+import sign from './sign.png'
 
 export default {
   home_about,
@@ -39,5 +43,9 @@ export default {
   d2,
   d3,
   d4,
-  star
+  star,
+  download,
+  key,
+  register,
+  sign
 }

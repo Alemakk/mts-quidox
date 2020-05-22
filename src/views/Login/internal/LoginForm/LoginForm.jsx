@@ -54,7 +54,7 @@ export default function () {
           rules={[
             {
               type: 'email',
-              message: 'Не валидный имейл'
+              message: 'Указан неверный адрес электронной почты'
             },
             {
               required: true,

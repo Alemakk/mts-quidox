@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import MaskedInput from 'antd-mask-input'
 
-import ApplicationContext from '../../../../ApplicationContext'
+import api from '../../../../services'
 import { ServiceContext } from '../../context'
 import { servicePackages } from '../../static'
 import { Form, Input, Select, Checkbox, notification } from 'antd'
@@ -10,15 +10,25 @@ import { Text, Button } from '../../../../components'
 export default function () {
   const [isFormDataAgree, setFormDataAgree] = useState(true)
   const { state: serviceState } = useContext(ServiceContext)
-  const { state } = useContext(ApplicationContext)
-  const handleSubscribe = values => {
-    notification.success({
-      message: 'Заявка успешно отправлена!'
-    })
-  }
-  const { user } = state
   const { activeService } = serviceState
-  console.log(serviceState)
+
+  const handleSubscribe = values => {
+    api.mts.sendInvoice(values)
+      .then(({ data: { success, error } }) => {
+        if (success) {
+          notification.success({
+            message: 'Заявка успешно отправлена!'
+          })
+        } else {
+          throw new Error(error)
+        }
+      })
+      .catch(error => {
+        notification.error({
+          message: error.message
+        })
+      })
+  }
   return (
     <>
       <Form

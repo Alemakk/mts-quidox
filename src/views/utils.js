@@ -1,10 +1,12 @@
+import { Base64 } from 'js-base64'
+
 const handleLoginWithSimECP = () => {
-  const newPageUrl = `${process.env.REACT_APP_SIM_SCEP_URL}?`+
-    `client_id=${process.env.REACT_APP_SIM_SCEP_CLIENT_ID}&`+
-    `response_type=code&`+
-    `state=mts&`+
-    `authentication=phone&`+
-    `scope=sign&`+
+  const newPageUrl = `${process.env.REACT_APP_SIM_SCEP_URL}?` +
+    `client_id=${process.env.REACT_APP_SIM_SCEP_CLIENT_ID}&` +
+    `response_type=code&` +
+    `state=${Base64.encode(JSON.stringify({ 'co_brand_name': 'quidox', 'user_id': 0 }))}&` +
+    `authentication=phone&` +
+    `scope=sign&` +
     `redirect_uri=${process.env.REACT_APP_SIM_SCEP_CALLBACK}`
 
   window.open(newPageUrl, '', 'width=800,height=600')

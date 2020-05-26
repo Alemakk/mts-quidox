@@ -19,6 +19,9 @@ const AboutContent = styled.section`
     width: 100%;
     background-color: ${colors.alabaster};
   }
+  @media (min-width: 768px) {
+    max-height: 58rem;
+  }
 `
 
 export {

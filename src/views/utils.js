@@ -9,7 +9,7 @@ const handleLoginWithSimECP = () => {
     `scope=sign&` +
     `redirect_uri=${process.env.REACT_APP_SIM_SCEP_CALLBACK}`
 
-  window.open(newPageUrl, '', 'width=800,height=600')
+  window.open(newPageUrl, '_self')
 }
 
 const handleLoginWithECP = () => {

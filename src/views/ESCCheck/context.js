@@ -7,7 +7,8 @@ const initialState = {
   sign: {
     isLoaded: false,
     data: {}
-  }
+  },
+  isCheckSuccess: false
 }
 
 function reducer (state, action) {
@@ -21,14 +22,16 @@ function reducer (state, action) {
         [type]: {
           ...state[type],
           data: file
-        }
+        },
+        isCheckSuccess: false
       }
     case 'REMOVE_FILE':
       return {
         ...state,
         [action.payload.type]: {
           ...initialState[action.payload.type]
-        }
+        },
+        isCheckSuccess: false
       }
     case 'SWITCH_FILE_LOAD_STATUS':
       return {
@@ -37,6 +40,11 @@ function reducer (state, action) {
           ...state[action.payload.type],
           isLoaded: true
         }
+      }
+    case 'TOGGLE_CHECK':
+      return {
+        ...state,
+        isCheckSuccess: true
       }
     default: return new Error('action error')
   }

@@ -68,7 +68,7 @@ export default function ESCCheck () {
                 ? <Col span={12} offset={6}>
                     <div style={{ backgroundColor: '#F9F9F9', padding: '9rem 10rem' }}>
                       <Heading brandText='Результат:' />
-                      <Heading>ЭЦП документа верна</Heading>
+                      <Heading style={{ margin: 0 }}>ЭЦП документа верна</Heading>
                     </div>
                   </Col>
                 : <>

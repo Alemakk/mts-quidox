@@ -83,7 +83,7 @@ export default function ESCCheck () {
           {(file.isLoaded && sign.isLoaded) &&
             <Button
               loading={fetch}
-              onClick={() => handleVerifySignature()}
+              onClick={() => isCheckSuccess ? console.log('download will soon') : handleVerifySignature()}
               type='primary'
               style={{ margin: '3rem auto 0', display: 'block' }}>
               {isCheckSuccess ? 'Скачать pdf' : 'Проверить подлинность документа'}

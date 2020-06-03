@@ -6,6 +6,7 @@ import { ServiceContext } from '../../context'
 import { servicePackages } from '../../static'
 import { Form, Input, Select, Checkbox, notification } from 'antd'
 import { Text, Button } from '../../../../components'
+import { Base64 } from 'js-base64'
 
 export default function () {
   const [isFormDataAgree, setFormDataAgree] = useState(true)
@@ -19,6 +20,8 @@ export default function () {
           notification.success({
             message: 'Заявка успешно отправлена!'
           })
+          let file = Base64.decode(success.data)
+          window.open(file);
         } else {
           throw new Error(error)
         }

@@ -19,7 +19,7 @@ export default function () {
           notification.success({
             message: 'Заявка успешно отправлена!'
           })
-          window.open(success.data);
+          history.push(success.data);
         } else {
           throw new Error(error)
         }

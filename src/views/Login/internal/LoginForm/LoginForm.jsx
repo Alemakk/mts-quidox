@@ -95,7 +95,7 @@ export default function () {
         </Form.Item>
         <Button
           onClick={handleResetPassword}
-          style={{ marginTop: 30 }}
+          style={{ marginTop: 30, marginBottom: 30 }}
           type='secondary'
           ghost
         >

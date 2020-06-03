@@ -14,12 +14,13 @@ export default function () {
 
   const handleSubscribe = values => {
     api.mts.sendInvoice(values)
-      .then(({ data: { success, error } }) => {
+      .then(response => {
+        const { data: { data, success, error } } = response
         if (success) {
           notification.success({
             message: 'Заявка успешно отправлена!'
           })
-          history.push(success.data);
+          window.open(data, "_blank")
         } else {
           throw new Error(error)
         }

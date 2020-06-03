@@ -5,10 +5,11 @@ import { Base64 } from 'js-base64'
 
 import api from '../../../../services'
 import FormContext from '../../context'
-import { handleLoginWithSimECP, handleLoginWithECP } from '../../../utils'
+import { handleLoginWithSimECP, handleLoginWithECP, handleRegister, handleResetPassword } from '../../../utils'
 import { Form, Input, Checkbox } from 'antd'
 import { Button, Alert, Text } from '../../../../components'
 import LoginFormContent from './styled'
+import { Link } from 'react-router-dom'
 
 export default function () {
   const history = useHistory()
@@ -92,6 +93,14 @@ export default function () {
             Войти
           </Button>
         </Form.Item>
+        <Button
+          onClick={handleResetPassword}
+          style={{ marginTop: 30 }}
+          type='secondary'
+          ghost
+        >
+          Забыли пароль?
+        </Button>
       </Form>
 
       <div style={{ marginBottom: '2rem' }}>

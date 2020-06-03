@@ -16,7 +16,12 @@ const handleLoginWithECP = () => {
   window.open(`${process.env.REACT_APP_QUIDOX_URL}/e-sign-login`, '_self')
 }
 
+const handleResetPassword = () => {
+  window.open(`${process.env.REACT_APP_QUIDOX_URL}/password-recovery`, '_self')
+}
+
 export {
   handleLoginWithSimECP,
-  handleLoginWithECP
+  handleLoginWithECP,
+  handleResetPassword
 }

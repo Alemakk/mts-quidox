@@ -40,6 +40,7 @@ export default function ESCCheck () {
           setFetch(false)
           dispatch({ type: 'TOGGLE_CHECK' })
           console.log(data)
+          window.open(data, "_blank")
         } else {
           throw new Error(error)
         }
@@ -83,10 +84,10 @@ export default function ESCCheck () {
           {(file.isLoaded && sign.isLoaded) &&
             <Button
               loading={fetch}
-              onClick={() => isCheckSuccess ? console.log('download will soon') : handleVerifySignature()}
+              onClick={() => handleVerifySignature()}
               type='primary'
               style={{ margin: '3rem auto 0', display: 'block' }}>
-              {isCheckSuccess ? 'Скачать pdf' : 'Проверить подлинность документа'}
+              {'Проверить подлинность документа'}
             </Button>}
         </Container>
       </ESCCheckContent>

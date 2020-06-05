@@ -4,7 +4,7 @@ import MaskedInput from 'antd-mask-input'
 import api from '../../../../services'
 import { ServiceContext } from '../../context'
 import { icons } from '../../../../resources'
-import {Form, notification} from 'antd'
+import { Form, notification } from 'antd'
 import { Button, Text, Alert } from '../../../../components'
 
 const { SuccessIcon } = icons
@@ -16,8 +16,8 @@ export default function () {
 
   const handleSendPhone = values => {
     const phone = `+375${values.phone.split('-').join('')}`
-
-    api.auth.sendPhone({ phone })
+    const check_existing_user = false
+    api.auth.sendPhone({ phone, check_existing_user })
       .then(({ data: { success, error } }) => {
         if (success) {
           setPhoneConfirm(true)
@@ -36,9 +36,10 @@ export default function () {
       ? <div>
         <div className='flex-center flex-center--jc-center'>
           <Text bolder>Спасибо! Проверка успешно пройдена</Text>
-          <SuccessIcon style={{ marginLeft: '1rem' }} />
+          <SuccessIcon style={{ marginLeft: '1rem' }}/>
         </div>
-        <Button style={{ display: 'block', margin: '3rem auto 0' }} onClick={() => dispatch({ type: 'INCREMENT_ACTIVE_STEP' })}>Продолжить</Button>
+        <Button style={{ display: 'block', margin: '3rem auto 0' }}
+                onClick={() => dispatch({ type: 'INCREMENT_ACTIVE_STEP' })}>Продолжить</Button>
       </div>
       : <Form
         style={{ maxWidth: '55rem', margin: '0 auto', width: '100%' }}
@@ -52,7 +53,7 @@ export default function () {
           label='Введите номер мобильного телефона'
           rules={[{ required: true, message: 'Обязательное поле' }]}
         >
-          <MaskedInput size='large' addonBefore='+375' mask='11-111-11-11' />
+          <MaskedInput size='large' addonBefore='+375' mask='11-111-11-11'/>
         </Form.Item>
 
         {error &&

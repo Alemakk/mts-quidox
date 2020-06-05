@@ -24,12 +24,12 @@ export default function () {
     delete values.secret_key
     api.user.userLogin(values)
       .then(response => {
-        const { data: { data: { token }, success, error } } = response
+        const { data: { data, success, error } } = response
 
-        if (success) {
+        if (success && data) {
           dispatch({ type: 'LOGIN_INIT', payload: false })
-          window.localStorage.setItem('authToken', token)
-          window.open(`${process.env.REACT_APP_QUIDOX_URL}/login?token=${token}`, '_self')
+          window.localStorage.setItem('authToken', data.token)
+          window.open(`${process.env.REACT_APP_QUIDOX_URL}/login?token=${data.token}`, '_self')
         } else {
           throw new Error(error)
         }

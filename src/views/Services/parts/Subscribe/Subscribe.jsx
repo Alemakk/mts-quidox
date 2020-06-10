@@ -128,6 +128,9 @@ export default function () {
         <Form.Item>
           <Checkbox onChange={() => setFormDataAgree(!isFormDataAgree)}>Все данные введены верно</Checkbox>
         </Form.Item>
+        <Form.Item>
+          <Text small><strong>Для добавления услуги необходимо сформировать документ, подписать, поставить печать и отправить скан-копию на электронный адрес corporate@mts.by</strong></Text>
+        </Form.Item>
 
         <Form.Item>
           <Button type='primary' style={{ display: 'block', margin: '0 auto' }} disabled={isFormDataAgree}>Сформировать документ</Button>

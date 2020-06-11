@@ -312,7 +312,7 @@ export default function ({ theme: { theme } }) {
           <ThemePanel header='Удаление Услуг' key={7}>
             <ol>
               <li style={termItemStyle}>
-                <Text>Все услуги линейки «МТС SmartDoc» являются взаимоисключающими.</Text>
+                <Text>Абонент может отказаться от Услуги линейки «МТС SmartDoc» в Личном кабинете или  Салоне связи МТС.</Text>
               </li>
             </ol>
           </ThemePanel>

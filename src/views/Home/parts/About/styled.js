@@ -19,7 +19,7 @@ const AboutContent = styled.section`
     width: 100%;
     background-color: ${colors.alabaster};
   }
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     max-height: 58rem;
   }
 `

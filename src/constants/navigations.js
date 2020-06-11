@@ -47,7 +47,7 @@ const aside = [
   },
   {
     title: 'Правила пользования',
-    disabled: true,
+    disabled: false,
     route: '/terms'
   }
 ]

@@ -6,16 +6,16 @@ import { styleguide } from '../../constants'
 const { Panel } = Collapse
 const { colors } = styleguide
 
-const FAQContent = styled.section``
+const TermsContent = styled.section``
 
 const ThemeCollapse = styled(Collapse)`
   && {
     border-radius: 0;
     .ant-collapse-item {
       .ant-collapse-header {
-        font-size: 2.6rem;
+        font-size: 1.8rem;
         font-weight: bold;
-        padding: 4rem 4rem 4rem 10rem;
+        padding: 2rem 2rem 2rem 7rem;
         color: ${colors.rolling_stone};
         
         .ant-collapse-arrow {
@@ -43,7 +43,7 @@ const ThemeCollapse = styled(Collapse)`
 const ThemePanel = styled(Panel)``
 
 export {
-  FAQContent,
+  TermsContent,
   ThemeCollapse,
   ThemePanel
 }

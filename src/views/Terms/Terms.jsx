@@ -1,97 +1,345 @@
 import React from 'react'
+import { Typography, Table } from 'antd'
 
-import { Container, Heading, Text } from '../../components'
-import { FAQContent } from './styled'
+import { Container, Heading } from '../../components'
+import { TermsContent, ThemeCollapse, ThemePanel } from './styled'
 
-export default function Terms({theme: {theme}}) {
+const { Text } = Typography
+
+const dataSource = [
+  {
+    key: '1',
+    name: 'МТС SmartDoc Лайт',
+    api: 'нет',
+    users: 100,
+    value: '1 GB'
+  },
+  {
+    key: '2',
+    name: 'МТС SmartDoc Стандарт',
+    api: 'да',
+    users: 1000,
+    value: '5 GB'
+  },
+  {
+    key: '1',
+    name: 'МТС SmartDoc Бизнес',
+    api: 'да',
+    users: 5000,
+    value: '5 GB'
+  }
+]
+
+const columns = [
+  {
+    title: 'МТС SmartDoc Лайт',
+    dataIndex: 'name',
+    key: 'name'
+  },
+  {
+    title: 'Доступ по API',
+    dataIndex: 'api',
+    key: 'api'
+  },
+  {
+    title: 'Количество пользователей компании',
+    dataIndex: 'users',
+    key: 'users'
+  },
+  {
+    title: 'Объем рабочего дискового пространства (учитывается только созданные и отправленные автором, переотправленные, черновики)',
+    dataIndex: 'value',
+    key: 'value'
+  }
+]
+
+const termTextStyle = {
+  marginBottom: 5,
+  display: 'block'
+}
+
+const termItemStyle = {
+  marginBottom: 10
+}
+
+export default function ({ theme: { theme } }) {
   return (
-    <FAQContent>
+    <TermsContent>
       <Container medium>
         <Heading brandText='Правила'> использования</Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna turpis, ullamcorper eget
-          felis sit amet, vestibulum rutrum arcu. Suspendisse cursus gravida suscipit. Sed eleifend eros sed
-          venenatis dignissim. Maecenas condimentum id justo et tempus. Praesent sit amet eleifend nunc, non
-          eleifend ante. Nullam nibh ipsum, mattis ut mollis vitae, gravida a dui. Curabitur mattis tincidunt
-          justo ac vulputate.
+        <ThemeCollapse style={{ marginTop: 90 }} color={theme['@primary-color']}>
+          <ThemePanel header='Общее описание' key={1}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text style={termTextStyle}>
+                  МТС SmartDoc» – это сервис электронного документооборота, предоставляющий абонентам МТС возможность
+                  обмениваться электронными документами, в том числе подписанными с помощью функционала электронной
+                  цифровой подписи «МТС ID» или функционала электронной цифровой подписи на USB-носителе с сертификатом
+                  ГосСУОК (государственная система управления открытыми ключами проверки электронной цифровой подписи
+                  Республики Беларусь).
+                  Для обмена документами используется web-интерфейс smartdoc.mts.by.
+                </Text>
+                <Text style={termTextStyle}>
+                  «МТС SmartDoc» позволяет подписывать файлы любого формата электронной цифровой подписью, обеспечивает
+                  их доставку адресату с подтверждением, а также последующее хранение, как исходящих, так и входящих сообщений.
+                </Text>
+                <Text>
+                  Линейка услуг «МТС SmartDoc» включает в себя 3 услуги: «МТС SmartDoc Лайт», «МТС SmartDoc Стандарт», «МТС SmartDoc Бизнес».
+                </Text>
+              </li>
+              <li>
+                <Text>
+                  Услуги линейки «МТС SmartDoc» доступны только резидентам Республики Беларусь юридическим лицам и
+                  индивидуальным предпринимателям и оказываются только на территории Республики Беларусь. Данная линейка
+                  услуг предоставляется на всех тарифных планах с авансовым и кредитным методом расчетов.<br /><br />
+                </Text>
+              </li>
+              <li style={termItemStyle}>
+                <Text style={termTextStyle}>
+                  Подключение услуг линейки «МТС SmartDoc», их удаление и управление осуществляется через Личный кабинет
+                  пользователя «МТС SmartDoc» на сайте
+                  &nbsp;
+                  <a style={{ color: '#E30611' }} rel='noopener noreferrer' target='_blank' href='http://smartdoc.mts.by'>smartdoc.mts.by</a>
+                  &nbsp;
+                  (далее — Личный кабинет) или в Салоне связи МТС.
+                </Text>
+                <Text style={termTextStyle}>
+                  Регистрация в Личном кабинете возможна с помощью:
+                  <ul style={{ marginBottom: 0, marginTop: 0 }}>
+                    <li>номера мобильного телефона Абонента МТС;</li>
+                    <li>адреса электронной почты.</li>
+                  </ul>
+                </Text>
+                <Text>
+                  При регистрации и авторизации в Личном кабинете, добавлении и удалении услуг, их управлении на номер
+                  Абонента поступают входящие SMS-сообщения с короткого номера «SmartDoc».<br /><br />
+                </Text>
+              </li>
+            </ol>
+          </ThemePanel>
 
-          Suspendisse potenti. Fusce sit amet congue tortor. Vestibulum rutrum nec mauris non interdum. Donec
-          sed diam venenatis, tincidunt est eget, pharetra tortor. Nullam semper sapien quis metus consectetur
-          ultrices. Nam purus augue, volutpat ut dui vitae, viverra porttitor nisl. Donec nibh neque, ornare
-          id lacus vitae, aliquam pellentesque libero. Aliquam quis eros et sem commodo dictum vel ut mi.
+          <ThemePanel header='Функциональные возможности услуг «МТС SmartDoc Лайт», «МТС SmartDoc Стандарт», «МТС SmartDoc Бизнес».' key={2}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text style={termTextStyle}>
+                  Функциональные возможности линейки услуг «МТС SmartDoc» описаны в таблице.
+                </Text>
+                <Table pagination={false} dataSource={dataSource} columns={columns} rowId='id' />
+              </li>
+              <li style={termItemStyle}>
+                <Text>
+                  Каждая из услуг линейки «МТС SmartDoc»  позволяет  совершать неограниченное количество внутренних
+                  отправлений, где получателем при отправке или перенаправлении указан пользователь этой же компании.
+                  Количество входящих отправлений в рамках данных услуг, включая подписание, согласование и отклонение,
+                  также не ограничено.
+                </Text>
+              </li>
+              <li>
+                <Text style={termTextStyle}>
+                  Перед началом пользования любой из услуг линейки «МТС SmartDoc» Абонент может воспользоваться
+                  ознакомительным периодом. Ознакомительный период предоставляется не более 1 (одного) раза для
+                  каждого юридического лица или индивидуального предпринимателя и действует не более 30 (тридцати)
+                  календарных дней с момента начала его использования. Ознакомительным периодом можно воспользоваться
+                  после регистрации через web-интерфейс
+                  &nbsp;
+                  <a style={{ color: '#E30611' }} rel='noopener noreferrer' target='_blank' href='http://smartdoc.mts.by'>smartdoc.mts.by</a>
+                  &nbsp;
+                  или в Салоне связи МТС. По истечении 30 (тридцати)
+                  календарных дней предоставление ознакомительного периода прекращается автоматически. В случае если
+                  Абонент подключает любую  из услуг линейки «МТС SmartDoc» до окончания тридцатидневного ознакомительного
+                  периода, последний отключается автоматически и больше недоступен для подключения Абоненту.
+                </Text>
+                <Text>
+                  Ознакомительный период имеет следующий функционал:
+                  <ul style={{ marginBottom: 0, marginTop: 0 }}>
+                    <li>количество пользователей юридического лица или индивидуального предпринимателя – до 2 (двух)
+                      пользователей;
+                    </li>
+                    <li>количество внутренних отправлений (где получателем при отправке или перенаправлении указан
+                      пользователь этого же юридического лица или индивидуального предпринимателя) – без ограничений;
+                    </li>
+                    <li>количество внешних отправлений (где получателем при отправке или перенаправлении указан любой
+                      адрес кроме пользователей юридического лица или индивидуального предпринимателя) – до 100
+                      отправлений;
+                    </li>
+                    <li>количество входящих отправлений, включая подписание, согласование, отклонение – без ограничений;</li>
+                    <li>объем рабочего дискового пространства (учитываются только документы, созданные и отправленные
+                      автором, переотправленные и черновики) – 1 Gb.
+                    </li>
+                  </ul>
+                </Text>
+              </li>
+            </ol>
+          </ThemePanel>
 
-          Sed et mauris gravida, tincidunt magna eu, pharetra nisi. Praesent volutpat, enim vel elementum
-          rhoncus, sapien mauris blandit nunc, nec accumsan nisl massa vitae erat. Phasellus blandit suscipit
-          feugiat. Vestibulum a finibus justo. Integer erat quam, imperdiet sit amet orci eu, pretium mollis
-          dui. Donec maximus mollis nisi non semper. Morbi tellus elit, mollis at euismod non, tristique eget
-          tellus. Ut cursus dolor ut augue rutrum, at dignissim risus consectetur. Curabitur vitae magna
-          maximus, faucibus tortor at, auctor urna. Aenean eleifend consectetur nisi, vel sodales nisi
-          eleifend eget. Vestibulum suscipit, dui nec consectetur pulvinar, purus urna ultricies augue, ac
-          consequat nibh nisi in lorem. Proin eleifend, sapien eu molestie vulputate, ipsum ex euismod ipsum,
-          in iaculis odio libero in neque. Vivamus et augue ac felis placerat mollis pretium et felis.
-          Suspendisse vel ligula vitae metus bibendum aliquam. Curabitur lobortis quam eget porta blandit.
-          Cras rhoncus nisl eu velit sodales faucibus.
+          <ThemePanel header='Ограничения пользования Услугами.' key={3}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text style={termTextStyle}>
+                  Услуги линейки «МТС SmartDoc» не предназначены для обмена следующими видами информации:
+                  <ul style={{ marginBottom: 0, marginTop: 0 }}>
+                    <li>товарно-транспортные, транспортные накладные;</li>
+                    <li>информация, содержащая государственные секреты;</li>
+                    <li>служебная информация ограниченного распространения;</li>
+                    <li>информация о частной жизни физического лица;</li>
+                    <li>персональные данные;</li>
+                    <li>иная информация, распространение и (или) предоставление которой ограничено</li>
+                  </ul>
+                </Text>
+              </li>
 
-          Nam nec tellus mattis, maximus lectus at, egestas ligula. Sed consequat, massa eget suscipit
-          venenatis, odio felis dictum diam, vel iaculis lorem lacus ac libero. Duis euismod a risus in
-          lobortis. Sed nibh est, rhoncus ut leo nec, vulputate gravida ex. Nulla elementum posuere tincidunt.
-          Vivamus pellentesque bibendum odio, at facilisis diam finibus ac. Nullam at finibus nisi, porta
-          iaculis arcu. Donec mattis nunc eget mauris cursus, non varius massa tempus. Vivamus malesuada
-          ligula sem, ac hendrerit velit eleifend ac. Nunc sed eros nulla. Nunc sagittis non velit id luctus.
-          Curabitur diam tellus, tempus quis ullamcorper eget, tempus eget risus. Maecenas vitae massa et odio
-          pretium fringilla. Aliquam suscipit faucibus ex, sit amet malesuada lacus varius pharetra. Phasellus
-          non nibh a ipsum eleifend dictum. Integer euismod neque et gravida feugiat.
+              <li style={termItemStyle}>
+                <Text style={termTextStyle}>
+                  Абонент обязуется:
+                  <ul style={{ marginBottom: 0, marginTop: 0 }}>
+                    <li>не использовать Услуги в противоправных целях, в т. ч. для распространения материалов,
+                      оскорбляющих человеческое достоинство, для пропаганды насилия, разжигания расовой, религиозной
+                      или национальной вражды, для хулиганских или мошеннических целей, не совершать действий,
+                      наносящих вред Оператору и (или) третьим лицам;
+                    </li>
+                    <li>не пользоваться Услугами с целью осуществления безлицензионной или иной деятельности, не
+                      соответствующей законодательству;
+                    </li>
+                    <li>не предпринимать действий, которые могут повлечь за собой нарушение функционирования сетей и
+                      средств электросвязи;
+                    </li>
+                    <li>не осуществлять несанкционированный доступ к информационным системам сети связи Оператора или
+                      оборудованию Оператора, или оборудованию других Абонентов;
+                    </li>
+                    <li>не допускать использования сети связи Оператора для передачи информации, запрещённой к
+                      распространению в соответствии с законодательством;
+                    </li>
+                    <li>не допускать использование Услуг без дополнительного письменного согласования с Оператором для
+                      проведения лотерей, голосований, конкурсов, викторин, рекламы, опросов, массовых рассылок сообщений
+                    </li>
+                    <li>не производить рассылку пользователям сети Интернет рекламной и иной незапрашиваемой ими информации (спама);</li>
+                    <li>не фальсифицировать свой IP-адрес, адреса, используемые в других сетевых протоколах, а также
+                      прочую служебную информацию при передаче данных в сети Интернет;
+                    </li>
+                    <li>не допускать использования предоставляемых Абонентских номеров и логинов и паролей, или SIM-карт
+                      для организации присоединения и взаимодействия сетей электросвязи в нарушение установленного
+                      законодательством порядка пропуска трафика между ними (в том числе для установки шлюзов для
+                      доступа к сети электросвязи и интернет-телефонии, организации доступа из сети связи общего
+                      пользования к модемным пулам, узлам передачи данных и телематических служб, карточным платформам и т. п.).
+                    </li>
+                  </ul>
+                </Text>
 
-          Nullam mauris massa, posuere a pharetra feugiat, cursus a dui. Nullam pulvinar est pharetra est
-          dignissim, eget eleifend mi molestie. Curabitur interdum ante ut ante sagittis, eget blandit sem
-          varius. Donec at mauris porttitor, viverra diam at, rutrum massa. Nulla feugiat sollicitudin metus
-          in dapibus. Aliquam vulputate imperdiet dui quis placerat. Proin ante risus, vehicula in laoreet
-          non, placerat a lorem. Mauris in felis gravida lorem vestibulum molestie at eget purus.
+                <Text style={termItemStyle}>
+                  Пользователи услуг линейки «МТС SmartDoc», соглашаясь с настоящими правилами обязуются не обмениваться
+                  вышеуказанной информацией, не производить несанкционированную рассылку и не совершать указанные выше действия.
+                </Text>
+              </li>
+            </ol>
+          </ThemePanel>
 
-          Donec augue nunc, tincidunt at elit ac, blandit iaculis dui. Fusce faucibus velit nibh, quis sodales
-          tellus consectetur a. Ut cursus dolor quis placerat congue. Donec non tincidunt orci. Praesent ac
-          orci finibus, sodales justo vitae, sodales eros. Sed id sapien feugiat, commodo ante id, maximus
-          erat. Sed a lobortis lectus. Donec ac condimentum lacus, eget sollicitudin lectus. Curabitur
-          bibendum aliquam ante sed posuere. Curabitur lorem velit, congue vel mollis nec, maximus nec tortor.
-          Ut a nulla in quam euismod dictum. Curabitur fermentum leo ligula, ut dictum odio vehicula quis.
+          <ThemePanel header='Особенности пользования Услугами' key={4}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text>Все услуги линейки «МТС SmartDoc» являются взаимоисключающими.</Text>
+              </li>
+            </ol>
+          </ThemePanel>
 
-          Pellentesque dolor metus, congue at luctus nec, luctus vel massa. Nunc in dolor luctus, malesuada
-          justo ac, scelerisque sem. Fusce pretium orci ante, vel scelerisque tellus posuere sed. Nullam in
-          egestas ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-          egestas. Nullam porttitor, ipsum nec condimentum blandit, eros ex suscipit orci, nec porttitor felis
-          arcu a felis. Aliquam tincidunt sollicitudin tellus vel faucibus. Nullam pulvinar lacus quis
-          eleifend posuere. Suspendisse scelerisque, mauris eget mollis tempus, dolor purus sodales sapien,
-          nec ornare augue ex id velit. Phasellus sollicitudin tristique tempus. Mauris quis mi tincidunt,
-          tempor enim eget, feugiat nisl. Vivamus vitae egestas purus. Etiam faucibus iaculis dolor, a
-          pellentesque nulla cursus non. Quisque non leo nisl. Vivamus ut neque iaculis, posuere metus non,
-          venenatis erat. Aliquam accumsan, ipsum ut consectetur tempus, mi elit fringilla metus, id posuere
-          neque nunc id velit.
+          <ThemePanel header='Тарификация Услуг' key={5}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text>Стоимость услуг линейки «МТС SmartDoc» списывается в соответствии с утвержденным в МТС
+                  прейскурантом тарифов на услуги связи с учетом действующих положений о системе скидок.
+                </Text>
+              </li>
 
-          Ut tristique, ligula at auctor pharetra, mi magna venenatis ipsum, ac consectetur enim dui ac sem.
-          Sed eget fermentum ex. Nam tempus libero vel nisi luctus ultricies. Nam condimentum sit amet nulla
-          sed porttitor. Nulla sed augue non urna consectetur viverra ut id ante. Integer auctor condimentum
-          ante, et vulputate diam condimentum at. Phasellus quis nunc ac massa vestibulum fermentum et vel
-          lectus. Quisque sit amet eros dictum, tristique enim vitae, ullamcorper tortor. Vivamus egestas a
-          leo in semper. Donec eget nulla euismod, mattis ligula nec, iaculis est.
+              <li style={termItemStyle}>
+                <Text> Тарификация за Услугу производится единоразовым платежом в момент ее добавления. По истечении 30
+                  (тридцати) календарных дней, если Абонент не отключил одну из услуг линейки «МТС SmartDoc», она
+                  автоматически продлевается и стоимость услуги списывается в момент продления в полном объеме.
+                  В случае если Абонент на момент продления находится в блокировке (частичной, принудительной,
+                  добровольной, блокировке «Аппарат утрачен») стоимость услуги не списывается. Стоимость услуги спишется
+                  в полном объеме в момент выхода абонента из блокировки.
+                </Text>
+              </li>
 
-          Morbi laoreet porttitor dapibus. Maecenas nunc lorem, bibendum eget scelerisque sed, suscipit eget
-          sapien. Integer eget ipsum et ex aliquet laoreet. Ut finibus nisi non lectus iaculis, nec tincidunt
-          quam auctor. Nam tincidunt eleifend sem, sed gravida purus tempus eu. Fusce purus purus, lobortis ut
-          dolor et, posuere pharetra erat. Morbi ultrices lacus eget quam pellentesque, eu tempor nisi
-          iaculis. Duis egestas semper purus, ac rhoncus nunc iaculis nec. Cras massa dui, eleifend ac
-          tristique vel, aliquam lobortis diam. Sed a felis euismod, semper tortor in, laoreet massa. Proin
-          eleifend, nunc in egestas facilisis, dui nisi vestibulum lorem, non dapibus augue nisl et enim. Sed
-          ultricies arcu eu quam porta faucibus. Phasellus scelerisque nisi et fringilla suscipit.
+              <li style={termItemStyle}>
+                <Text>В случае нахождения в блокировке (частичной, принудительной, добровольной, блокировке «Аппарат утрачен»)
+                  Абонент не может воспользоваться функционалом любой из услуг линейки «МТС SmartDoc» за исключением
+                  функции получения входящих отправлений.
+                </Text>
+              </li>
 
-          Aliquam et elementum nulla, accumsan commodo orci. Aenean felis libero, lacinia molestie egestas eu,
-          ullamcorper id arcu. Quisque dictum justo sit amet tempus porttitor. Morbi efficitur, velit nec
-          fermentum accumsan, metus metus imperdiet erat, sed consequat orci massa eu ligula. Sed sed augue
-          sit amet erat ultrices volutpat. Curabitur ut scelerisque risus, non faucibus ante. Sed ac nisi
-          tortor. Mauris in pretium velit. Nullam quis ligula nec neque aliquet eleifend. Quisque quis
-          ultricies nisl. Aenean id finibus elit. In ac condimentum magna. Nulla a turpis turpis. Nam vehicula
-          egestas auctor. Donec at dolor tellus.
-        </Text>
+              <li style={termItemStyle}>
+                <Text>Стоимость ежемесячных Услуг не возвращается при отключении их до момента истечения 30 (тридцати)
+                  календарных дней, за которые списалась плата, а также в случае, если абонент не отправил ни одного сообщения.
+                </Text>
+              </li>
+
+              <li style={termItemStyle}>
+                <Text>Тарификация интернет-трафика в рамках пользования Услугами линейки «МТС SmartDoc» не производится
+                  при использовании интернет-услуг МТС.  Доступ к web-интерфейсу smartdoc.mts.by и пользование услугами
+                  линейки «МТС SmartDoc» возможны также при условии пользования услугами передачи данных иных провайдеров
+                  интернет услуг.
+                </Text>
+              </li>
+
+              <li style={termItemStyle}>
+                <Text>Тарификация входящих SMS-сообщений, поступающих с короткого номера «SmartDoc»  при регистрации,
+                  авторизации, добавлении/удалении услуг линейки «МТС SmartDoc»  в Личном кабинете
+                  &nbsp;
+                  <a style={{ color: '#E30611' }} rel='noopener noreferrer' target='_blank' href='http://smartdoc.mts.by'>smartdoc.mts.by</a>,
+                  &nbsp;
+                  не производится.
+                </Text>
+              </li>
+
+              <li style={termItemStyle}>
+                <Text>При нахождении абонента в роуминге тарификация входящего/исходящего интернет-трафика и SMS-сообщений,
+                  поступающих с номера SmartDoc, осуществляется в соответствии с прейскурантом тарифов на услуги
+                  международного роуминга: "Исходящее SMS, 1 сообщение", "Входящее SMS, 1 сообщение". "GPRS (1 MB)",
+                  "Открытый интернет Роуминг". Стоимость услуг линейки «МТС SmartDoc» списывается в соответствии
+                  с пп.5.1-5.2 настоящих Правил.
+                </Text>
+              </li>
+            </ol>
+          </ThemePanel>
+
+          <ThemePanel header='Особенности пользования Услугами' key={6}>
+            <ol>
+              <li>
+                <Text>Абонент может отказаться от Услуги линейки «МТС SmartDoc» в Личном кабинете или  Салоне связи МТС.</Text>
+              </li>
+            </ol>
+          </ThemePanel>
+
+          <ThemePanel header='Удаление Услуг' key={7}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text>Все услуги линейки «МТС SmartDoc» являются взаимоисключающими.</Text>
+              </li>
+            </ol>
+          </ThemePanel>
+
+          <ThemePanel header='Техническая поддержка' key={8}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text>Услуги линейки «МТС SmartDoc» предоставляются при технической поддержке ООО «Квидокс»:
+                  <ul style={{ marginBottom: 0, marginTop: 0 }}>
+                    <li>220007, г.Минск, ул. Аэродромная, 125, пом. 21-11;</li>
+                    <li>e-mail: ask@quidox.by;</li>
+                    <li>тел. +375 (33) 652 36 36.</li>
+                  </ul>
+                </Text>
+              </li>
+            </ol>
+          </ThemePanel>
+
+          <ThemePanel header='Заключение' key={9}>
+            <ol>
+              <li style={termItemStyle}>
+                <Text>Подключая любую из услуг линейки «МТС SmartDoc» абонент тем самым подтверждает ознакомление и выражает согласие с настоящими Правилами.</Text>
+              </li>
+            </ol>
+          </ThemePanel>
+        </ThemeCollapse>
       </Container>
-    </FAQContent>
+    </TermsContent>
   )
 }

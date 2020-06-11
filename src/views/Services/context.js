@@ -2,8 +2,8 @@ import React from 'react'
 
 const initialState = {
   activeService: '',
-  phone: null,
-  activeStep: 0
+  phone: '33-309-08-80',
+  activeStep: 2
 }
 
 function reducer (state, action) {

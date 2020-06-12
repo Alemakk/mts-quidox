@@ -301,14 +301,6 @@ export default function ({ theme: { theme } }) {
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Особенности пользования Услугами' key={6}>
-            <ol>
-              <li>
-                <Text>Абонент может отказаться от Услуги линейки «МТС SmartDoc» в Личном кабинете или  Салоне связи МТС.</Text>
-              </li>
-            </ol>
-          </ThemePanel>
-
           <ThemePanel header='Удаление Услуг' key={7}>
             <ol>
               <li style={termItemStyle}>

@@ -118,7 +118,7 @@ export default function ({ theme: { theme } }) {
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Функциональные возможности услуг «МТС SmartDoc Лайт», «МТС SmartDoc Стандарт», «МТС SmartDoc Бизнес».' key={2}>
+          <ThemePanel header='Функциональные возможности услуг «МТС SmartDoc Лайт», «МТС SmartDoc Стандарт», «МТС SmartDoc Бизнес»' key={2}>
             <ol>
               <li style={termItemStyle}>
                 <Text style={termTextStyle}>
@@ -172,7 +172,7 @@ export default function ({ theme: { theme } }) {
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Ограничения пользования Услугами.' key={3}>
+          <ThemePanel header='Ограничения пользования Услугами' key={3}>
             <ol>
               <li style={termItemStyle}>
                 <Text style={termTextStyle}>

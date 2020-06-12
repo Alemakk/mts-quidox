@@ -96,12 +96,12 @@ export default function ({ theme: { theme } }) {
               </li>
               <li style={termItemStyle}>
                 <Text style={termTextStyle}>
-                  Подключение услуг линейки «МТС SmartDoc», их удаление и управление осуществляется через Личный кабинет
+                  Подключение и управление услугами линейки «МТС SmartDoc» осуществляется через Личный кабинет
                   пользователя «МТС SmartDoc» на сайте
                   &nbsp;
                   <a style={{ color: '#E30611' }} rel='noopener noreferrer' target='_blank' href='http://smartdoc.mts.by'>smartdoc.mts.by</a>
                   &nbsp;
-                  (далее — Личный кабинет) или в Салоне связи МТС.
+                  (далее — Личный кабинет) или в Салоне связи МТС. Удалить данные услуги можно в Салоне связи МТС.
                 </Text>
                 <Text style={termTextStyle}>
                   Регистрация в Личном кабинете возможна с помощью:
@@ -301,15 +301,15 @@ export default function ({ theme: { theme } }) {
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Удаление Услуг' key={7}>
+          <ThemePanel header='Удаление Услуг' key={6}>
             <ol>
               <li style={termItemStyle}>
-                <Text>Абонент может отказаться от Услуги линейки «МТС SmartDoc» в Личном кабинете или  Салоне связи МТС.</Text>
+                <Text>Абонент может отказаться от Услуги линейки «МТС SmartDoc» в Салоне связи МТС.</Text>
               </li>
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Техническая поддержка' key={8}>
+          <ThemePanel header='Техническая поддержка' key={7}>
             <ol>
               <li style={termItemStyle}>
                 <Text>Услуги линейки «МТС SmartDoc» предоставляются при технической поддержке ООО «Квидокс»:
@@ -323,7 +323,7 @@ export default function ({ theme: { theme } }) {
             </ol>
           </ThemePanel>
 
-          <ThemePanel header='Заключение' key={9}>
+          <ThemePanel header='Заключение' key={8}>
             <ol>
               <li style={termItemStyle}>
                 <Text>Подключая любую из услуг линейки «МТС SmartDoc» абонент тем самым подтверждает ознакомление и выражает согласие с настоящими Правилами.</Text>

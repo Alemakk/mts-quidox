@@ -2,7 +2,7 @@ import http from './http'
 
 function sendPhone (data) {
   return http({
-    url: '/sms/send',
+    url: `${process.env.REACT_APP_MTS_URL}/sms/send`,
     method: 'POST',
     data
   })

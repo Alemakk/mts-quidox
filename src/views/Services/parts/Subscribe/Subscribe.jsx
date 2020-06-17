@@ -87,8 +87,8 @@ export default function () {
           rules={[{ required: true, message: 'Обязательное поле' }]}
         >
           <Select size='large'>
-            {servicePackages.map(({ description, title }, idx) => (
-              <Select.Option key={idx} value={description}>{title}</Select.Option>
+            {servicePackages.map(({ type, title }, idx) => (
+              <Select.Option key={idx} value={type}>{title}</Select.Option>
             ))}
           </Select>
         </Form.Item>

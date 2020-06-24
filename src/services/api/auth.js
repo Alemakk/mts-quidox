@@ -10,7 +10,7 @@ function sendPhone (data) {
 
 function confirmSmsCode (data) {
   return http({
-    url: '/sms/confirm',
+    url: `${process.env.REACT_APP_MTS_URL}/sms/confirm`,
     method: 'POST',
     data
   })
@@ -18,7 +18,7 @@ function confirmSmsCode (data) {
 
 function createUser (data) {
   return http({
-    url: '/register',
+    url: `${process.env.REACT_APP_MTS_URL}/register`,
     method: 'POST',
     data
   })

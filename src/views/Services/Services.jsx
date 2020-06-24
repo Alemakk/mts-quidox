@@ -41,6 +41,7 @@ export default function () {
     dispatch({ type: 'CHANGE_ACTIVE_SERVICE', payload: type })
   }
   const { activeService, activeStep } = state
+  console.log(activeService)
   return (
     <ServiceContext.Provider value={{ state, dispatch }}>
       <ServicesContent style={{ backgroundColor: activeService ? '#F9F9F9' : '#fff' }}>

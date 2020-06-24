@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
 import classNames from 'classnames'
+import { Typography } from 'antd'
 import { useCountUp } from 'react-countup'
 
 import { ESCCheckContext } from '../../context'
@@ -7,6 +8,8 @@ import { Button } from '../../../../components'
 import { FileIcon, CloseIcon } from './icons'
 import LoadStatus from './styled'
 import './DropZone.scss'
+
+const { Text } = Typography
 
 export default function ({ type = '', text = '' }) {
   const [status, setStatus] = useState(false)
@@ -87,13 +90,15 @@ export default function ({ type = '', text = '' }) {
             ? <>
               <div className='dropzone__file-item file'>
                 <FileIcon style={{ marginRight: '1rem' }} />
-                {state[type].data.name}
+                <Text style={{ maxWidth: '80%', wordBreak: 'break-all' }}>{state[type].data.name}</Text>
                 <CloseIcon style={{ marginLeft: '3rem', cursor: 'pointer' }} onClick={() => handleRemoveFile(type)} />
               </div>
             </>
             : <>
               <div className='dropzone__text'>Загрузка...</div>
-              <div className='dropzone__text dropzone__text--light'>{state[type].data.name}</div>
+              <div className='dropzone__text dropzone__text--light'>
+                <Text type='secondary' style={{ maxWidth: '80%', wordBreak: 'break-all' }}>{state[type].data.name}</Text>
+              </div>
             </>
 
           }

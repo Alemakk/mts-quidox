@@ -8,7 +8,7 @@ const auth = [
     type: 'phone',
     image: auth_phone,
     disabledImage: d4,
-    disabled: true
+    disabled: false
   },
   {
     text: 'Электронная почта',

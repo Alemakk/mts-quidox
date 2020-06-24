@@ -51,12 +51,8 @@ export default function () {
       >
         <Form.Item
           name='email'
-          label='Введите адрес электронной почты'
+          label='Введите Email или номер телефона: +375...'
           rules={[
-            {
-              type: 'email',
-              message: 'Указан неверный адрес электронной почты'
-            },
             {
               required: true,
               message: 'Обязательное поле!'

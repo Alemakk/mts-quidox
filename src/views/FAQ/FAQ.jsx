@@ -12,7 +12,7 @@ export default function FAQ ({ theme: { theme } }) {
         <ThemeCollapse style={{ marginTop: 90 }} color={theme['@primary-color']}>
           {faq.map(({ title, text }, idx) => (
             <ThemePanel header={title} key={idx}>
-              <Text>{text}</Text>
+              <Text dangerouslySetInnerHTML={{__html: text}}></Text>
             </ThemePanel>
           ))}
         </ThemeCollapse>

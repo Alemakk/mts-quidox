@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import MaskedInput from 'antd-mask-input'
 
 import api from '../../../../services'
 import { ServiceContext } from '../../context'
 import { servicePackages } from '../../static'
-import { Form, Input, Select, Checkbox, notification } from 'antd'
-import { Text, Button } from '../../../../components'
+import { Checkbox, Form, Input, notification, Select } from 'antd'
+import { Button, Text } from '../../../../components'
 
 export default function () {
   const [isFormDataAgree, setFormDataAgree] = useState(true)
@@ -13,6 +13,7 @@ export default function () {
   const { activeService } = serviceState
 
   const handleSubscribe = values => {
+    values.service = servicePackages.find(service => service.type === values.service).description
     api.mts.sendInvoice(values)
       .then(response => {
         const { data: { data, success, error } } = response
@@ -20,7 +21,7 @@ export default function () {
           notification.success({
             message: 'Заявка успешно отправлена!'
           })
-          window.open(data, "_blank")
+          window.open(data, '_blank')
         } else {
           throw new Error(error)
         }
@@ -54,7 +55,7 @@ export default function () {
           label='Наименование организации или ФИО абонента (от...)'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -62,7 +63,7 @@ export default function () {
           label='Должность и ФИО руководителя / доверенного лица (в лице...)'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -70,7 +71,7 @@ export default function () {
           label='Действующего на основании'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -78,7 +79,7 @@ export default function () {
           label='Номер мобильного телефона'
           rules={[{ required: true, message: 'Обязательное поле' }]}
         >
-          <MaskedInput disabled size='large' addonBefore='+375' mask='11-111-11-11' />
+          <MaskedInput disabled size='large' addonBefore='+375' mask='11-111-11-11'/>
         </Form.Item>
 
         <Form.Item
@@ -87,8 +88,8 @@ export default function () {
           rules={[{ required: true, message: 'Обязательное поле' }]}
         >
           <Select size='large'>
-            {servicePackages.map(({ description, title }, idx) => (
-              <Select.Option key={idx} value={description}>{title}</Select.Option>
+            {servicePackages.map(({ description, type, title }, idx) => (
+              <Select.Option key={idx} value={type}>{title}</Select.Option>
             ))}
           </Select>
         </Form.Item>
@@ -98,7 +99,7 @@ export default function () {
           label='Должность доверенного лица'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -106,7 +107,7 @@ export default function () {
           label='Номер паспорта доверенного лица'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -114,7 +115,7 @@ export default function () {
           label='Орган, который выдал паспорт доверенному лицу'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item
@@ -122,25 +123,29 @@ export default function () {
           label='Срок действия паспорта доверенного лица'
           rules={[{ required: true, message: 'Обязательное поле!' }]}
         >
-          <Input size='large' />
+          <Input size='large'/>
         </Form.Item>
 
         <Form.Item>
           <Checkbox onChange={() => setFormDataAgree(!isFormDataAgree)}>Все данные введены верно</Checkbox>
         </Form.Item>
         <Form.Item>
-          <Text small><strong>Для добавления услуги необходимо сформировать документ, подписать, поставить печать и отправить скан-копию на электронный адрес corporate@mts.by</strong></Text>
+          <Text small><strong>Для добавления услуги необходимо сформировать документ, подписать, поставить печать и
+            отправить скан-копию на электронный адрес corporate@mts.by</strong></Text>
         </Form.Item>
 
         <Form.Item>
-          <Button type='primary' style={{ display: 'block', margin: '0 auto' }} disabled={isFormDataAgree}>Сформировать документ</Button>
+          <Button type='primary' style={{ display: 'block', margin: '0 auto' }} disabled={isFormDataAgree}>Сформировать
+            документ</Button>
         </Form.Item>
 
         <Form.Item>
-          <Text small>*Вы также можете скачать пустой бланк заявления в формате pdf, заполнить и подписать его вручную.</Text>
+          <Text small>*Вы также можете скачать пустой бланк заявления в формате pdf, заполнить и подписать его
+            вручную.</Text>
         </Form.Item>
       </Form>
-      <Button onClick={() => window.open(`${process.env.PUBLIC_URL}/corp_service.doc`, '_self')} type='secondary' style={{ display: 'block', margin: '0 auto' }} ghost>Скачать пустой бланк pdf</Button>
+      <Button onClick={() => window.open(`${process.env.PUBLIC_URL}/corp_service.doc`, '_self')} type='secondary'
+              style={{ display: 'block', margin: '0 auto' }} ghost>Скачать пустой бланк pdf</Button>
     </>
   )
 }

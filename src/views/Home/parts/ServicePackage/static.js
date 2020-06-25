@@ -3,6 +3,7 @@ const servicePackages = [
     id: 1,
     type: 'easy',
     title: 'Лайт',
+    description:'MTC SmartDoc Лайт',
     top: false,
     accessAPI: false,
     timePeriod: 30,
@@ -16,6 +17,7 @@ const servicePackages = [
   {
     title: 'Стандарт',
     type: 'standard',
+    description:'MTC SmartDoc Лайт',
     top: true,
     accessAPI: true,
     timePeriod: 30,
@@ -29,6 +31,7 @@ const servicePackages = [
   {
     title: 'Бизнес',
     type: 'business',
+    description:'MTC SmartDoc Лайт',
     top: false,
     accessAPI: true,
     timePeriod: 30,

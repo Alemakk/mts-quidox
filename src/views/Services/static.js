@@ -2,7 +2,8 @@ const servicePackages = [
   {
     id: 1,
     title: 'Лайт',
-    type:'MTC SmartDoc Лайт',
+    type:'easy',
+    description:'MTC SmartDoc Лайт',
     top: false,
     accessAPI: false,
     timePeriod: 30,

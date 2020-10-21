@@ -19,7 +19,7 @@ export default function () {
         const { data: { data, success, error } } = response
         if (success) {
           notification.success({
-            message: 'Заявка успешно отправлена!'
+            message: 'Не забудьте подписать документ и отправить!'
           })
           window.open(data, '_blank')
         } else {

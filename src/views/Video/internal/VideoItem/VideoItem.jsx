@@ -16,7 +16,7 @@ export default function VideoItem ({ data = null, direction }) {
 
       <Video.Content>
         <Heading level={3}>{title}</Heading>
-        <Text>{text}</Text>
+        <div dangerouslySetInnerHTML={{ __html: text }} />
       </Video.Content>
     </Video>
   )

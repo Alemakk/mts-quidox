@@ -6,6 +6,7 @@ import SingleNews from './SingleNews'
 import Registration from './Registration'
 import Contacts from './Contacts'
 import FAQ from './FAQ'
+import SIgnFAQ from './SIgnFAQ'
 import Services from './Services'
 import ESCCheck from './ESCCheck'
 import Terms from './Terms'
@@ -19,6 +20,7 @@ export {
   SingleNews,
   Registration,
   Contacts,
+  SIgnFAQ,
   FAQ,
   Services,
   ESCCheck,

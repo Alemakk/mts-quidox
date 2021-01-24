@@ -11,6 +11,7 @@ import {
   Registration,
   Contacts,
   FAQ,
+  SIgnFAQ,
   Services,
   ESCCheck,
   Login,
@@ -34,6 +35,7 @@ function App () {
             <PublicRoute path='/esc-check' component={ESCCheck} />
             <PublicRoute path='/services' component={Services} />
             <PublicRoute path='/faq' component={FAQ} />
+            <PublicRoute path='/sign-faq' component={SIgnFAQ} />
             <PublicRoute path='/terms' component={Terms} />
             <PublicRoute path='/free-functional' component={FreeFunctionality} />
             <PublicRoute path='/contacts' component={Contacts} />

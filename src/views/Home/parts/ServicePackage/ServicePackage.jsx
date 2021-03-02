@@ -77,7 +77,7 @@ export default function ServicePackage ({ theme: { theme } }) {
 
                 <Package.Item>
                   <Text>Срок действия пакета</Text>
-                  <Text style={{ color: '#000' }}>{i.timePeriod} дней</Text>
+                  <Text style={{ color: '#000' }}>до {i.timePeriod} дней</Text>
                 </Package.Item>
 
                 <Package.Item>

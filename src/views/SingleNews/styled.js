@@ -43,13 +43,13 @@ News.Banner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 4rem;
-`
+  padding-bottom: 2rem;
+  `
 
 News.ItemContent = styled.div`
-  margin-top: 10rem;
+  margin-top: 5rem;
   * {
-    text-align: left;
+    // text-align: left;
   }
 `
 

@@ -3,7 +3,7 @@ import React from 'react'
 import history from '../../../../history'
 import { Row, Col } from 'antd'
 import { Container, Heading, NewsItem, Button } from '../../../../components'
-import { news } from './static'
+import { news } from '../../../News/static'
 import { NewsContent } from './styled'
 
 const sizes = {
@@ -24,13 +24,13 @@ export default function () {
           информация
         </Heading>
 
-        <Row gutter={[24, 24]}>
+        {/*<Row gutter={[24, 24]}>*/}
           {news.map(({ text, image, id }, idx) => (
-            <Col {...sizes} key={idx}>
+            // <Col {...sizes} key={idx}>
               <NewsItem text={text} path={image} id={id} />
-            </Col>
+            // </Col>
           ))}
-        </Row>
+        {/*</Row>*/}
         <div style={{ textAlign: 'center', marginTop: '4rem' }}>
           <Button type='secondary' onClick={() => history.push('/news')} ghost>Другие новости</Button>
         </div>

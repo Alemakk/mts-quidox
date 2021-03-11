@@ -14,28 +14,24 @@ export default function SingleNews ({ theme: { theme } }) {
 
   return (
     <News.Content>
-      <News.Banner src={src}>
-        <News.UselessLine color={theme['@primary-color']} />
-        <Container>
-          <Heading
-            level={2}
-            style={{ color: '#fff', textAlign: 'left' }}
-          >
-            {selectedNews.title}
-          </Heading>
-        </Container>
-      </News.Banner>
+        <News.Banner src={src}>
+          <News.UselessLine color={theme['@primary-color']}/>
+          <Container>
+            <Heading
+              level={1}
+              style={{ color: '#fff', textAlign: 'left' }}
+            >
+              {selectedNews.title}
+            </Heading>
+          </Container>
+        </News.Banner>
+
       <News.ItemContent>
         <Container small>
-          <Heading level={2}>Большой заголовок</Heading>
-
-          <Text>LСайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
-            осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в
-            домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст
-            генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст
-            более привлекательным и живым.
+          {/*<Heading level={2}>Большой заголовок</Heading>*/}
+          <Text dangerouslySetInnerHTML={{ __html: selectedNews.text }}>
           </Text>
-          <Slider />
+          {/*<Slider/>*/}
         </Container>
       </News.ItemContent>
     </News.Content>

@@ -19,7 +19,7 @@ const videoData = [
     poster: poster
   },
   {
-    text: 'Пришло пришлашение. Как получить документ?',
+    text: 'Пришло приглашение. Как получить документ?',
     url: 'https://youtu.be/EFEqBMm8QwA',
     poster: poster
   },

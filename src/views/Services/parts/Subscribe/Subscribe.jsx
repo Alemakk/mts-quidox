@@ -21,7 +21,9 @@ export default function () {
           notification.success({
             message: 'Не забудьте подписать документ и отправить!'
           })
-          window.open(data, '_blank')
+          // eslint-disable-next-line no-undef
+          const sharedToken = `?shared_token=${btoa(process.env.REACT_APP_SECRET_KEY)}`
+          window.open(data + sharedToken, '_blank')
         } else {
           throw new Error(error)
         }

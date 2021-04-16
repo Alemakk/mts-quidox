@@ -40,7 +40,9 @@ export default function ESCCheck () {
           setFetch(false)
           dispatch({ type: 'TOGGLE_CHECK' })
           console.log(data)
-          window.open(data, "_blank")
+          // eslint-disable-next-line no-undef
+          const sharedToken = `?shared_token=${btoa(process.env.REACT_APP_SECRET_KEY)}`
+          window.open(data + sharedToken, '_blank')
         } else {
           throw new Error(error)
         }
